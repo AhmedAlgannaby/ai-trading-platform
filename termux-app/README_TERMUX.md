@@ -173,6 +173,35 @@ bash status.sh
 لا تحذف أو تستبدل `.env` أو `server/data/`؛ فهما يحتويان إعداداتك ومعلومات التداول
 المحلية. ملفات الواجهة المحدّثة موجودة في `dist/` وتُقدّم تلقائياً بعد إعادة التشغيل.
 
+## 11) مسح سجل التداول مع الاحتفاظ بالإعدادات
+
+إذا أردت البدء بسجل تداول فارغ دون إعادة تثبيت التطبيق أو فقدان إعداداتك، أوقف
+السيرفر وخذ نسخة احتياطية، ثم أفرغ ملفات السجل المحددة فقط:
+
+```bash
+cd ~/ai-trading-termux
+bash stop.sh
+
+mkdir -p backups
+cp -a server/data "backups/server-data-before-reset-$(date +%Y%m%d-%H%M%S)"
+
+for file in Trade Signal AlertLog TradeReview TradeLesson StrategyScore PortfolioSnapshot; do
+  if [ -f "server/data/$file.json" ]; then
+    printf '[]\n' > "server/data/$file.json"
+  fi
+done
+
+bash run.sh
+```
+
+يبقي هذا الأمر `.env` وملفي `RiskSettings.json` و`_user.json` دون تغيير، ويمسح
+الصفقات والإشارات والتنبيهات والمراجعات ونتائج الاستراتيجيات ولقطات المحفظة
+المحفوظة محلياً. لاستعادة البيانات، أوقف السيرفر وانسخ الملفات من مجلد النسخة
+الاحتياطية إلى `server/data/`.
+
+> هذا يمسح السجل المحلي فقط؛ لا يغلق مراكز أو أوامر مفتوحة في Binance أو أي بورصة.
+> تحقّق من حساب البورصة وأدر مراكزك هناك بشكل منفصل.
+
 ## استكشاف الأخطاء
 
 | المشكلة | الحل |

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { base44 } from "@/api/base44Client";
 import { TrendingUp, TrendingDown, Wallet, Target, BarChart3, RefreshCw, Zap, WifiOff, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
@@ -51,27 +50,12 @@ const signedMoney = (v) => {
   return `${n >= 0 ? '+' : '-'}$${Math.abs(n).toFixed(2)}`;
 };
 
-export default function LivePortfolioStats({ portfolio: fallbackPortfolio }) {
-  const [isLive, setIsLive] = useState(false);
+export default function LivePortfolioStats({ portfolio: fallbackPortfolio, tradingMode, loading: portfolioLoading = false, unavailable = false }) {
+  const isLive = tradingMode === "live";
+  const isPaper = tradingMode === "paper";
   const [liveData, setLiveData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  useEffect(() => {
-    // التفعيل التلقائي حسب وضع التداول (المفاتيح تبقى على السيرفر)
-    loadRiskSettings();
-  }, []);
-
-  const loadRiskSettings = async () => {
-    try {
-      const list = await base44.entities.RiskSettings.list("-created_date", 1);
-      const mode = list[0]?.trading_mode;
-      if (mode === "live") {
-        setIsLive(true);
-        fetchLiveData();
-      }
-    } catch {}
-  };
 
   const fetchLiveData = useCallback(async () => {
     setLoading(true);
@@ -85,22 +69,21 @@ export default function LivePortfolioStats({ portfolio: fallbackPortfolio }) {
       setLiveData({ ...portfolio, tickers });
     } catch (e) {
       setError(e.message || "خطأ في الاتصال بـ Binance");
-      setIsLive(false);
+      setLiveData(null);
     } finally {
       setLoading(false);
     }
   }, []);
 
-  const handleToggleLive = async () => {
-    if (!isLive) {
-      setIsLive(true);
-      await fetchLiveData();
+  useEffect(() => {
+    if (isLive) {
+      fetchLiveData();
     } else {
-      setIsLive(false);
       setLiveData(null);
       setError(null);
+      setLoading(false);
     }
-  };
+  }, [fetchLiveData, isLive]);
 
   const portfolio = isLive && liveData
     ? {
@@ -116,22 +99,24 @@ export default function LivePortfolioStats({ portfolio: fallbackPortfolio }) {
         max_drawdown: fallbackPortfolio?.max_drawdown || 0,
         sharpe_ratio: fallbackPortfolio?.sharpe_ratio || 0,
       }
+    : isLive
+      ? { ...fallbackPortfolio, total_balance: null, available_balance: null }
     : fallbackPortfolio;
 
   const stats = [
     {
       icon: Wallet,
       label: isLive ? "الرصيد الحقيقي (Binance)" : "إجمالي الرصيد",
-      value: `$${(portfolio?.total_balance || 0).toLocaleString()}`,
+      value: portfolio?.total_balance == null ? (loading ? "جارٍ التحميل…" : "غير متاح") : `$${portfolio.total_balance.toLocaleString()}`,
       subValue: isLive
-        ? `متاح: $${(portfolio?.available_balance || 0).toLocaleString()}`
+        ? (portfolio?.available_balance == null ? "" : `متاح: $${portfolio.available_balance.toLocaleString()}`)
         : `${(portfolio?.total_pnl_percent || 0) >= 0 ? '+' : ''}${(portfolio?.total_pnl_percent || 0).toFixed(2)}%`,
       color: "cyan",
       live: isLive,
     },
     {
       icon: (portfolio?.daily_pnl || 0) >= 0 ? TrendingUp : TrendingDown,
-      label: "الربح اليومي",
+      label: isLive ? "الربح اليومي (تجريبي)" : "الربح اليومي",
       value: `${(portfolio?.daily_pnl || 0) >= 0 ? '+' : '-'}$${Math.abs(portfolio?.daily_pnl || 0).toLocaleString(undefined, { maximumFractionDigits: 2 })}`,
       subValue: `${(portfolio?.daily_pnl || 0) >= 0 ? '+' : '-'}${Math.abs(portfolio?.daily_pnl_percent || 0).toFixed(2)}%`,
       breakdown: `محقق ${signedMoney(portfolio?.daily_realized)} • عائم ${signedMoney(portfolio?.daily_unrealized)}`,
@@ -139,14 +124,14 @@ export default function LivePortfolioStats({ portfolio: fallbackPortfolio }) {
     },
     {
       icon: Target,
-      label: "نسبة النجاح",
+      label: isLive ? "نسبة النجاح (تجريبي)" : "نسبة النجاح",
       value: `${(portfolio?.win_rate || 0).toFixed(1)}%`,
       subValue: `${portfolio?.winning_trades || 0}W / ${portfolio?.losing_trades || 0}L`,
       color: "yellow",
     },
     {
       icon: BarChart3,
-      label: "Sharpe Ratio",
+      label: isLive ? "Sharpe (تجريبي)" : "Sharpe Ratio",
       value: (portfolio?.sharpe_ratio || 0).toFixed(2),
       subValue: `Max DD: ${(portfolio?.max_drawdown || 0).toFixed(1)}%`,
       color: "purple",
@@ -159,19 +144,25 @@ export default function LivePortfolioStats({ portfolio: fallbackPortfolio }) {
       <div className="flex items-center justify-between glass-card px-4 py-3">
         <div className="flex items-center gap-3">
           {isLive ? (
-            <div className="flex items-center gap-2 text-trading-green">
+            <div className="flex items-center gap-2 text-trading-red">
               <Zap className="w-4 h-4" />
-              <span className="text-sm font-semibold">بيانات حقيقية من Binance</span>
-              <Badge className="bg-trading-green/20 text-trading-green border-0 text-[10px]">LIVE</Badge>
+              <span className="text-sm font-semibold">وضع التداول الحقيقي</span>
+              <Badge className="bg-trading-red/20 text-trading-red border-0 text-[10px]">LIVE</Badge>
             </div>
-          ) : (
+          ) : isPaper ? (
             <div className="flex items-center gap-2 text-muted-foreground">
               <WifiOff className="w-4 h-4" />
               <span className="text-sm">بيانات تجريبية</span>
               <Badge variant="outline" className="text-[10px]">PAPER</Badge>
             </div>
+          ) : (
+            <div className="flex items-center gap-2 text-trading-yellow">
+              <WifiOff className="w-4 h-4" />
+              <span className="text-sm">وضع التداول غير معروف</span>
+              <Badge variant="outline" className="text-[10px]">UNKNOWN</Badge>
+            </div>
           )}
-          {error && <span className="text-xs text-trading-red">{error}</span>}
+          {error && <span className="text-xs text-trading-red" role="alert">تعذر تحميل حساب Binance: {error}</span>}
         </div>
         <div className="flex items-center gap-2">
           {isLive && (
@@ -186,29 +177,34 @@ export default function LivePortfolioStats({ portfolio: fallbackPortfolio }) {
               تحديث
             </Button>
           )}
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-muted-foreground">{isLive ? "Live" : "Paper"}</span>
-            <button
-              onClick={handleToggleLive}
-              disabled={loading}
-              className={`relative w-11 h-6 rounded-full transition-colors duration-200 focus:outline-none ${
-                isLive ? 'bg-trading-green' : 'bg-secondary'
-              }`}
-            >
-              <span className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform duration-200 ${
-                isLive ? 'translate-x-5' : 'translate-x-0'
-              }`} />
-            </button>
-          </div>
+          <span className="text-xs text-muted-foreground">
+            الوضع مضبوط من إعدادات المخاطر — هذا العرض لا يغيّر وضع الأوامر.
+          </span>
         </div>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {stats.map((stat, i) => (
-          <StatCard key={stat.label} {...stat} delay={i * 0.05} />
-        ))}
-      </div>
+      {portfolioLoading ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[0, 1, 2, 3].map((key) => <div key={key} className="glass-card h-24 animate-pulse bg-primary/5" />)}
+        </div>
+      ) : unavailable ? (
+        <div className="glass-card p-4 text-sm text-trading-red" role="alert">
+          تعذر تحميل مؤشرات المحفظة؛ لن نعرض أرقاماً افتراضية بدلاً منها.
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {stats.map((stat, i) => (
+            <StatCard key={stat.label} {...stat} delay={i * 0.05} />
+          ))}
+        </div>
+      )}
+
+      {isLive && !unavailable && !portfolioLoading && (
+        <p className="text-xs text-muted-foreground">
+          رصيد الحساب من Binance؛ مؤشرات الأداء الأخرى محسوبة من صفقات Paper.
+        </p>
+      )}
 
       {/* Live Assets Breakdown */}
       {isLive && liveData?.assets && liveData.assets.length > 0 && (

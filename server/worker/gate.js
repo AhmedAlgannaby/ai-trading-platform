@@ -48,12 +48,7 @@ export async function evaluateEntry({ pair, direction, confidence, strategyId })
   const dir = direction === 'buy' ? 'long' : 'short';
   const notes = [];
   let penalty = 0;
-  let stats;
-  try {
-    stats = await entryStats();
-  } catch {
-    return { blocked: false, adjustedConfidence: confidence, notes };
-  }
+  const stats = await entryStats();
 
   const combo = stats.pairDir[`${pair}|${dir}`];
   if (combo && combo.total >= MIN_SAMPLES) {
@@ -104,9 +99,14 @@ export async function lossThrottle() {
   const settingsList = await db.list('RiskSettings', { sort: '-created_date', limit: 1 });
   const settings = settingsList[0] || {};
   const breaker = Math.min(Math.max(Number(settings.circuit_breaker_losses) || 3, 1), 10);
-  const closed = await db.list('Trade', { sort: '-created_date', limit: 20, filter: { status: 'closed' } });
+  const closed = await db.list('Trade', { sort: '-closed_at', limit: 200, filter: { status: 'closed' } });
+  closed.sort((a, b) => {
+    const at = Date.parse(a.closed_at || a.updated_date || a.created_date || 0) || 0;
+    const bt = Date.parse(b.closed_at || b.updated_date || b.created_date || 0) || 0;
+    return bt - at;
+  });
   let consec = 0;
-  for (const t of closed) {
+  for (const t of closed.slice(0, 20)) {
     if ((t.pnl || 0) > 0) break;
     consec++;
   }

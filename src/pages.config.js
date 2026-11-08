@@ -47,27 +47,29 @@
  *
  * The mainPage value must match a key in the PAGES object exactly.
  */
-import AIEngine from './pages/AIEngine';
-import AutoTrading from './pages/AutoTrading';
-import AutoStrategies from './pages/AutoStrategies';
-import AISignals from './pages/AISignals';
-import Alerts from './pages/Alerts';
-import AppSettings from './pages/AppSettings';
-import Backtesting from './pages/Backtesting';
-import CopyTrading from './pages/CopyTrading';
-import Dashboard from './pages/Dashboard';
-import MarketAnalysis from './pages/MarketAnalysis';
-import PerformanceAnalytics from './pages/PerformanceAnalytics';
-import RiskManagement from './pages/RiskManagement';
-import SentimentAnalysis from './pages/SentimentAnalysis';
-import StrategyBuilder from './pages/StrategyBuilder';
-import StrategyMarketplace from './pages/StrategyMarketplace';
-import SignalMarketplace from './pages/SignalMarketplace';
-import TradeHistory from './pages/TradeHistory';
-import Trades from './pages/Trades';
-import WhaleTracking from './pages/WhaleTracking';
+import { lazy } from 'react';
 import __Layout from './Layout.jsx';
 
+const AIEngine = lazy(() => import('./pages/AIEngine'));
+const AutoTrading = lazy(() => import('./pages/AutoTrading'));
+const AutoStrategies = lazy(() => import('./pages/AutoStrategies'));
+const AISignals = lazy(() => import('./pages/AISignals'));
+const Alerts = lazy(() => import('./pages/Alerts'));
+const AppSettings = lazy(() => import('./pages/AppSettings'));
+const Backtesting = lazy(() => import('./pages/Backtesting'));
+const CopyTrading = lazy(() => import('./pages/CopyTrading'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const MarketAnalysis = lazy(() => import('./pages/MarketAnalysis'));
+const PerformanceAnalytics = lazy(() => import('./pages/PerformanceAnalytics'));
+const RiskManagement = lazy(() => import('./pages/RiskManagement'));
+const SentimentAnalysis = lazy(() => import('./pages/SentimentAnalysis'));
+const StrategyBuilder = lazy(() => import('./pages/StrategyBuilder'));
+const StrategyMarketplace = lazy(() => import('./pages/StrategyMarketplace'));
+const SignalMarketplace = lazy(() => import('./pages/SignalMarketplace'));
+const TradeHistory = lazy(() => import('./pages/TradeHistory'));
+const Trades = lazy(() => import('./pages/Trades'));
+const WhaleTracking = lazy(() => import('./pages/WhaleTracking'));
+const Wallet = lazy(() => import('./pages/Wallet'));
 
 export const PAGES = {
     "AIEngine": AIEngine,
@@ -89,6 +91,7 @@ export const PAGES = {
     "TradeHistory": TradeHistory,
     "Trades": Trades,
     "WhaleTracking": WhaleTracking,
+    "Wallet": Wallet,
 }
 
 export const pagesConfig = {

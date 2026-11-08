@@ -183,6 +183,10 @@ function SignalCard({ signal, delay }) {
       const { data: settings } = await base44.entities.RiskSettings.list("-created_date", 1).then(d => ({ data: d[0] })).catch(() => ({ data: null }));
       const mode = "paper"; // صفقات المتصفح ورقية دائماً — الحي عبر executeSignal فقط
       const market = settings?.market_type === "futures" ? "futures" : "spot";
+      const maxLeverage = Math.min(Math.max(Number(settings?.max_leverage) || 5, 1), 125);
+      const leverage = market === "futures"
+        ? Math.min(Math.max(Number(settings?.default_leverage) || 1, 1), maxLeverage)
+        : 1;
       if (signal.direction === "sell" && market !== "futures") {
         console.warn("sell skipped — spot cannot short");
         return;
@@ -193,7 +197,7 @@ function SignalCard({ signal, delay }) {
         riskPct: settings?.max_risk_per_trade || 2,
         entry: signal.entry_price,
         sl: signal.stop_loss,
-        leverage: 1,
+        leverage,
       });
 
       await base44.entities.Trade.create({
@@ -206,7 +210,7 @@ function SignalCard({ signal, delay }) {
         take_profit_2: signal.take_profit_2,
         take_profit_3: signal.take_profit_3,
         position_size: Math.round(size),
-        leverage: 1,
+        leverage,
         confidence: signal.confidence,
         strategy: signal.strategy || "AI Signal",
         timeframe: signal.timeframe || "4H",

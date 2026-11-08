@@ -6,7 +6,7 @@
  * و calcRSI/calcEMA/calcATR/computeIndicators من marketFeatures.js
  * (جلب الشموع fetchCandles يُختبر بجلب مُزيَّف محلي — بلا إنترنت).
  */
-import { buildFeatures, predict, initialWeights, trainStep, trainEpochs, evaluate, N_FEATURES } from './signalModel.js';
+import { buildFeatures, predict, initialWeights, trainStep, trainEpochs, evaluate, evaluateWalkForward, N_FEATURES } from './signalModel.js';
 import { calcRSI, calcEMA, calcATR, computeIndicators, fetchCandles } from './marketFeatures.js';
 
 let pass = 0, fail = 0;
@@ -46,6 +46,16 @@ ok(predict(wTrained, xBuy) !== predict(wTrained, xSell), 'بعد التدريب:
 const ev = evaluate(wTrained, [{ x: xBuy, y: 1 }, { x: xSell, y: 0 }]);
 ok(ev.accuracy >= 0 && ev.accuracy <= 100 && isFinite(ev.loss), `تقييم: دقة ${ev.accuracy}% وخسارة ${ev.loss}`);
 ok(evaluate(w0, []).accuracy === 0, 'تقييم فارغ آمن');
+const shortWalkForward = evaluateWalkForward([{ x: xBuy, y: 1 }, { x: xSell, y: 0 }]);
+ok(shortWalkForward.accuracy === null && shortWalkForward.samples === 0,
+  'لا يعرض دقة خارج العينة قبل اكتمال فترة التهيئة');
+const walkForwardSamples = Array.from({ length: 7 }, (_, i) => ({
+  x: i % 2 ? xSell : xBuy,
+  y: i % 2 ? 0 : 1,
+}));
+const walkForward = evaluateWalkForward(walkForwardSamples);
+ok(walkForward.samples === 2 && walkForward.accuracy !== null && isFinite(walkForward.loss),
+  'التقييم المتتابع يختبر كل صفقة قبل التعلّم منها');
 
 // ── 5) مؤشرات marketFeatures ──
 const up = Array.from({ length: 30 }, (_, i) => 100 + i);

@@ -4,8 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { Brain, ArrowUpCircle, ArrowDownCircle, Minus, ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
+import { Skeleton } from "@/components/ui/skeleton";
 
-export default function RecentSignals({ signals }) {
+export default function RecentSignals({ signals, loading = false, error = false, onRetry }) {
   const recentSignals = (signals || []).slice(0, 5);
 
   return (
@@ -25,7 +26,16 @@ export default function RecentSignals({ signals }) {
         </Link>
       </div>
 
-      {recentSignals.length === 0 ? (
+      {error ? (
+        <div className="py-8 text-center text-sm text-muted-foreground" role="alert">
+          <p>تعذر تحميل الإشارات.</p>
+          {onRetry && <button className="mt-2 text-primary hover:underline" onClick={onRetry}>إعادة المحاولة</button>}
+        </div>
+      ) : loading ? (
+        <div className="space-y-2">
+          {[0, 1, 2].map((key) => <Skeleton key={key} className="h-14 w-full" />)}
+        </div>
+      ) : recentSignals.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-8 text-muted-foreground">
           <Brain className="w-8 h-8 mb-2 opacity-30" />
           <p className="text-sm">لا توجد إشارات حالياً</p>

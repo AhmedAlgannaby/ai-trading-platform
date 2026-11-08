@@ -25,11 +25,10 @@ let running = false;
 
 export function calcPnL(trade, price) {
   if (!price || !trade.entry_price || !trade.position_size) return { pnl: 0, pnlPercent: 0 };
-  const leverage = trade.leverage || 1;
   const qty = trade.position_size / trade.entry_price;
   const pnl = trade.type === 'long'
-    ? (price - trade.entry_price) * qty * leverage
-    : (trade.entry_price - price) * qty * leverage;
+    ? (price - trade.entry_price) * qty
+    : (trade.entry_price - price) * qty;
   const pnlPercent = trade.position_size ? (pnl / trade.position_size) * 100 : 0;
   return { pnl: Math.round(pnl * 100) / 100, pnlPercent: Math.round(pnlPercent * 100) / 100 };
 }
@@ -207,6 +206,7 @@ export async function monitorTick() {
           await db.update('Trade', trade.id, {
             status: 'closed', current_price: price, exit_price: exitPrice,
             pnl: final.pnl, pnl_percent: final.pnlPercent,
+            pnl_accounting_version: 2,
             exit_reason: closeReason, closed_at: new Date().toISOString(),
             ...(stopMoved ? { stop_loss: trade.stop_loss, trailing_peak: trade.trailing_peak, breakeven_moved: !!trade.breakeven_moved } : {}),
           });
@@ -218,7 +218,7 @@ export async function monitorTick() {
           });
         } else {
           const { pnl, pnlPercent } = calcPnL(trade, price);
-          const patch = { current_price: price, pnl, pnl_percent: pnlPercent };
+          const patch = { current_price: price, pnl, pnl_percent: pnlPercent, pnl_accounting_version: 2 };
           if (stopMoved) {
             patch.stop_loss = trade.stop_loss;
             patch.take_profit_1 = trade.take_profit_1;

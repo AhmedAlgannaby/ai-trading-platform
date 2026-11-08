@@ -101,7 +101,8 @@ export default function AutoTrading() {
         return;
       }
       const realizedToday = microTrades
-        .filter(t => t.status === "closed" && (t.closed_at || t.updated_date || "").slice(0, 10) === day)
+        .filter(t => t.status === "closed" && t.pnl_accounting_version === 2 &&
+          (t.closed_at || t.updated_date || "").slice(0, 10) === day)
         .reduce((sum, t) => sum + (Number(t.pnl) || 0), 0);
       if (realizedToday <= -(balance * MICRO_DAILY_LOSS_PCT / 100)) {
         addLog(`🛑 حد الخسارة اليومي (-${MICRO_DAILY_LOSS_PCT}%) بلغ ${realizedToday.toFixed(2)}$ — توقف لليوم`, "warning");
@@ -122,9 +123,11 @@ export default function AutoTrading() {
       ? Math.max(0, Math.min(config.max_trades_per_run, MICRO_MAX_TRADES_PER_DAY - openedToday, MICRO_MAX_POSITIONS - currentOpen))
       : config.max_trades_per_run;
     const minConfidence = micro ? Math.max(config.min_confidence, MICRO_MIN_CONFIDENCE) : config.min_confidence;
-    const effectiveLeverage = micro
-      ? Math.min(settings?.default_leverage || 1, MICRO_MAX_LEVERAGE)
-      : (settings?.default_leverage || 1);
+    const effectiveMarket = settings?.market_type === "futures" ? "futures" : "spot";
+    const maxLeverage = Math.min(Math.max(Number(settings?.max_leverage) || 5, 1), 125);
+    const effectiveLeverage = effectiveMarket === "futures"
+      ? Math.min(Math.max(Number(settings?.default_leverage) || 1, 1), maxLeverage, micro ? MICRO_MAX_LEVERAGE : 125)
+      : 1;
     const effectiveRiskPct = micro ? microRiskPct(balance) : (settings?.max_risk_per_trade || 2);
 
     let executedCount = 0;
@@ -314,9 +317,11 @@ export default function AutoTrading() {
   const microMode = isMicroBalance(paperBalance);
   const displayMaxOpen = microMode ? MICRO_MAX_POSITIONS : (settings?.max_open_positions || 5);
   const displayRisk = microMode ? microRiskPct(paperBalance) : (settings?.max_risk_per_trade || 2);
-  const displayLeverage = microMode
-    ? Math.min(settings?.default_leverage || 1, MICRO_MAX_LEVERAGE)
-    : (settings?.default_leverage || 1);
+  const displayMarket = settings?.market_type === "futures" ? "futures" : "spot";
+  const displayMaxLeverage = Math.min(Math.max(Number(settings?.max_leverage) || 5, 1), 125);
+  const displayLeverage = displayMarket === "futures"
+    ? Math.min(Math.max(Number(settings?.default_leverage) || 1, 1), displayMaxLeverage, microMode ? MICRO_MAX_LEVERAGE : 125)
+    : 1;
   const displayMinConfidence = microMode ? Math.max(config.min_confidence, MICRO_MIN_CONFIDENCE) : config.min_confidence;
 
   return (

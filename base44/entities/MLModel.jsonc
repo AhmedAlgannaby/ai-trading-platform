@@ -29,12 +29,21 @@
     "accuracy": {
       "type": "number",
       "default": 0,
-      "description": "Accuracy % on trained trades"
+      "description": "Prequential walk-forward accuracy %"
     },
     "last_loss": {
       "type": "number",
       "default": 0,
-      "description": "Mean log-loss on trained trades"
+      "description": "Prequential walk-forward log-loss"
+    },
+    "validation_samples": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of prequential out-of-sample predictions"
+    },
+    "validation_method": {
+      "type": "string",
+      "default": "prequential-walk-forward"
     },
     "trained_trade_ids": {
       "type": "array",

@@ -1,6 +1,6 @@
 import { base44 } from "@/api/base44Client";
 
-const MIN_SAMPLES = 3; // أقل عدد صفقات قبل الحكم على نمط
+const MIN_SAMPLES = 5;
 const MAX_PENALTY = 25;
 
 /** يستخرج العوامل من نص سبب الدخول المحفوظ في الصفقة */
@@ -18,7 +18,7 @@ export async function recordLessons() {
     base44.entities.TradeLesson.list("-created_date", 200),
   ]);
   const known = new Set(lessons.map(l => l.trade_id));
-  const fresh = closed.filter(t => !known.has(t.id));
+  const fresh = closed.filter(t => t.pnl_accounting_version === 2 && !known.has(t.id));
   if (!fresh.length) return 0;
 
   const records = fresh.map(t => {

@@ -6,25 +6,31 @@ const dayKey = (d) => new Date(d).toISOString().slice(0, 10);
 
 /** يحمّل الصفقات والإعدادات ويحسب كل مقاييس الأداء من الصفقات الفعلية */
 export default function usePerformanceData() {
-  const { data: trades = [], isLoading } = useQuery({
+  const tradesQuery = useQuery({
     queryKey: ["perf-trades"],
     queryFn: () => base44.entities.Trade.filter({ mode: "paper" }, "-created_date", 500),
     refetchInterval: 30000,
   });
-  const { data: settings = [] } = useQuery({
+  const settingsQuery = useQuery({
     queryKey: ["risk-settings"],
     queryFn: () => base44.entities.RiskSettings.list("-created_date", 1),
   });
 
+  const trades = tradesQuery.data || [];
+  const settings = settingsQuery.data || [];
   const initial = settings[0]?.paper_balance || 10000;
 
   const metrics = useMemo(() => {
-    const closed = trades.filter(t => t.status === "closed")
+    const legacyClosedCount = trades.filter(t =>
+      t.status === "closed" && t.pnl_accounting_version !== 2,
+    ).length;
+    const closed = trades.filter(t => t.status === "closed" && t.pnl_accounting_version === 2)
       .sort((a, b) => new Date(a.closed_at || a.updated_date) - new Date(b.closed_at || b.updated_date));
     const open = trades.filter(t => t.status === "open");
+    const valuedOpen = open.filter(t => t.pnl_accounting_version === 2);
 
     const realized = closed.reduce((s, t) => s + (t.pnl || 0), 0);
-    const unrealized = open.reduce((s, t) => s + (t.pnl || 0), 0);
+    const unrealized = valuedOpen.reduce((s, t) => s + (t.pnl || 0), 0);
     const balance = initial + realized + unrealized;
 
     const wins = closed.filter(t => (t.pnl || 0) > 0);
@@ -47,6 +53,17 @@ export default function usePerformanceData() {
         drawdown: -Math.round(dd * 100) / 100,
       });
     });
+    if (valuedOpen.length) {
+      peak = Math.max(peak, balance);
+      const dd = peak ? ((peak - balance) / peak) * 100 : 0;
+      maxDD = Math.max(maxDD, dd);
+      equity.push({
+        label: "الآن",
+        date: dayKey(new Date()),
+        balance: Math.round(balance * 100) / 100,
+        drawdown: -Math.round(dd * 100) / 100,
+      });
+    }
 
     // يومي: ربح/خسارة + معدل النجاح التراكمي
     const byDay = {};
@@ -97,7 +114,7 @@ export default function usePerformanceData() {
       .sort((a, b) => b.pnl - a.pnl);
 
     return {
-      closed, open, balance, realized, unrealized, equity, daily, strategies, pairs,
+      closed, open, legacyClosedCount, balance, realized, unrealized, equity, daily, strategies, pairs,
       totalReturnPct: initial ? ((balance - initial) / initial) * 100 : 0,
       winRate: closed.length ? (wins.length / closed.length) * 100 : 0,
       winsCount: wins.length,
@@ -110,5 +127,13 @@ export default function usePerformanceData() {
     };
   }, [trades, initial]);
 
-  return { ...metrics, initial, isLoading };
+  return {
+    ...metrics,
+    initial,
+    isLoading: tradesQuery.isLoading || settingsQuery.isLoading,
+    isError: tradesQuery.isError || settingsQuery.isError,
+    tradesIsError: tradesQuery.isError,
+    settingsIsError: settingsQuery.isError,
+    refetch: () => Promise.all([tradesQuery.refetch(), settingsQuery.refetch()]),
+  };
 }

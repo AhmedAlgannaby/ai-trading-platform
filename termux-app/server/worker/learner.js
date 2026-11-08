@@ -2,7 +2,7 @@
  * worker/learner — تسجيل الدروس من الصفقات المغلقة في السيرفر.
  * (نقل لمنطق tradeLearning.js من المتصفح — يعمل بلا متصفح مفتوح)
  *
- * كل دورة: الصفقات المغلقة (paper) التي بلا TradeLesson ← سجل درساً بنفس الشكل:
+ * كل دورة: الصفقات الورقية المغلقة ذات PnL الحالي التي بلا TradeLesson ← سجل درساً:
  * { trade_id, pair, direction, outcome, pnl, pnl_percent, factors, exit_reason, lesson }
  * التدريب الإحصائي/النموذجي العميق (Phase 4) يقرأ من TradeLesson.
  */
@@ -26,12 +26,14 @@ export async function learnerTick() {
   const t0 = Date.now();
   try {
     const [closed, lessons] = await Promise.all([
-      db.list('Trade', { sort: '-created_date', limit: 50, filter: { status: 'closed' } }),
+      db.list('Trade', {
+        sort: '-closed_at', limit: 50,
+        filter: { status: 'closed', mode: 'paper', pnl_accounting_version: 2 },
+      }),
       db.list('TradeLesson', { sort: '-created_date', limit: 200 }),
     ]);
-    const paperClosed = closed.filter((t) => (t.mode || 'paper') === 'paper');
     const known = new Set(lessons.map((l) => l.trade_id));
-    const fresh = paperClosed.filter((t) => !known.has(t.id));
+    const fresh = closed.filter((t) => !known.has(t.id));
     if (!fresh.length) {
       learnerStats.recorded = 0;
       return { recorded: 0 };
@@ -124,7 +126,8 @@ export async function postMortem(t) {
   try {
     const symbol = String(t.pair).replace('/', '');
     if (isFinite(entryMs)) {
-      const pre = toBrain(await klines(symbol, '1h', 80, { endTime: entryMs }));
+      const preRaw = await klines(symbol, '1h', 80, { endTime: entryMs - 1 });
+      const pre = toBrain(preRaw.filter((c) => Number(c[0]) + 3600000 <= entryMs));
       if (pre.length >= 30) {
         const closes = pre.map((c) => c.close);
         entryRsi = rsi(closes);
@@ -132,7 +135,8 @@ export async function postMortem(t) {
         entryRegime = rg.regime;
         entryAtrPct = rg.atrPct;
       }
-      const daily = toBrain(await klines(symbol, '1d', 60, { endTime: entryMs }));
+      const dailyRaw = await klines(symbol, '1d', 60, { endTime: entryMs - 1 });
+      const daily = toBrain(dailyRaw.filter((c) => Number(c[0]) + 86400000 <= entryMs));
       if (daily.length >= 55) dailyTrend = marketRegime(daily).trend;
     }
   } catch { /* تبقى null — بصراحة */ }
@@ -148,16 +152,17 @@ export async function postMortem(t) {
   try {
     if (isFinite(entryMs) && isFinite(exitMs)) {
       const symbol = String(t.pair).replace('/', '');
-      const raw = await klines(symbol, '1h', 1000, { endTime: exitMs + 3600000 });
-      truncated = raw.length >= 1000;
-      const range = toBrain(raw).map((c, idx) => ({ ...c, t: raw[idx][0] })).filter((c) => c.t >= entryMs);
-      if (range.length) {
+      const raw = await klines(symbol, '1h', 1000, { endTime: exitMs });
+      truncated = raw.length >= 1000 && Number(raw[0]?.[0]) > entryMs;
+      const range = toBrain(raw).map((c, idx) => ({ ...c, t: Number(raw[idx][0]) }))
+        .filter((c) => c.t >= entryMs && c.t + 3600000 <= exitMs);
+      if (!truncated && range.length) {
         if (isLong) {
-          mfePct = ((Math.max(...range.map((c) => c.high)) - entry) / entry) * 100;
-          maePct = ((entry - Math.min(...range.map((c) => c.low))) / entry) * 100;
+          mfePct = Math.max(0, ((Math.max(...range.map((c) => c.high)) - entry) / entry) * 100);
+          maePct = Math.max(0, ((entry - Math.min(...range.map((c) => c.low))) / entry) * 100);
         } else {
-          mfePct = ((entry - Math.min(...range.map((c) => c.low))) / entry) * 100;
-          maePct = ((Math.max(...range.map((c) => c.high)) - entry) / entry) * 100;
+          mfePct = Math.max(0, ((entry - Math.min(...range.map((c) => c.low))) / entry) * 100);
+          maePct = Math.max(0, ((Math.max(...range.map((c) => c.high)) - entry) / entry) * 100);
         }
       }
     }

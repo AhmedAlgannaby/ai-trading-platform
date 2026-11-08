@@ -10,7 +10,7 @@ export default function PaperTradingStatus() {
   const [closedAlerts, setClosedAlerts] = useState([]);
 
   const { data: trades } = useQuery({
-    queryKey: ["trades"],
+    queryKey: ["trades", "paper"],
     queryFn: () => base44.entities.Trade.filter({ mode: "paper" }, "-created_date", 50),
     initialData: [],
     refetchInterval: 15000,
@@ -37,10 +37,11 @@ export default function PaperTradingStatus() {
   }, []);
 
   const openTrades = trades.filter(t => t.status === "open");
-  const closedTrades = trades.filter(t => t.status === "closed");
+  const closedTrades = trades.filter(t => t.status === "closed" && t.pnl_accounting_version === 2);
   const paperBalance = settings[0]?.paper_balance || 10000;
   const totalPnl = closedTrades.reduce((sum, t) => sum + (t.pnl || 0), 0);
-  const openPnl = openTrades.reduce((sum, t) => sum + (t.pnl || 0), 0);
+  const openPnl = openTrades.filter(t => t.pnl_accounting_version === 2)
+    .reduce((sum, t) => sum + (t.pnl || 0), 0);
   const winCount = closedTrades.filter(t => (t.pnl || 0) > 0).length;
   const winRate = closedTrades.length > 0 ? Math.round((winCount / closedTrades.length) * 100) : 0;
 

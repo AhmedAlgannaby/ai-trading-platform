@@ -6,7 +6,7 @@ export default function EquityDrawdownChart({ equity }) {
   const empty = equity.length < 2;
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <ChartCard title="منحنى رأس المال" subtitle="الرصيد بعد كل صفقة مغلقة" className="lg:col-span-2">
+      <ChartCard title="منحنى رأس المال التجريبي" subtitle="الرصيد بعد كل صفقة تجريبية مغلقة" className="lg:col-span-2">
         {empty ? <EmptyChart /> : (
           <div className="h-[260px]">
             <ResponsiveContainer width="100%" height="100%">

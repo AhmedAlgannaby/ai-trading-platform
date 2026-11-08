@@ -95,6 +95,17 @@ await resetDir();
 let lt = await lossThrottle();
 ok(lt.allow === true && lt.riskMult === 1 && lt.consecLosses === 0, 'بلا خسائر: مخاطرة كاملة');
 
+await resetDir();
+await db.create('Trade', {
+  status: 'closed', pnl: 50, closed_at: '2026-01-03T00:00:00.000Z',
+});
+await db.create('Trade', {
+  status: 'closed', pnl: -10, closed_at: '2026-01-02T00:00:00.000Z',
+});
+lt = await lossThrottle();
+ok(lt.consecLosses === 0, 'closed trade ordering uses close time, not creation time');
+
+await resetDir();
 // ── 10) خسارتان متتاليتان → نصف المخاطرة ──
 await db.create('Trade', { status: 'closed', pnl: -10, pair: 'A' });
 await db.create('Trade', { status: 'closed', pnl: -20, pair: 'B' });

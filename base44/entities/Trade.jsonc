@@ -59,6 +59,14 @@
     "pnl_percent": {
       "type": "number"
     },
+    "pnl_accounting_version": {
+      "type": "number",
+      "description": "PnL formula version used for this trade result"
+    },
+    "pnl_accounting_version": {
+      "type": "number",
+      "description": "PnL formula version used for this trade result"
+    },
     "confidence": {
       "type": "number",
       "description": "AI confidence score 0-100"

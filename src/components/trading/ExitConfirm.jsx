@@ -91,10 +91,10 @@ export default function ExitConfirm({ trade, onDismiss, onClosed }) {
         <div className="flex gap-2">
           <Button
             onClick={handleConfirm}
-            disabled={loading || closing}
+            disabled={loading || closing || !preview}
             className="flex-1 bg-trading-red hover:bg-trading-red/90 text-white font-bold"
           >
-            {closing ? <Loader2 className="w-4 h-4 animate-spin" /> : "إغلاق الآن → USDT"}
+            {closing ? <Loader2 className="w-4 h-4 animate-spin" /> : trade.mode === "live" ? "تأكيد أمر سوق حقيقي" : "تأكيد إغلاق الصفقة"}
           </Button>
           <Button variant="outline" onClick={onDismiss} className="flex-1">
             <TrendingUp className="w-4 h-4 ml-1" /> انتظار

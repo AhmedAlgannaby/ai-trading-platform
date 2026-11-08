@@ -46,5 +46,11 @@ ok(v.verdict === 'hold' && v.confidence <= 60, 'فراغ → انتظار آمن
 v = adviseExit({ unrealizedPnlPct: 0, positionType: 'long', freshDirection: 'hold', freshConfidence: 0 });
 ok(['hold', 'close'].includes(v.verdict) && Array.isArray(v.reasons) && isFinite(v.confidence), 'شكل الناتج ثابت');
 
+// 10) short: sell is with the position; buy is against it
+v = adviseExit({ unrealizedPnlPct: -2, positionType: 'short', freshDirection: 'sell', freshConfidence: 75 });
+ok(v.verdict === 'hold', 'صفقة بيع خاسرة + تحليل معها → انتظار');
+v = adviseExit({ unrealizedPnlPct: -2, positionType: 'short', freshDirection: 'buy', freshConfidence: 75 });
+ok(v.verdict === 'close', 'صفقة بيع خاسرة + تحليل ضدها → إغلاق');
+
 console.log(`\nالنتيجة: ${pass} ناجح / ${fail} فاشل`);
 process.exit(fail ? 1 : 0);

@@ -21,19 +21,23 @@ export default function TradeHistory() {
 
   const allClosed = trades.filter(t => t.status === "closed");
   const closedTrades = applyFilters(allClosed, filters);
+  const reliableTrades = closedTrades.filter(t => t.pnl_accounting_version === 2);
+  const legacyCount = closedTrades.length - reliableTrades.length;
   const strategyList = [...new Set(allClosed.map(strategyOf))];
-  const comparison = strategyStats(applyFilters(allClosed, { ...filters, strategy: "all" }));
+  const comparison = strategyStats(applyFilters(
+    allClosed.filter(t => t.pnl_accounting_version === 2), { ...filters, strategy: "all" },
+  ));
 
-  const winningTrades = closedTrades.filter(t => (t.pnl || 0) > 0);
-  const losingTrades = closedTrades.filter(t => (t.pnl || 0) <= 0);
-  const totalPnl = closedTrades.reduce((sum, t) => sum + (t.pnl || 0), 0);
-  const winRate = closedTrades.length ? (winningTrades.length / closedTrades.length * 100) : 0;
+  const winningTrades = reliableTrades.filter(t => (t.pnl || 0) > 0);
+  const losingTrades = reliableTrades.filter(t => (t.pnl || 0) <= 0);
+  const totalPnl = reliableTrades.reduce((sum, t) => sum + (t.pnl || 0), 0);
+  const winRate = reliableTrades.length ? (winningTrades.length / reliableTrades.length * 100) : 0;
   const avgWin = winningTrades.length ? winningTrades.reduce((s, t) => s + t.pnl, 0) / winningTrades.length : 0;
   const avgLoss = losingTrades.length ? losingTrades.reduce((s, t) => s + Math.abs(t.pnl), 0) / losingTrades.length : 0;
 
   const pairSet = [...new Set(allClosed.map(t => t.pair))];
 
-  const pnlData = closedTrades.slice(0, 20).reverse().map((t, i) => ({
+  const pnlData = reliableTrades.slice(0, 20).reverse().map((t, i) => ({
     name: `#${i + 1}`,
     pnl: t.pnl || 0,
   }));
@@ -48,8 +52,13 @@ export default function TradeHistory() {
       <AdvancedFilters filters={filters} onChange={setFilters} pairs={pairSet} strategies={strategyList} />
 
       {/* Stats */}
+      {legacyCount > 0 && (
+        <p className="text-xs text-muted-foreground" role="status">
+          تُستبعد {legacyCount} صفقة قديمة من مؤشرات الأداء لأنها غير موسومة بصيغة PnL الحالية؛ تبقى السجلات ظاهرة أدناه.
+        </p>
+      )}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <StatBox label="إجمالي الصفقات" value={closedTrades.length} />
+        <StatBox label="صفقات موثوقة" value={reliableTrades.length} />
         <StatBox label="صافي الربح" value={`$${totalPnl.toFixed(2)}`} color={totalPnl >= 0 ? "green" : "red"} />
         <StatBox label="نسبة النجاح" value={`${winRate.toFixed(1)}%`} color={winRate >= 50 ? "green" : "red"} />
         <StatBox label="متوسط الربح/الخسارة" value={`$${avgWin.toFixed(0)} / -$${avgLoss.toFixed(0)}`} />
@@ -86,7 +95,7 @@ export default function TradeHistory() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="glass-card p-5">
           <h3 className="text-sm font-semibold mb-4">توزيع النتائج</h3>
           <div className="h-[200px]">
-            {closedTrades.length > 0 ? (
+            {reliableTrades.length > 0 ? (
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie data={pieData} cx="50%" cy="50%" innerRadius={50} outerRadius={80} dataKey="value">
@@ -160,7 +169,11 @@ export default function TradeHistory() {
                     {(trade.pnl_percent || 0) >= 0 ? "+" : ""}{(trade.pnl_percent || 0).toFixed(2)}%
                   </td>
                   <td className="py-2.5 px-3">
-                    {(trade.pnl || 0) >= 0 ? (
+                    {trade.pnl_accounting_version !== 2 ? (
+                      <Badge variant="outline" className="text-[9px] text-muted-foreground">
+                        PnL قديم غير موثق
+                      </Badge>
+                    ) : (trade.pnl || 0) >= 0 ? (
                       <span className="text-trading-green">✅</span>
                     ) : (
                       <span className="text-trading-red">❌</span>

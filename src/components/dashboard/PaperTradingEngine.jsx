@@ -14,11 +14,10 @@ async function fetchPrices(pairs) {
 
 function calcPnL(trade, currentPrice) {
   if (!currentPrice || !trade.entry_price || !trade.position_size) return { pnl: 0, pnlPercent: 0 };
-  const leverage = trade.leverage || 1;
   const qty = trade.position_size / trade.entry_price;
   const pnl = trade.type === "long"
-    ? (currentPrice - trade.entry_price) * qty * leverage
-    : (trade.entry_price - currentPrice) * qty * leverage;
+    ? (currentPrice - trade.entry_price) * qty
+    : (trade.entry_price - currentPrice) * qty;
   const pnlPercent = (pnl / trade.position_size) * 100;
   return {
     pnl: Math.round(pnl * 100) / 100,
@@ -87,6 +86,7 @@ export default function PaperTradingEngine({ onTradeClose }) {
             exit_price: shouldClose === "stop_loss" ? trade.stop_loss : trade.take_profit_1,
             pnl: finalPnl.pnl,
             pnl_percent: finalPnl.pnlPercent,
+            pnl_accounting_version: 2,
             exit_reason: closeReason,
             closed_at: new Date().toISOString(),
           }));
@@ -98,6 +98,7 @@ export default function PaperTradingEngine({ onTradeClose }) {
             current_price: currentPrice,
             pnl,
             pnl_percent: pnlPercent,
+            pnl_accounting_version: 2,
           }));
         }
       }
@@ -108,8 +109,8 @@ export default function PaperTradingEngine({ onTradeClose }) {
         queryClient.invalidateQueries({ queryKey: ["trades"] });
         queryClient.invalidateQueries({ queryKey: ["trades-closed"] });
       }
-    } catch {
-      // silent
+    } catch (e) {
+      console.error("PaperTradingEngine run failed:", e);
     } finally {
       processingRef.current = false;
     }

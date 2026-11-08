@@ -383,12 +383,16 @@ function EntryPlan({ result, pair }) {
         console.error("executeTrade refused: spot cannot short");
         return;
       }
+      const maxLeverage = Math.min(Math.max(Number(settings?.max_leverage) || 5, 1), 125);
+      const leverage = market === "futures"
+        ? Math.min(Math.max(Number(settings?.default_leverage) || 1, 1), maxLeverage)
+        : 1;
       const size = calcPositionSize({
         balance: settings?.paper_balance || 10000,
         riskPct: settings?.max_risk_per_trade || 2,
         entry: result.entry_price,
         sl: result.stop_loss,
-        leverage: settings?.default_leverage || 1,
+        leverage,
       });
       await base44.entities.Trade.create({
         pair,
@@ -399,7 +403,7 @@ function EntryPlan({ result, pair }) {
         take_profit_1: result.take_profit_1,
         take_profit_2: result.take_profit_2,
         position_size: Math.round(size),
-        leverage: settings?.default_leverage || 1,
+        leverage,
         confidence: result.overall_confidence,
         strategy: "AI Engine",
         status: "open",

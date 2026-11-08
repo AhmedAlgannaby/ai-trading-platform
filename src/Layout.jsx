@@ -3,14 +3,16 @@ import { base44 } from "@/api/base44Client";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import {
-  LayoutDashboard, TrendingUp, Brain, History,
+  LayoutDashboard, TrendingUp, Brain, History, Wallet,
   Shield, Settings, Bell, ChevronLeft, ChevronRight,
   BarChart3, Bot, Zap, LineChart, Cpu, Fish, MessageSquare, Store, Copy, Wand2, Radio, PieChart
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import TradingSafetyBanner from "@/components/trading/TradingSafetyBanner";
 
 const navItems = [
   { name: "Dashboard", icon: LayoutDashboard, page: "Dashboard" },
+  { name: "إدارة المحفظة", icon: Wallet, page: "Wallet" },
   { name: "تحليل السوق", icon: LineChart, page: "MarketAnalysis" },
   { name: "إشارات AI", icon: Brain, page: "AISignals" },
   { name: "محرك AI", icon: Cpu, page: "AIEngine", badge: "NEW" },
@@ -144,6 +146,7 @@ export default function Layout({ children, currentPageName }) {
 
         {/* Content */}
         <div className="flex-1 overflow-y-auto p-6 scrollbar-thin">
+          <TradingSafetyBanner />
           {children}
         </div>
       </main>

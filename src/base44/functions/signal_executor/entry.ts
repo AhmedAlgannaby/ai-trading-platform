@@ -46,11 +46,39 @@ Deno.serve(async (req) => {
   }
 
   if (mode === "auto") {
-    // تنفيذ الصفقة تلقائياً
+    if ((settings.trading_mode || "paper") === "live") {
+      await adminClient.entities.Signal.update(signal.id, { status: "expired" });
+      return Response.json({ skipped: true, reason: "live execution is not implemented by this signal handler" });
+    }
+
+    const market = settings.market_type === "futures" ? "futures" : "spot";
+    if (signal.direction === "sell" && market !== "futures") {
+      await adminClient.entities.Signal.update(signal.id, { status: "expired" });
+      return Response.json({ skipped: true, reason: "spot market cannot short" });
+    }
+
     const balance = settings.paper_balance || 10000;
     const riskPct = settings.max_risk_per_trade || 2;
-    const leverage = settings.default_leverage || 1;
-    const positionSize = Math.round(balance * riskPct / 100 * leverage);
+    const maxLeverage = Math.min(Math.max(Number(settings.max_leverage) || 5, 1), 125);
+    const leverage = market === "futures"
+      ? Math.min(Math.max(Number(settings.default_leverage) || 1, 1), maxLeverage)
+      : 1;
+    const entry = Number(signal.entry_price);
+    const stop = Number(signal.stop_loss);
+    const stopDistancePct = entry > 0 && stop > 0 ? Math.abs(entry - stop) / entry : 0;
+    if (!Number.isFinite(stopDistancePct) || stopDistancePct <= 0) {
+      await adminClient.entities.Signal.update(signal.id, { status: "expired" });
+      return Response.json({ skipped: true, reason: "invalid entry/stop for sizing" });
+    }
+    const riskUsd = balance * riskPct / 100;
+    const positionSize = Math.min(
+      Math.round(riskUsd / stopDistancePct),
+      Math.round(balance * leverage),
+    );
+    if (positionSize < 10) {
+      await adminClient.entities.Signal.update(signal.id, { status: "expired" });
+      return Response.json({ skipped: true, reason: "position size below minimum" });
+    }
 
     await adminClient.entities.Trade.create({
       pair: signal.pair,
@@ -68,7 +96,7 @@ Deno.serve(async (req) => {
       timeframe: signal.timeframe || "1H",
       status: "open",
       mode: settings.trading_mode || "paper",
-      market_type: "spot",
+      market_type: market,
       pnl: 0,
       pnl_percent: 0,
       entry_reason: `[تلقائي] ${signal.analysis_summary?.slice(0, 300) || ""}`,

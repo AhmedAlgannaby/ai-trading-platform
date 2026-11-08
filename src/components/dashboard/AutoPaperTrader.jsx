@@ -132,15 +132,17 @@ export default function AutoPaperTrader() {
         const openedToday = microTrades.filter(t => (t.created_date || "").slice(0, 10) === day).length;
         if (openedToday >= MICRO_MAX_TRADES_PER_DAY) return;
         const realizedToday = microTrades
-          .filter(t => t.status === "closed" && (t.closed_at || t.updated_date || "").slice(0, 10) === day)
+          .filter(t => t.status === "closed" && t.pnl_accounting_version === 2 &&
+            (t.closed_at || t.updated_date || "").slice(0, 10) === day)
           .reduce((sum, t) => sum + (Number(t.pnl) || 0), 0);
         if (realizedToday <= -(balance * MICRO_DAILY_LOSS_PCT / 100)) return;
       }
 
-      const leverage = micro
-        ? Math.min(settings.default_leverage || 1, MICRO_MAX_LEVERAGE)
-        : (settings.default_leverage || 1);
       const market = settings.market_type === "futures" ? "futures" : "spot";
+      const maxLeverage = Math.min(Math.max(Number(settings.max_leverage) || 5, 1), 125);
+      const leverage = market === "futures"
+        ? Math.min(Math.max(Number(settings.default_leverage) || 1, 1), maxLeverage, micro ? MICRO_MAX_LEVERAGE : 125)
+        : 1;
       const riskPct = micro ? microRiskPct(balance) : (settings.max_risk_per_trade || 2);
       const minConfidence = micro ? Math.max(MIN_CONFIDENCE, MICRO_MIN_CONFIDENCE) : MIN_CONFIDENCE;
       const minWinProb = micro ? MICRO_MIN_WIN_PROB : MIN_WIN_PROB;
@@ -219,8 +221,8 @@ export default function AutoPaperTrader() {
         queryClient.invalidateQueries({ queryKey: ["trades"] });
         queryClient.invalidateQueries({ queryKey: ["signals"] });
       }
-    } catch {
-      // silent
+    } catch (e) {
+      console.error("AutoPaperTrader run failed:", e);
     } finally {
       runningRef.current = false;
     }

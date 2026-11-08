@@ -119,16 +119,14 @@ export async function generateSignals(pairs = PAIRS) {
           const gate = await evaluateEntry({
             pair, direction: result.direction,
             confidence: result.confidence, strategyId: result.strategy_id || spec?.id,
-          }).catch(() => null);
-          if (gate) {
-            if (gate.blocked) {
-              results.push({ pair, status: 'blocked', reason: gate.notes[0] || 'blocked by gate' });
-              continue;
-            }
-            if (gate.notes.length) {
-              result.confidence = gate.adjustedConfidence;
-              result.analysis_summary = `${result.analysis_summary || ''}\nتعلّم: ${gate.notes.join('؛ ')}`.slice(0, 2000);
-            }
+          });
+          if (gate.blocked) {
+            results.push({ pair, status: 'blocked', reason: gate.notes[0] || 'blocked by gate' });
+            continue;
+          }
+          if (gate.notes.length) {
+            result.confidence = gate.adjustedConfidence;
+            result.analysis_summary = `${result.analysis_summary || ''}\nتعلّم: ${gate.notes.join('؛ ')}`.slice(0, 2000);
           }
         }
       } else {
@@ -268,7 +266,8 @@ async function _executeSignalInner(signalId) {
       const microCap = balance * MICRO_MAX_LEVERAGE;
       const microTrades = paperTrades.filter(t => (Number(t.position_size) || 0) <= microCap + 0.01);
       const realizedToday = microTrades
-        .filter(t => t.status === 'closed' && (t.closed_at || t.updated_date || '').slice(0, 10) === day)
+        .filter(t => t.status === 'closed' && t.pnl_accounting_version === 2 &&
+          (t.closed_at || t.updated_date || '').slice(0, 10) === day)
         .reduce((s, t) => s + (Number(t.pnl) || 0), 0);
       if (realizedToday <= -(balance * MICRO_DAILY_LOSS_PCT / 100)) {
         await db.update('Signal', signal.id, { status: 'expired' });
@@ -283,7 +282,7 @@ async function _executeSignalInner(signalId) {
 
     // كبح الخسائر المتتالية (Phase 4) — قبل أي مخاطرة جديدة
     const { lossThrottle } = await import('./worker/gate.js');
-    const throttle = await lossThrottle().catch(() => ({ allow: true, riskMult: 1 }));
+    const throttle = await lossThrottle();
     if (!throttle.allow) {
       await db.update('Signal', signal.id, { status: 'expired' });
       await db.create('AlertLog', {
@@ -294,6 +293,14 @@ async function _executeSignalInner(signalId) {
     }
     const baseRisk = micro ? microRiskPct(balance) : Math.min(Math.max(Number(settings.max_risk_per_trade) || 2, 0.1), 10);
     const riskPct = baseRisk * (throttle.riskMult ?? 1);
+    const market = settings.market_type === 'futures' ? 'futures' : 'spot';
+    const maxAllowedLeverage = market === 'futures'
+      ? Math.min(Math.max(Math.trunc(Number(settings.max_leverage) || 5), 1), 125)
+      : 1;
+    const requestedLeverage = market === 'futures'
+      ? Math.min(Math.max(Math.trunc(Number(settings.default_leverage) || 1), 1), maxAllowedLeverage)
+      : 1;
+    const leverage = micro ? Math.min(requestedLeverage, MICRO_MAX_LEVERAGE) : requestedLeverage;
     const entry = Number(signal.entry_price);
     const sl = Number(signal.stop_loss);
     if (!isFinite(entry) || entry <= 0 || !isFinite(sl) || sl <= 0 || entry === sl) {
@@ -304,8 +311,7 @@ async function _executeSignalInner(signalId) {
     const slDistPct = Math.abs(entry - sl) / entry;
     const riskUsd = (balance * riskPct) / 100;
     let positionSize = slDistPct > 0 ? Math.round(riskUsd / slDistPct) : 0;
-    const maxLeverage = micro ? MICRO_MAX_LEVERAGE : 5;
-    positionSize = Math.min(Math.max(positionSize, 0), Math.round(balance * maxLeverage));
+    positionSize = Math.min(Math.max(positionSize, 0), Math.round(balance * leverage));
     const minSize = micro ? MICRO_MIN_NOTIONAL : 10;
     if (positionSize < minSize) {
       await db.update('Signal', signal.id, { status: 'expired' });
@@ -323,11 +329,7 @@ async function _executeSignalInner(signalId) {
     // Leverage only applies to futures; spot trades use 1x.
     // سوق التنفيذ من الإعدادات (spot افتراضياً). السبوت شراء فقط:
     // بيع ما لا تملكه مستحيل — إشارات البيع تُتخطى إلا في الفيوتشر.
-    const market = settings.market_type === 'futures' ? 'futures' : 'spot';
     const marketType = market;
-    const leverage = market === 'futures'
-      ? Math.min(Math.max(Math.trunc(Number(settings.default_leverage) || 1), 1), micro ? MICRO_MAX_LEVERAGE : 125)
-      : 1;
     if (signal.direction === 'sell' && market !== 'futures') {
       await db.update('Signal', signal.id, { status: 'expired' });
       return { skipped: true, reason: 'spot market cannot short — sell signal skipped (switch market_type to futures to trade both sides)' };
@@ -444,7 +446,10 @@ export async function closeTradeById(tradeId, { confirmed = false } = {}) {
   const trade = await db.get('Trade', tradeId);
   if (!trade) return { ok: false, status: 404, error: 'Trade not found' };
   if (trade.status !== 'open') return { ok: false, status: 409, error: 'Trade is not open' };
-  if (trade.type !== 'long') return { ok: false, status: 400, error: 'Only long positions can be closed to USDT' };
+  if (!['long', 'short'].includes(trade.type)) return { ok: false, status: 400, error: 'Unsupported position type' };
+  if (trade.mode === 'live' && trade.type !== 'long') {
+    return { ok: false, status: 400, error: 'Live short positions must be closed on Binance' };
+  }
 
   const { ticker } = await import('./binance.js');
   const { calcPnL } = await import('./worker/monitor.js');
@@ -461,7 +466,7 @@ export async function closeTradeById(tradeId, { confirmed = false } = {}) {
   const { pnl, pnlPercent } = calcPnL(trade, price);
   const tp = Number(trade.take_profit_1);
   const tpDistancePct = isFinite(tp) && tp > 0
-    ? ((tp - price) / price) * 100
+    ? (trade.type === 'long' ? (tp - price) : (price - tp)) / price * 100
     : null;
   let freshDirection = 'hold', freshConfidence = 0;
   try {
@@ -472,7 +477,7 @@ export async function closeTradeById(tradeId, { confirmed = false } = {}) {
     freshConfidence = a.confidence;
   } catch { /* بلا تحليل طازج — النصيحة متحفظة */ }
   const advice = adviseExit({
-    unrealizedPnlPct: pnlPercent, tpDistancePct, positionType: 'long',
+    unrealizedPnlPct: pnlPercent, tpDistancePct, positionType: trade.type,
     freshDirection, freshConfidence,
   });
   const preview = {
@@ -494,7 +499,7 @@ export async function closeTradeById(tradeId, { confirmed = false } = {}) {
   }
   await db.update('Trade', trade.id, {
     status: 'closed', current_price: price, exit_price: price,
-    pnl, pnl_percent: pnlPercent,
+    pnl, pnl_percent: pnlPercent, pnl_accounting_version: 2,
     exit_reason: advice.verdict === 'close' ? 'مستشار الخروج' : 'إغلاق يدوي',
     closed_at: new Date().toISOString(),
   });

@@ -9,6 +9,16 @@ import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { Shield, Save, AlertTriangle, Loader2, CheckCircle2, Zap, TrendingUp, DollarSign, BarChart2, Info, Activity } from "lucide-react";
 import { motion } from "framer-motion";
 import PortfolioRiskAnalysis from "@/components/risk/PortfolioRiskAnalysis";
@@ -17,8 +27,10 @@ export default function RiskManagement() {
   const queryClient = useQueryClient();
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [confirmLiveOpen, setConfirmLiveOpen] = useState(false);
+  const [saveError, setSaveError] = useState("");
 
-  const { data: settings, isLoading: settingsLoading, isError: settingsError } = useQuery({
+  const { data: settings, isLoading: settingsLoading, isError: settingsError, refetch: refetchSettings } = useQuery({
     queryKey: ["riskSettings"],
     queryFn: async () => {
       const list = await base44.entities.RiskSettings.list("-created_date", 1);
@@ -74,8 +86,9 @@ export default function RiskManagement() {
     }
   }, [settings, dirty]);
 
-  const handleSave = async () => {
+  const saveSettings = async () => {
     setSaving(true);
+    setSaveError("");
     try {
       if (settings?.id) {
         await base44.entities.RiskSettings.update(settings.id, form);
@@ -83,27 +96,43 @@ export default function RiskManagement() {
         await base44.entities.RiskSettings.create(form);
       }
       setDirty(false);
-      queryClient.invalidateQueries({ queryKey: ["riskSettings"] });
-      // Legacy key variants used elsewhere — invalidate those too until unified.
-      queryClient.invalidateQueries({ queryKey: ["risk-settings"] });
-      queryClient.invalidateQueries({ queryKey: ["risk_settings"] });
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ["riskSettings"] }),
+        queryClient.invalidateQueries({ queryKey: ["risk-settings"] }),
+        queryClient.invalidateQueries({ queryKey: ["risk_settings"] }),
+      ]);
       setSaved(true);
+      setConfirmLiveOpen(false);
       setTimeout(() => setSaved(false), 2000);
     } catch (e) {
-      console.error("save risk settings failed:", e);
+      setSaveError(e.message || "تعذر حفظ إعدادات المخاطر.");
     } finally {
       setSaving(false);
     }
   };
 
+  const handleSave = () => {
+    const enablingLiveExecution = form.trading_mode === "live" && (
+      settings?.trading_mode !== "live"
+      || (form.execution_mode === "auto" && settings.execution_mode !== "auto")
+    );
+    if (enablingLiveExecution) {
+      setConfirmLiveOpen(true);
+      return;
+    }
+    void saveSettings();
+  };
+
   return (
+    <>
     <div className="space-y-6 max-w-[1200px] mx-auto">
       {settingsLoading && (
         <div className="glass-card p-4 text-center text-sm text-muted-foreground">جاري تحميل الإعدادات...</div>
       )}
       {settingsError && (
-        <div className="glass-card p-4 text-center text-sm text-trading-red" role="alert">
-          تعذر تحميل الإعدادات — سيتم إنشاء سجل جديد عند الحفظ.
+        <div className="glass-card flex flex-wrap items-center justify-center gap-3 p-4 text-sm text-trading-red" role="alert">
+          <span>تعذر تحميل الإعدادات الحالية. أعد المحاولة قبل الحفظ لتجنب استبدال إعدادات موجودة.</span>
+          <Button variant="outline" size="sm" onClick={() => refetchSettings()}>إعادة المحاولة</Button>
         </div>
       )}
       <Tabs defaultValue="settings">
@@ -132,11 +161,12 @@ export default function RiskManagement() {
             <p className="text-xs text-muted-foreground">ضبط قواعد حماية رأس المال</p>
           </div>
         </div>
-        <Button onClick={handleSave} disabled={saving} className="bg-primary hover:bg-primary/90">
+        <Button onClick={handleSave} disabled={saving || settingsLoading || settingsError} className="bg-primary hover:bg-primary/90">
           {saving ? <Loader2 className="w-4 h-4 ml-2 animate-spin" /> : saved ? <CheckCircle2 className="w-4 h-4 ml-2" /> : <Save className="w-4 h-4 ml-2" />}
           {saved ? "تم الحفظ" : "حفظ الإعدادات"}
         </Button>
       </div>
+      {saveError && <p className="text-sm text-trading-red" role="alert">{saveError}</p>}
 
       {/* Trading Mode */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card p-6">
@@ -225,7 +255,15 @@ export default function RiskManagement() {
         {(() => {
           const balance = form.trading_mode === "paper" ? (form.paper_balance || 10000) : 10000;
           const riskAmount = +(balance * form.max_risk_per_trade / 100).toFixed(2);
-          const positionSize = +(riskAmount * form.default_leverage).toFixed(2);
+          const stopDistancePct = Math.max(Number(form.default_stop_loss_percent) || 0, 0.1) / 100;
+          const effectiveLeverage = Math.min(
+            Math.max(Number(form.default_leverage) || 1, 1),
+            Math.max(Number(form.max_leverage) || 1, 1),
+          );
+          const positionSize = +Math.min(
+            riskAmount / stopDistancePct,
+            balance * effectiveLeverage,
+          ).toFixed(2);
           const exampleEntry = 65000;
           const stopLossPrice = +(exampleEntry * (1 - form.default_stop_loss_percent / 100)).toFixed(2);
           const tp1Price = +(exampleEntry * (1 + form.default_take_profit_percent / 100)).toFixed(2);
@@ -235,8 +273,8 @@ export default function RiskManagement() {
           return (
             <div className="space-y-4">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                <PreviewBox icon={DollarSign} label="حجم الصفقة" value={`$${positionSize.toLocaleString()}`} color="primary" />
-                <PreviewBox icon={Shield} label="المبلغ المخاطر" value={`$${riskAmount.toLocaleString()}`} color="yellow" />
+                <PreviewBox icon={DollarSign} label="حجم المركز الاسمي" value={`$${positionSize.toLocaleString()}`} color="primary" />
+                <PreviewBox icon={Shield} label="الخسارة عند الوقف" value={`$${Math.min(riskAmount, positionSize * stopDistancePct).toFixed(2)}`} color="yellow" />
                 <PreviewBox icon={TrendingUp} label="وقف الخسارة" value={`$${stopLossPrice.toLocaleString()}`} color="red" />
                 <PreviewBox icon={BarChart2} label="الهدف 1" value={`$${tp1Price.toLocaleString()}`} color="green" />
               </div>
@@ -262,7 +300,7 @@ export default function RiskManagement() {
               </div>
 
               <div className="p-3 rounded-lg bg-secondary/40 text-[11px] text-muted-foreground leading-relaxed">
-                📌 مثال: عند فتح صفقة شراء BTC/USDT بسعر ${exampleEntry.toLocaleString()} — ستُخصص <strong className="text-foreground">${riskAmount}</strong> من رصيد <strong className="text-foreground">${balance.toLocaleString()}</strong>، ويُفتح مركز بحجم <strong className="text-foreground">${positionSize.toLocaleString()}</strong> مع رافعة {form.default_leverage}x. وقف الخسارة عند <strong className="text-trading-red">${stopLossPrice.toLocaleString()}</strong> وهدف الربح الأول عند <strong className="text-trading-green">${tp1Price.toLocaleString()}</strong>.
+                📌 مثال: عند فتح صفقة شراء BTC/USDT بسعر ${exampleEntry.toLocaleString()} — حجم المركز الاسمي <strong className="text-foreground">${positionSize.toLocaleString()}</strong>، والخسارة النظرية عند الوقف <strong className="text-foreground">${Math.min(riskAmount, positionSize * stopDistancePct).toFixed(2)}</strong> قبل الرسوم والانزلاق. وقف الخسارة عند <strong className="text-trading-red">${stopLossPrice.toLocaleString()}</strong> والهدف الأول عند <strong className="text-trading-green">${tp1Price.toLocaleString()}</strong>.
               </div>
             </div>
           );
@@ -271,6 +309,30 @@ export default function RiskManagement() {
         </TabsContent>
       </Tabs>
     </div>
+    <AlertDialog open={confirmLiveOpen} onOpenChange={(open) => { if (!saving) setConfirmLiveOpen(open); }}>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>تأكيد تفعيل التداول الحقيقي</AlertDialogTitle>
+          <AlertDialogDescription>
+            {form.execution_mode === "auto"
+              ? "أنت تفعّل التنفيذ التلقائي الحقيقي. قد يرسل التطبيق أوامر شراء فعلية إلى Binance دون موافقة لكل صفقة. قد تخسر رأس المال."
+              : "أنت تفعّل وضع التداول الحقيقي. إغلاق صفقات Live قد يرسل أوامر سوق فعلية إلى Binance. قد تخسر رأس المال."}
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel disabled={saving}>إلغاء</AlertDialogCancel>
+          <AlertDialogAction
+            disabled={saving}
+            className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+            onClick={(event) => { event.preventDefault(); void saveSettings(); }}
+          >
+            {saving && <Loader2 className="h-4 w-4 animate-spin" />}
+            تأكيد وحفظ الوضع الحقيقي
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+    </>
   );
 }
 

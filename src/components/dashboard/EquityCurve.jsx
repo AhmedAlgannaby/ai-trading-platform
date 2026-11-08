@@ -1,8 +1,7 @@
 import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { useQuery } from "@tanstack/react-query";
-import { base44 } from "@/api/base44Client";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -16,51 +15,14 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
-export default function EquityCurve() {
-  const { data: trades } = useQuery({
-    queryKey: ["trades-closed"],
-    queryFn: () => base44.entities.Trade.filter({ status: "closed", mode: "paper" }, "-closed_at", 200),
-    initialData: [],
-    refetchInterval: 30000,
-  });
+export default function EquityCurve({ equity = [], closedCount = 0, loading = false, error = false, onRetry }) {
+  const data = useMemo(
+    () => equity.map(point => ({ date: point.date || point.label, value: point.balance })),
+    [equity],
+  );
 
-  const { data: settings } = useQuery({
-    queryKey: ["risk-settings"],
-    queryFn: () => base44.entities.RiskSettings.list("-created_date", 1),
-    initialData: [],
-  });
-
-  const paperBalance = settings[0]?.paper_balance || 10000;
-
-  // بناء منحنى رأس المال من الصفقات المغلقة الفعلية
-  const data = useMemo(() => {
-    if (!trades.length) {
-      // إذا لا توجد صفقات - نعرض رصيد البداية فقط
-      const today = new Date().toLocaleDateString('ar-SA', { month: 'short', day: 'numeric' });
-      return [{ date: today, value: paperBalance }];
-    }
-
-    // ترتيب الصفقات حسب تاريخ الإغلاق
-    const sorted = [...trades]
-      .filter(t => t.closed_at)
-      .sort((a, b) => new Date(a.closed_at) - new Date(b.closed_at));
-
-    let balance = paperBalance;
-    const points = [{ date: "البداية", value: paperBalance }];
-
-    sorted.forEach(t => {
-      balance += (t.pnl || 0);
-      points.push({
-        date: new Date(t.closed_at).toLocaleDateString('ar-SA', { month: 'short', day: 'numeric' }),
-        value: Math.round(balance),
-      });
-    });
-
-    return points;
-  }, [trades, paperBalance]);
-
-  const startVal = data[0]?.value || paperBalance;
-  const endVal = data[data.length - 1]?.value || paperBalance;
+  const startVal = data[0]?.value || 0;
+  const endVal = data[data.length - 1]?.value || startVal;
   const totalPnl = endVal - startVal;
   const totalPct = startVal ? ((totalPnl / startVal) * 100).toFixed(2) : "0.00";
   const isProfit = totalPnl >= 0;
@@ -74,16 +36,28 @@ export default function EquityCurve() {
     >
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="text-sm font-semibold text-foreground">منحنى رأس المال</h3>
+          <h3 className="text-sm font-semibold text-foreground">منحنى رأس المال التجريبي</h3>
           <p className={`text-xs font-mono mt-0.5 ${isProfit ? "text-trading-green" : "text-trading-red"}`}>
             {isProfit ? "+" : ""}{totalPnl.toFixed(2)}$ ({isProfit ? "+" : ""}{totalPct}%)
           </p>
         </div>
         <div className="text-xs text-muted-foreground">
-          {trades.length} صفقة مغلقة
+          {closedCount} صفقة مغلقة
         </div>
       </div>
 
+      {error ? (
+        <div className="flex h-[220px] flex-col items-center justify-center gap-2 text-sm text-muted-foreground" role="alert">
+          <p>تعذر تحميل بيانات منحنى رأس المال.</p>
+          {onRetry && <button className="text-primary hover:underline" onClick={onRetry}>إعادة المحاولة</button>}
+        </div>
+      ) : loading ? (
+        <Skeleton className="h-[220px] w-full" />
+      ) : data.length < 2 ? (
+        <div className="flex h-[220px] items-center justify-center text-sm text-muted-foreground">
+          لا توجد صفقات مغلقة لعرض المنحنى بعد
+        </div>
+      ) : (
       <div className="h-[220px]">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
@@ -119,6 +93,7 @@ export default function EquityCurve() {
           </AreaChart>
         </ResponsiveContainer>
       </div>
+      )}
     </motion.div>
   );
 }

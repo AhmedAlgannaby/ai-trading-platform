@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
@@ -43,6 +44,12 @@ const AuthenticatedApp = () => {
   // Render the main app — "/" redirects to the canonical main page URL
   // to avoid duplicate content (was rendering Dashboard at both / and /Dashboard).
   return (
+    <Suspense fallback={
+      <div className="fixed inset-0 flex items-center justify-center gap-3 bg-background text-sm text-muted-foreground" role="status">
+        <div className="h-6 w-6 animate-spin rounded-full border-4 border-slate-200 border-t-slate-800" />
+        جارٍ تحميل الصفحة...
+      </div>
+    }>
     <Routes>
       <Route path="/" element={<Navigate to={`/${mainPageKey}`} replace />} />
       {Object.entries(Pages).map(([path, Page]) => (
@@ -58,6 +65,7 @@ const AuthenticatedApp = () => {
       ))}
       <Route path="*" element={<PageNotFound />} />
     </Routes>
+    </Suspense>
   );
 };
 

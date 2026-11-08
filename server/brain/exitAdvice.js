@@ -9,7 +9,7 @@
  * @param {number} a.unrealizedPnlPct الربح/الخسارة غير المحققة %
  * @param {number|null} a.tpDistancePct المسافة للهدف % (موجبة = قبل الهدف)
  * @param {number|null} a.slDistancePct المسافة للوقف % (موجبة = قبل الوقف)
- * @param {string} a.positionType 'long' فقط حالياً (السبوت شراء فقط)
+ * @param {string} a.positionType 'long' | 'short'
  * @param {string} a.freshDirection اتجاه التحليل الطازج buy/sell/hold
  * @param {number} a.freshConfidence ثقة التحليل الطازج 0..100
  * @returns {{verdict:'hold'|'close', confidence:number, reasons:string[]}}
@@ -23,8 +23,9 @@ export function adviseExit(a = {}) {
   const tpD = a.tpDistancePct === null || a.tpDistancePct === undefined ? null : Number(a.tpDistancePct);
   const dir = a.freshDirection;
   const conf = Number(a.freshConfidence) || 0;
-  const withPos = dir === 'buy';
-  const againstPos = dir === 'sell';
+  const isShort = a.positionType === 'short';
+  const withPos = isShort ? dir === 'sell' : dir === 'buy';
+  const againstPos = isShort ? dir === 'buy' : dir === 'sell';
 
   // 1) الهدف قريب ونحن رابحون → انتظار (لا تخرج قبل القطف)
   if (pnl > 0 && tpD !== null && isFinite(tpD) && tpD <= TP_NEAR_PCT) {

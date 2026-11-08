@@ -3,6 +3,7 @@
  *   node server/worker/worker.test.js
  */
 import { adjustTrade } from './adaptive.js';
+import { calcPnL } from './monitor.js';
 
 let pass = 0, fail = 0;
 function ok(cond, name, extra = '') {
@@ -12,6 +13,11 @@ function ok(cond, name, extra = '') {
 
 const long = { type: 'long', entry_price: 100, stop_loss: 98, take_profit_1: 106 };
 const short = { type: 'short', entry_price: 100, stop_loss: 102, take_profit_1: 94 };
+
+const pnlLong = calcPnL({ type: 'long', entry_price: 100, position_size: 1000, leverage: 5 }, 98);
+const pnlShort = calcPnL({ type: 'short', entry_price: 100, position_size: 1000, leverage: 5 }, 102);
+ok(pnlLong.pnl === -20 && pnlShort.pnl === -20,
+  'PnL is based on notional exactly once, including leveraged trades');
 
 // 1) انعكاس النظام ضد الشراء → تصفير نصف المخاطرة (98 → 99)
 const r1 = adjustTrade({ ...long }, 101, { regime: { trend: 'down', regime: 'trending' }, rsiV: 55, atrPct: 1 });

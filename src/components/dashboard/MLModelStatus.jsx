@@ -18,6 +18,7 @@ export default function MLModelStatus() {
   });
 
   if (!model) return null;
+  const validationHistory = (model.history || []).filter(point => Number.isFinite(point.loss) && point.validation_samples >= 1);
   const top = (model.weights || [])
     .map((w, i) => ({ name: FEATURE_NAMES[i], w }))
     .filter(f => f.name !== "bias")
@@ -39,19 +40,25 @@ export default function MLModelStatus() {
       <div className="grid grid-cols-3 gap-2 text-center mb-3">
         <Stat label="عينات" value={model.trained_samples} />
         <Stat label="تحديثات خسارة" value={model.loss_updates} />
-        <Stat label="الدقة" value={model.trained_samples ? `${model.accuracy}%` : "—"} />
+        <Stat
+          label="دقة خارج العينة"
+          value={model.validation_method === "prequential-walk-forward" && model.validation_samples >= 5
+            ? `${model.accuracy}%` : "غير كافية"}
+        />
       </div>
 
-      {(model.history || []).length > 1 && (
+      {validationHistory.length > 1 && (
         <div className="h-[50px] mb-2">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={model.history}>
+            <LineChart data={validationHistory}>
               <Tooltip contentStyle={{ fontSize: 11, background: "hsl(222,47%,9%)", border: "1px solid hsl(222,30%,16%)" }}
-                formatter={(v) => [`${v}`, "خطأ النموذج"]} labelFormatter={() => ""} />
+                formatter={(v) => [`${v}`, "خطأ خارج العينة"]} labelFormatter={() => ""} />
               <Line type="monotone" dataKey="loss" stroke="hsl(262, 83%, 58%)" strokeWidth={2} dot={false} />
             </LineChart>
           </ResponsiveContainer>
-          <p className="text-[9px] text-muted-foreground text-center">انخفاض الخط = انخفاض الأخطاء</p>
+          <p className="text-[9px] text-muted-foreground text-center">
+            خطأ التنبؤ المتتابع ({model.validation_samples} اختبار) — لا يُعرض كمقياس موثوق قبل 5 اختبارات
+          </p>
         </div>
       )}
 

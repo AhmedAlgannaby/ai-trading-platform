@@ -12,6 +12,7 @@ import path from 'node:path';
 process.env.DATA_DIR = await fs.mkdtemp(path.join(os.tmpdir(), 'ecc-func-test-'));
 const { db } = await import('./db.js');
 const { executeSignal } = await import('./functions.js');
+const { calcPnL } = await import('./worker/monitor.js');
 
 let pass = 0, fail = 0;
 function ok(cond, name, extra = '') {
@@ -51,6 +52,8 @@ const trades = await db.list('Trade', {});
 const got1 = await db.get('Signal', s1.id);
 ok(r1.success && r1.action === 'trade_executed', 'paper/auto ينفذ');
 ok(trades.length === 1 && trades[0].mode === 'paper', 'الصفقة المنشأة paper');
+ok(trades[0].position_size === 10000 && trades[0].leverage === 1,
+  'spot sizing is capped to account balance');
 ok(got1.status === 'executed', 'الإشارة تُختم منفذة');
 
 // ── 2) ثقة منخفضة → منتهية ──
@@ -117,6 +120,8 @@ const r9 = await executeSignal(s9.id);
 const after9 = await db.list('Trade', {});
 ok(r9.success && after9.length === 1 && after9[0].type === 'short' &&
   after9[0].market_type === 'futures' && after9[0].leverage === 3, 'بيع فيوتشر ينفذ برافعة الإعدادات');
+ok(after9[0].position_size === 10000 && calcPnL(after9[0], 102).pnl === -200,
+  'futures size risks the configured 2% at the stop without double leverage');
 
 // ── 10) micro: $10 → حجم صغير ورافعة ≤ 2x ──
 await resetDir();

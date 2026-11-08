@@ -39,7 +39,7 @@ export function predict(weights, x) {
 }
 
 /** خطوة تدريب واحدة (SGD + L2). الخسارة تُعامل بوزن أكبر لتصحيح الأخطاء أسرع */
-export function trainStep(weights, x, label, { lr = 0.08, lossBoost = 2, l2 = 0.002 } = {}) {
+export function trainStep(weights, x, label, { lr = 0.08, lossBoost = 1, l2 = 0.002 } = {}) {
   const p = predict(weights, x);
   const err = label - p; // موجب لو النموذج قلّل من احتمال النجاح
   const rate = label === 0 ? lr * lossBoost : lr;
@@ -66,5 +66,29 @@ export function evaluate(weights, samples) {
   return {
     accuracy: Math.round((correct / samples.length) * 1000) / 10,
     loss: Math.round((loss / samples.length) * 1000) / 1000,
+  };
+}
+
+/** Evaluates each trade before learning from it; the first warmup trades only train. */
+export function evaluateWalkForward(samples, warmup = 5) {
+  let weights = initialWeights();
+  let correct = 0;
+  let loss = 0;
+  let scored = 0;
+
+  for (const [index, sample] of samples.entries()) {
+    if (index >= warmup) {
+      const p = clamp(predict(weights, sample.x), 1e-6, 1 - 1e-6);
+      if ((p >= 0.5 ? 1 : 0) === sample.y) correct++;
+      loss += -(sample.y * Math.log(p) + (1 - sample.y) * Math.log(1 - p));
+      scored++;
+    }
+    weights = trainStep(weights, sample.x, sample.y);
+  }
+
+  return {
+    accuracy: scored ? Math.round((correct / scored) * 1000) / 10 : null,
+    loss: scored ? Math.round((loss / scored) * 1000) / 1000 : null,
+    samples: scored,
   };
 }

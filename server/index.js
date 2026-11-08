@@ -32,13 +32,18 @@ const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173,http:/
   .split(',')
   .map((s) => s.trim())
   .filter(Boolean);
-app.use(cors({
+const corsMiddleware = cors({
   origin: (origin, cb) => {
     if (!origin) return cb(null, true); // same-origin / curl / server-to-server
     if (allowedOrigins.includes(origin)) return cb(null, true);
     return cb(new Error('CORS blocked'), false);
   },
-}));
+});
+app.use((req, res, next) => {
+  const origin = req.get('origin');
+  if (origin === `${req.protocol}://${req.get('host')}`) return next();
+  return corsMiddleware(req, res, next);
+});
 
 // Minimal security headers (helmet-lite to avoid new deps)
 app.use((req, res, next) => {

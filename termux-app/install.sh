@@ -1,10 +1,10 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# تثبيت AI Trading على Termux
+# تثبيت Quantum Trade على Termux
 # الاستخدام: bash install.sh
 set -e
 cd "$(dirname "$0")"
 
-echo "=== AI Trading — Termux install ==="
+echo "=== Quantum Trade — Termux install ==="
 echo "Working dir: $(pwd)"
 node --version 2>/dev/null || echo "Node not found — installing…"
 

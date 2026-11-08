@@ -1,5 +1,7 @@
 node_modules/
 dist/
+!termux-app/dist/
+!termux-app/dist/**
 .env
 .env.*
 !.env.example

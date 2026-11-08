@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" fill="none">
+  <defs>
+    <linearGradient id="background" x1="10" y1="8" x2="80" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172554"/>
+      <stop offset="1" stop-color="#07111f"/>
+    </linearGradient>
+    <linearGradient id="orbit" x1="12" y1="25" x2="76" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67e8f9"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="trend" x1="26" y1="68" x2="62" y2="31" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34d399"/>
+      <stop offset="1" stop-color="#a5f3fc"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="88" height="88" rx="24" fill="url(#background)"/>
+  <ellipse cx="48" cy="48" rx="32" ry="14.5" transform="rotate(-35 48 48)" stroke="url(#orbit)" stroke-width="3.2"/>
+  <ellipse cx="48" cy="48" rx="32" ry="14.5" transform="rotate(35 48 48)" stroke="url(#orbit)" stroke-opacity=".62" stroke-width="2"/>
+  <path d="M29 67V56h7v11m6 0V48h7v19m6 0V40h7v27" fill="#67e8f9" fill-opacity=".72"/>
+  <path d="m28 55 13-10 8 4 17-17m-10 0h10v10" stroke="url(#trend)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <circle cx="66" cy="32" r="4" fill="#a5f3fc"/>
+  <text x="112" y="47" fill="#f1f5f9" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" letter-spacing="1.2">QUANTUM</text>
+  <text x="112" y="76" fill="#67e8f9" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" letter-spacing="4">TRADE</text>
+</svg>

@@ -53,11 +53,11 @@ export default function Layout({ children, currentPageName }) {
         <div className="h-16 flex items-center justify-between px-4 border-b border-sidebar-border">
           {!collapsed && (
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
-                <Bot className="w-5 h-5 text-primary" />
+              <div className="w-8 h-8 rounded-lg overflow-hidden">
+                <img src="/quantum-trade-icon.svg" alt="" className="w-full h-full" />
               </div>
               <div>
-                <span className="font-bold text-sm text-sidebar-foreground">AI Trading</span>
+                <span className="font-bold text-sm text-sidebar-foreground">Quantum Trade</span>
                 <div className="flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-trading-green animate-pulse" />
                   <span className="text-[10px] text-muted-foreground">متصل</span>
@@ -66,8 +66,8 @@ export default function Layout({ children, currentPageName }) {
             </div>
           )}
           {collapsed && (
-            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mx-auto">
-              <Bot className="w-5 h-5 text-primary" />
+            <div className="w-8 h-8 rounded-lg overflow-hidden mx-auto">
+              <img src="/quantum-trade-icon.svg" alt="" className="w-full h-full" />
             </div>
           )}
         </div>

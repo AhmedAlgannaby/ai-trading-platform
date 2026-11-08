@@ -1,4 +1,4 @@
-**Welcome to your Base44 project** 
+**Welcome to Quantum Trade**
 
 **About**
 
@@ -9,6 +9,13 @@ This project contains everything you need to run your app locally.
 **Edit the code in your local development environment**
 
 Any change pushed to the repo will also be reflected in the Base44 Builder.
+
+**Start the local app on Windows**
+
+Install [Node.js LTS](https://nodejs.org/) once, then double-click `start-app.bat`.
+It installs dependencies if needed, builds the app, starts the local server, and
+opens the app at [http://localhost:3001](http://localhost:3001). Keep the server
+window open while using the app; close it to stop the server.
 
 **Prerequisites:** 
 

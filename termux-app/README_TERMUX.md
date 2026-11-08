@@ -1,4 +1,4 @@
-# AI Trading — نسخة Termux (24/7)
+# Quantum Trade — نسخة Termux (24/7)
 
 هذه نسخة خفيفة من التطبيق مصممة للتشغيل **24/7 على هاتف Android عبر Termux** لاختبار مخرجات المنصة (paper trading).
 
@@ -136,9 +136,42 @@ bash backup.sh   # ينتج backups/ai-trading-data-YYYYMMDD-HHMMSS.tar.gz
 
 ## 10) تحديث النسخة لاحقاً
 
-- انسخ `server/` + `dist/` + `shared/` الجديدين فوق القديمين (تجنّب `server/data/` و `.env`).
-- `npm install --omit=dev` ثم `bash stop.sh && nohup bash run.sh > logs/run.log 2>&1 &`
-- قبل ذلك: `bash backup.sh`
+قبل كل تحديث، أوقف السيرفر وخذ نسخة احتياطية:
+
+```bash
+cd ~/ai-trading-termux
+bash stop.sh
+bash backup.sh
+```
+
+انسخ نسخة `termux-app` الجديدة إلى الهاتف (مثلاً إلى `~/storage/downloads/termux-app`).
+ثبّت أداة المزامنة مرة واحدة، ثم انسخ ملفات التطبيق الجديدة فوق المجلد الحالي.
+الأمر يستثني إعداداتك وبياناتك وسجلاتك واعتماديات Node:
+
+```bash
+pkg install -y rsync
+rsync -a \
+  --exclude='.env' \
+  --exclude='server/data/' \
+  --exclude='node_modules/' \
+  --exclude='logs/' \
+  --exclude='backups/' \
+  ~/storage/downloads/termux-app/ ~/ai-trading-termux/
+```
+
+عدّل المسارين إذا كان مجلد التطبيق أو التنزيلات في مكان آخر. بعد النسخ حدّث
+اعتماديات السيرفر وأعد تشغيله:
+
+```bash
+cd ~/ai-trading-termux
+npm install --omit=dev
+mkdir -p logs
+nohup bash run.sh > logs/run.log 2>&1 &
+bash status.sh
+```
+
+لا تحذف أو تستبدل `.env` أو `server/data/`؛ فهما يحتويان إعداداتك ومعلومات التداول
+المحلية. ملفات الواجهة المحدّثة موجودة في `dist/` وتُقدّم تلقائياً بعد إعادة التشغيل.
 
 ## استكشاف الأخطاء
 

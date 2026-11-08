@@ -20,7 +20,7 @@ if [ ! -f .env ]; then
   echo "No .env found — copied .env.example. Edit .env then restart."
 fi
 
-echo "=== AI Trading 24/7 ==="
+echo "=== Quantum Trade 24/7 ==="
 echo "Dir:  $(pwd)"
 echo "Port: $PORT  (http://localhost:$PORT)"
 echo "Data: $(pwd)/server/data"

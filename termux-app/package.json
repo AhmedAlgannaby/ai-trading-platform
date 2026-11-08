@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "AI Trading - Termux 24/7 copy (server-only + prebuilt dist)",
+  "description": "Quantum Trade - Termux 24/7 copy (server-only + prebuilt dist)",
   "scripts": {
     "start": "node server/index.js",
     "dev": "node server/index.js",

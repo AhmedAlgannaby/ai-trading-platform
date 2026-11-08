@@ -3,7 +3,7 @@
 cd "$(dirname "$0")"
 PORT="${PORT:-3001}"
 
-echo "=== AI Trading status ==="
+echo "=== Quantum Trade status ==="
 echo "Dir: $(pwd)"
 
 if pgrep -f "node server/index.js" >/dev/null 2>&1; then

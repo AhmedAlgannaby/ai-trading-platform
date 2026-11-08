@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="background" x1="7" y1="5" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172554"/>
+      <stop offset="1" stop-color="#07111f"/>
+    </linearGradient>
+    <linearGradient id="orbit" x1="10" y1="14" x2="56" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67e8f9"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="trend" x1="20" y1="43" x2="45" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34d399"/>
+      <stop offset="1" stop-color="#a5f3fc"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="17" fill="url(#background)"/>
+  <ellipse cx="32" cy="32" rx="23" ry="10.5" transform="rotate(-35 32 32)" stroke="url(#orbit)" stroke-width="2.4"/>
+  <ellipse cx="32" cy="32" rx="23" ry="10.5" transform="rotate(35 32 32)" stroke="url(#orbit)" stroke-opacity=".62" stroke-width="1.5"/>
+  <path d="M19 42V35h5v7m4 0V30h5v12m4 0V25h5v17" fill="#67e8f9" fill-opacity=".72"/>
+  <path d="m19 34 9-7 6 3 12-12m-7 0h7v7" stroke="url(#trend)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/>
+  <circle cx="47" cy="18" r="3" fill="#a5f3fc"/>
+</svg>

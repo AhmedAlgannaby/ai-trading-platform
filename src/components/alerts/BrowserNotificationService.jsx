@@ -15,8 +15,8 @@ export function sendBrowserNotification(title, body, options = {}) {
   if (!("Notification" in window) || Notification.permission !== "granted") return;
   const n = new Notification(title, {
     body,
-    icon: "/favicon.ico",
-    badge: "/favicon.ico",
+    icon: "/quantum-trade-icon.svg",
+    badge: "/quantum-trade-icon.svg",
     tag: options.tag || "trading-alert",
     renotify: true,
     ...options,

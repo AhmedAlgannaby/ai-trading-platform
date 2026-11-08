@@ -22,3 +22,4 @@ server_node*
 *.tmp
 *.bak
 gitignore
+*.zip

@@ -1,0 +1,47 @@
+{
+  "name": "AlertLog",
+  "type": "object",
+  "properties": {
+    "alert_config_id": {
+      "type": "string"
+    },
+    "alert_name": {
+      "type": "string"
+    },
+    "pair": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "alert_type": {
+      "type": "string"
+    },
+    "triggered_price": {
+      "type": "number"
+    },
+    "threshold": {
+      "type": "number"
+    },
+    "telegram_sent": {
+      "type": "boolean",
+      "default": false
+    },
+    "telegram_error": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "warning",
+        "critical"
+      ],
+      "default": "info"
+    }
+  },
+  "required": [
+    "message",
+    "alert_type"
+  ]
+}

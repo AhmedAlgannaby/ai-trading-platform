@@ -1,0 +1,78 @@
+{
+  "name": "RiskSettings",
+  "type": "object",
+  "properties": {
+    "max_risk_per_trade": {
+      "type": "number",
+      "default": 2,
+      "description": "Max % of portfolio per trade"
+    },
+    "max_daily_loss": {
+      "type": "number",
+      "default": 5
+    },
+    "max_weekly_loss": {
+      "type": "number",
+      "default": 10
+    },
+    "max_drawdown": {
+      "type": "number",
+      "default": 15
+    },
+    "max_open_positions": {
+      "type": "number",
+      "default": 5
+    },
+    "default_leverage": {
+      "type": "number",
+      "default": 1
+    },
+    "max_leverage": {
+      "type": "number",
+      "default": 10
+    },
+    "default_stop_loss_percent": {
+      "type": "number",
+      "default": 2
+    },
+    "default_take_profit_percent": {
+      "type": "number",
+      "default": 6
+    },
+    "risk_reward_min": {
+      "type": "number",
+      "default": 2
+    },
+    "trailing_stop_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "circuit_breaker_losses": {
+      "type": "number",
+      "default": 3,
+      "description": "Stop after N consecutive losses"
+    },
+    "execution_mode": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "semi_auto",
+        "manual"
+      ],
+      "default": "semi_auto"
+    },
+    "trading_mode": {
+      "type": "string",
+      "enum": [
+        "live",
+        "paper"
+      ],
+      "default": "paper"
+    },
+    "paper_balance": {
+      "type": "number",
+      "default": 10000
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Signal",
+  "type": "object",
+  "properties": {
+    "pair": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "buy",
+        "sell",
+        "hold"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "description": "0-100 confidence score"
+    },
+    "entry_price": {
+      "type": "number"
+    },
+    "stop_loss": {
+      "type": "number"
+    },
+    "take_profit_1": {
+      "type": "number"
+    },
+    "take_profit_2": {
+      "type": "number"
+    },
+    "take_profit_3": {
+      "type": "number"
+    },
+    "risk_reward": {
+      "type": "string"
+    },
+    "timeframe": {
+      "type": "string"
+    },
+    "strategy": {
+      "type": "string"
+    },
+    "analysis_summary": {
+      "type": "string"
+    },
+    "indicators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "signal": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "patterns_detected": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "executed",
+        "expired",
+        "rejected"
+      ],
+      "default": "pending"
+    },
+    "suggested_size_percent": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "pair",
+    "direction",
+    "confidence"
+  ]
+}

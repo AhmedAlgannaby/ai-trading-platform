@@ -1,0 +1,13 @@
+{
+  "name": "signal_executor",
+  "entry": "entry.ts",
+  "automations": [
+    {
+      // يستمع لكل إشارة جديدة تُضاف لقاعدة البيانات
+      "type": "entity",
+      "name": "on_new_signal",
+      "entity_name": "Signal",
+      "event_types": ["create"]
+    }
+  ]
+}

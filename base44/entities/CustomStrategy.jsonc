@@ -1,0 +1,52 @@
+{
+  "name": "CustomStrategy",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "pair": {
+      "type": "string"
+    },
+    "timeframe": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "archived"
+      ],
+      "default": "draft"
+    },
+    "last_tested": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "test_win_rate": {
+      "type": "number"
+    },
+    "test_return": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

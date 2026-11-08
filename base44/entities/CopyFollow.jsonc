@@ -1,0 +1,59 @@
+{
+  "name": "CopyFollow",
+  "type": "object",
+  "properties": {
+    "trader_id": {
+      "type": "string"
+    },
+    "trader_name": {
+      "type": "string"
+    },
+    "follower_email": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "active",
+        "paused",
+        "stopped"
+      ],
+      "default": "pending"
+    },
+    "copy_amount": {
+      "type": "number"
+    },
+    "risk_multiplier": {
+      "type": "number",
+      "default": 1
+    },
+    "max_loss_limit": {
+      "type": "number"
+    },
+    "total_pnl": {
+      "type": "number",
+      "default": 0
+    },
+    "total_pnl_percent": {
+      "type": "number",
+      "default": 0
+    },
+    "copied_trades_count": {
+      "type": "number",
+      "default": 0
+    },
+    "auto_approve": {
+      "type": "boolean",
+      "default": false
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "trader_id",
+    "copy_amount"
+  ]
+}

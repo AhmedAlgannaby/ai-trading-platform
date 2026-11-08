@@ -1,0 +1,116 @@
+{
+  "name": "Trade",
+  "type": "object",
+  "properties": {
+    "pair": {
+      "type": "string",
+      "description": "Trading pair e.g. BTC/USDT"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "long",
+        "short"
+      ],
+      "description": "Trade direction"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "closed",
+        "cancelled"
+      ],
+      "default": "open"
+    },
+    "entry_price": {
+      "type": "number"
+    },
+    "current_price": {
+      "type": "number"
+    },
+    "exit_price": {
+      "type": "number"
+    },
+    "stop_loss": {
+      "type": "number"
+    },
+    "take_profit_1": {
+      "type": "number"
+    },
+    "take_profit_2": {
+      "type": "number"
+    },
+    "take_profit_3": {
+      "type": "number"
+    },
+    "position_size": {
+      "type": "number",
+      "description": "Size in USDT"
+    },
+    "leverage": {
+      "type": "number",
+      "default": 1
+    },
+    "pnl": {
+      "type": "number",
+      "description": "Profit/Loss in USDT"
+    },
+    "pnl_percent": {
+      "type": "number"
+    },
+    "confidence": {
+      "type": "number",
+      "description": "AI confidence score 0-100"
+    },
+    "strategy": {
+      "type": "string"
+    },
+    "timeframe": {
+      "type": "string"
+    },
+    "entry_reason": {
+      "type": "string"
+    },
+    "exit_reason": {
+      "type": "string"
+    },
+    "market_type": {
+      "type": "string",
+      "enum": [
+        "spot",
+        "futures"
+      ],
+      "default": "spot"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "live",
+        "paper"
+      ],
+      "default": "paper"
+    },
+    "closed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ml_features": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "ML feature vector captured at entry"
+    },
+    "ml_probability": {
+      "type": "number",
+      "description": "Model-predicted win probability (0-100) at entry"
+    }
+  },
+  "required": [
+    "pair",
+    "type",
+    "entry_price",
+    "position_size"
+  ]
+}

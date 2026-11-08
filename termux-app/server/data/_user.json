@@ -1,0 +1,11 @@
+[
+  {
+    "id": "local-user",
+    "email": "trader@local",
+    "full_name": "متداول محلي",
+    "role": "admin",
+    "binance_api_key": "KEY123",
+    "binance_secret_key": "SEC123",
+    "binance_network": "mainnet"
+  }
+]

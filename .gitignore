@@ -1,0 +1,24 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+server/data/
+*.log
+*.err
+*.out
+*.msi
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.local
+base44/.app.jsonc
+# local runtime logs
+logs/
+vite_direct.*
+server_node*
+# temp files
+*.tmp
+*.bak
+gitignore

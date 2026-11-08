@@ -1,0 +1,65 @@
+{
+  "name": "PortfolioSnapshot",
+  "type": "object",
+  "properties": {
+    "total_balance": {
+      "type": "number"
+    },
+    "available_balance": {
+      "type": "number"
+    },
+    "total_pnl": {
+      "type": "number"
+    },
+    "total_pnl_percent": {
+      "type": "number"
+    },
+    "daily_pnl": {
+      "type": "number"
+    },
+    "daily_pnl_percent": {
+      "type": "number"
+    },
+    "open_positions_count": {
+      "type": "number"
+    },
+    "win_rate": {
+      "type": "number"
+    },
+    "total_trades": {
+      "type": "number"
+    },
+    "winning_trades": {
+      "type": "number"
+    },
+    "losing_trades": {
+      "type": "number"
+    },
+    "max_drawdown": {
+      "type": "number"
+    },
+    "sharpe_ratio": {
+      "type": "number"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "live",
+        "paper"
+      ],
+      "default": "paper"
+    },
+    "snapshot_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "total_balance"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

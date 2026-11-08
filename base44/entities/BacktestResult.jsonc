@@ -1,0 +1,94 @@
+{
+  "name": "BacktestResult",
+  "type": "object",
+  "properties": {
+    "pair": {
+      "type": "string"
+    },
+    "strategy": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string"
+    },
+    "end_date": {
+      "type": "string"
+    },
+    "initial_balance": {
+      "type": "number"
+    },
+    "risk_per_trade": {
+      "type": "number"
+    },
+    "stop_loss_percent": {
+      "type": "number"
+    },
+    "take_profit_percent": {
+      "type": "number"
+    },
+    "total_return_percent": {
+      "type": "number"
+    },
+    "win_rate": {
+      "type": "number"
+    },
+    "total_trades": {
+      "type": "number"
+    },
+    "sharpe_ratio": {
+      "type": "number"
+    },
+    "max_drawdown": {
+      "type": "number"
+    },
+    "profit_factor": {
+      "type": "number"
+    },
+    "avg_win": {
+      "type": "number"
+    },
+    "avg_loss": {
+      "type": "number"
+    },
+    "ai_lessons": {
+      "type": "string"
+    },
+    "best_conditions": {
+      "type": "string"
+    },
+    "avoid_conditions": {
+      "type": "string"
+    },
+    "market_regime": {
+      "type": "string"
+    },
+    "optimal_risk": {
+      "type": "number"
+    },
+    "optimal_stop_loss": {
+      "type": "number"
+    },
+    "optimal_take_profit": {
+      "type": "number"
+    },
+    "optimal_tp_sl_ratio": {
+      "type": "number"
+    },
+    "confidence_to_enter": {
+      "type": "number"
+    },
+    "recommended_timeframe": {
+      "type": "string"
+    },
+    "parameter_reasoning": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "pair",
+    "strategy"
+  ]
+}

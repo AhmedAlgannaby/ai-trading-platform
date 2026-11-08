@@ -1,0 +1,56 @@
+{
+  "name": "MLModel",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "default": "signal_predictor"
+    },
+    "version": {
+      "type": "number",
+      "default": 0
+    },
+    "weights": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "Logistic regression weights (bias first)"
+    },
+    "trained_samples": {
+      "type": "number",
+      "default": 0
+    },
+    "loss_updates": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of updates triggered by losing trades"
+    },
+    "accuracy": {
+      "type": "number",
+      "default": 0,
+      "description": "Accuracy % on trained trades"
+    },
+    "last_loss": {
+      "type": "number",
+      "default": 0,
+      "description": "Mean log-loss on trained trades"
+    },
+    "trained_trade_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "Per-version snapshots: version, accuracy, loss, samples, trigger"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

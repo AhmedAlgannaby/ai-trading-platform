@@ -1,0 +1,4 @@
+{
+  "name": "binance_proxy",
+  "entry": "entry.ts"
+}

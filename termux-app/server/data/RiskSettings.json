@@ -1,0 +1,25 @@
+[
+  {
+    "trading_mode": "paper",
+    "execution_mode": "auto",
+    "paper_balance": 10000,
+    "max_risk_per_trade": 2,
+    "max_open_positions": 20,
+    "circuit_breaker_losses": 3,
+    "default_leverage": 5,
+    "default_stop_loss_percent": 2,
+    "default_take_profit_percent": 2.5,
+    "min_confidence": 65,
+    "id": "cc5d62da-343f-4cd2-a4ab-88a1361e3ec2",
+    "created_date": "2026-10-18T02:06:01.843Z",
+    "updated_date": "2026-11-07T05:19:53.235Z",
+    "created_by": "trader@local",
+    "market_type": "futures",
+    "max_leverage": 20,
+    "max_daily_loss": 5,
+    "max_weekly_loss": 10,
+    "max_drawdown": 15,
+    "risk_reward_min": 2,
+    "trailing_stop_enabled": true
+  }
+]

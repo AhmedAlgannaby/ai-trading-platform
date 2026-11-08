@@ -1,0 +1,15 @@
+{
+  "name": "ai_signal_generator",
+  "entry": "entry.ts",
+  "automations": [
+    {
+      // يعمل كل 4 ساعات لتوليد إشارات AI جديدة
+      "type": "scheduled",
+      "name": "generate_signals_every_4h",
+      "schedule_mode": "recurring",
+      "schedule_type": "simple",
+      "repeat_unit": "hours",
+      "repeat_interval": 4
+    }
+  ]
+}

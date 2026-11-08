@@ -1,0 +1,74 @@
+[
+  {
+    "name": "signal_predictor",
+    "version": 4,
+    "weights": [
+      -0.4081573238740608,
+      0.17773303610087982,
+      0.04934614875688048,
+      0.05492556741120195,
+      -0.18892431248269756,
+      -0.13424276344943142,
+      -0.18892431248269756,
+      0,
+      0.0035486474089449524
+    ],
+    "trained_samples": 13,
+    "loss_updates": 2,
+    "accuracy": 66.7,
+    "last_loss": 0.572,
+    "trained_trade_ids": [
+      "4b1b918d-e95c-45bb-9fe4-2571831dee32",
+      "da33a74b-b14c-44bd-b8e4-19d4f8c6492d",
+      "d80fa061-d03c-4b78-90bd-95353c775541",
+      "0b7c2fb3-946d-4fc0-bd18-eb363bfe08ac",
+      "cd4617fd-b0a0-48cb-b9e9-6adc3723a286",
+      "0f570f62-f606-464b-8603-1dc71d3db936",
+      "083ba220-f1bd-4411-9c0e-a467b0e6d7a9",
+      "f2d18e19-cd7b-4b25-9d84-effc49a28ae0",
+      "0b9ee416-bc26-4cc0-8686-994d91ebf329",
+      "e221ccbc-f676-4b4f-97a8-75cd1518e0ab",
+      "e979166e-733e-46af-9b0f-ac331b55bb2d",
+      "1f6b961b-83b2-40b8-88d4-bdb3fe993aad",
+      "de3a6679-496f-415a-8694-9c838523c1ad"
+    ],
+    "history": [
+      {
+        "version": 1,
+        "accuracy": 100,
+        "loss": 0.461,
+        "samples": 4,
+        "trigger": "win",
+        "at": "2026-10-20T05:29:29.623Z"
+      },
+      {
+        "version": 2,
+        "accuracy": 100,
+        "loss": 0.296,
+        "samples": 11,
+        "trigger": "win",
+        "at": "2026-11-07T04:20:54.392Z"
+      },
+      {
+        "version": 3,
+        "accuracy": 50,
+        "loss": 0.706,
+        "samples": 12,
+        "trigger": "loss",
+        "at": "2026-11-07T05:45:34.675Z"
+      },
+      {
+        "version": 4,
+        "accuracy": 66.7,
+        "loss": 0.572,
+        "samples": 13,
+        "trigger": "loss",
+        "at": "2026-11-07T06:25:21.540Z"
+      }
+    ],
+    "id": "ee2a4b09-45c7-40eb-8c90-2286aa2820c1",
+    "created_date": "2026-10-17T19:26:45.222Z",
+    "updated_date": "2026-11-07T06:25:21.550Z",
+    "created_by": "trader@local"
+  }
+]

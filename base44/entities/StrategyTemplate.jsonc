@@ -1,0 +1,70 @@
+{
+  "name": "StrategyTemplate",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "trend_following",
+        "mean_reversion",
+        "breakout",
+        "scalping",
+        "swing",
+        "ai_hybrid"
+      ]
+    },
+    "timeframes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "indicators": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "default_params": {
+      "type": "object"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "avg_win_rate": {
+      "type": "number"
+    },
+    "avg_return": {
+      "type": "number"
+    },
+    "times_used": {
+      "type": "number",
+      "default": 0
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "category"
+  ]
+}

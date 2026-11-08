@@ -1,0 +1,274 @@
+[
+  {
+    "name": "EMA Crossover Pro",
+    "description": "استراتيجية تقاطع المتوسطات المتحركة الأسية مع تأكيد من مؤشر RSI وحجم التداول. تعمل بشكل ممتاز في أسواق الاتجاه الواضح.",
+    "category": "trend_following",
+    "timeframes": [
+      "1h",
+      "4h",
+      "1d"
+    ],
+    "indicators": [
+      "EMA 20",
+      "EMA 50",
+      "RSI",
+      "Volume"
+    ],
+    "default_params": {
+      "risk": 2,
+      "sl": 2,
+      "tp": 6
+    },
+    "risk_level": "medium",
+    "avg_win_rate": 62,
+    "avg_return": 34,
+    "times_used": 847,
+    "is_featured": true,
+    "tags": [
+      "trending",
+      "popular"
+    ],
+    "id": "29db7338-a8e3-482c-bbb7-ecd041c490ff",
+    "created_date": "2026-10-17T20:05:24.707Z",
+    "updated_date": "2026-10-17T20:05:24.707Z",
+    "created_by": "trader@local"
+  },
+  {
+    "name": "RSI Divergence Hunter",
+    "description": "يكتشف الاختلافات بين السعر ومؤشر RSI للتنبؤ بانعكاسات الاتجاه. فعّال جداً في نقاط الذروة.",
+    "category": "mean_reversion",
+    "timeframes": [
+      "4h",
+      "1d"
+    ],
+    "indicators": [
+      "RSI",
+      "MACD",
+      "Bollinger Bands"
+    ],
+    "default_params": {
+      "risk": 1.5,
+      "sl": 3,
+      "tp": 9
+    },
+    "risk_level": "medium",
+    "avg_win_rate": 58,
+    "avg_return": 41,
+    "times_used": 623,
+    "is_featured": true,
+    "tags": [
+      "divergence",
+      "reversal"
+    ],
+    "id": "0d477ac8-ebcf-4154-a7f9-75133e2a8624",
+    "created_date": "2026-10-17T20:05:24.707Z",
+    "updated_date": "2026-10-17T20:05:24.707Z",
+    "created_by": "trader@local"
+  },
+  {
+    "name": "Breakout Sniper",
+    "description": "يرصد اختراقات مستويات الدعم والمقاومة مع تأكيد من الحجم والزخم. يستهدف تحركات كبيرة بعد فترات تداول ضيقة.",
+    "category": "breakout",
+    "timeframes": [
+      "15m",
+      "1h",
+      "4h"
+    ],
+    "indicators": [
+      "Support/Resistance",
+      "Volume",
+      "ATR",
+      "Momentum"
+    ],
+    "default_params": {
+      "risk": 2,
+      "sl": 1.5,
+      "tp": 7.5
+    },
+    "risk_level": "high",
+    "avg_win_rate": 54,
+    "avg_return": 52,
+    "times_used": 512,
+    "is_featured": false,
+    "tags": [
+      "breakout",
+      "volatile"
+    ],
+    "id": "661c9caf-07fb-4786-b661-91fbddf0e954",
+    "created_date": "2026-10-17T20:05:24.707Z",
+    "updated_date": "2026-10-17T20:05:24.707Z",
+    "created_by": "trader@local"
+  },
+  {
+    "name": "Scalping Lightning",
+    "description": "استراتيجية سكالبينج سريعة تعتمد على مؤشر Stochastic و VWAP في إطارات زمنية قصيرة. تناسب المتداولين النشطين.",
+    "category": "scalping",
+    "timeframes": [
+      "1m",
+      "5m",
+      "15m"
+    ],
+    "indicators": [
+      "Stochastic",
+      "VWAP",
+      "EMA 9",
+      "EMA 21"
+    ],
+    "default_params": {
+      "risk": 0.5,
+      "sl": 0.8,
+      "tp": 1.6
+    },
+    "risk_level": "high",
+    "avg_win_rate": 67,
+    "avg_return": 28,
+    "times_used": 1203,
+    "is_featured": false,
+    "tags": [
+      "scalping",
+      "fast",
+      "active"
+    ],
+    "id": "4ffc367e-1781-4a5b-88b7-62da1e5a7e77",
+    "created_date": "2026-10-17T20:05:24.707Z",
+    "updated_date": "2026-10-17T20:05:24.707Z",
+    "created_by": "trader@local"
+  },
+  {
+    "name": "Swing Master AI",
+    "description": "يجمع بين تحليل الموجات ومستويات فيبوناتشي ومؤشرات الزخم لتحديد نقاط الدخول المثلى في صفقات السوينج.",
+    "category": "swing",
+    "timeframes": [
+      "4h",
+      "1d",
+      "3d"
+    ],
+    "indicators": [
+      "Fibonacci",
+      "Elliott Waves",
+      "MACD",
+      "Ichimoku"
+    ],
+    "default_params": {
+      "risk": 2,
+      "sl": 4,
+      "tp": 12
+    },
+    "risk_level": "medium",
+    "avg_win_rate": 60,
+    "avg_return": 67,
+    "times_used": 389,
+    "is_featured": true,
+    "tags": [
+      "swing",
+      "fibonacci",
+      "long-term"
+    ],
+    "id": "d5dff15b-30f8-4091-903e-ff6858b166a5",
+    "created_date": "2026-10-17T20:05:24.707Z",
+    "updated_date": "2026-10-17T20:05:24.707Z",
+    "created_by": "trader@local"
+  },
+  {
+    "name": "AI Sentiment Trader",
+    "description": "يدمج تحليل المشاعر من وسائل التواصل الاجتماعي مع التحليل الفني للحصول على إشارات عالية الدقة.",
+    "category": "ai_hybrid",
+    "timeframes": [
+      "1h",
+      "4h"
+    ],
+    "indicators": [
+      "Sentiment Score",
+      "RSI",
+      "MACD",
+      "On-Chain Data"
+    ],
+    "default_params": {
+      "risk": 2,
+      "sl": 3,
+      "tp": 9
+    },
+    "risk_level": "medium",
+    "avg_win_rate": 71,
+    "avg_return": 89,
+    "times_used": 234,
+    "is_featured": true,
+    "tags": [
+      "ai",
+      "sentiment",
+      "hybrid"
+    ],
+    "id": "90c0c61e-cccf-4730-8b07-ec8b750c32af",
+    "created_date": "2026-10-17T20:05:24.707Z",
+    "updated_date": "2026-10-17T20:05:24.707Z",
+    "created_by": "trader@local"
+  },
+  {
+    "name": "Bollinger Squeeze",
+    "description": "يستغل ضغط نطاقات بولينجر للدخول قبيل الانفجارات السعرية الكبيرة. عائد ممتاز مع مخاطر منضبطة.",
+    "category": "breakout",
+    "timeframes": [
+      "1h",
+      "4h",
+      "1d"
+    ],
+    "indicators": [
+      "Bollinger Bands",
+      "Keltner Channel",
+      "ATR",
+      "Volume"
+    ],
+    "default_params": {
+      "risk": 1.5,
+      "sl": 2,
+      "tp": 8
+    },
+    "risk_level": "medium",
+    "avg_win_rate": 56,
+    "avg_return": 45,
+    "times_used": 445,
+    "is_featured": false,
+    "tags": [
+      "volatility",
+      "squeeze"
+    ],
+    "id": "01eb2db5-dabe-4699-a4de-7ff4b383ba2a",
+    "created_date": "2026-10-17T20:05:24.707Z",
+    "updated_date": "2026-10-17T20:05:24.707Z",
+    "created_by": "trader@local"
+  },
+  {
+    "name": "MACD Momentum Wave",
+    "description": "يتابع زخم السوق بدقة عبر MACD المُعدَّل مع فلترة إضافية للإشارات الضعيفة. ممتاز للأسواق المتأرجحة.",
+    "category": "trend_following",
+    "timeframes": [
+      "4h",
+      "1d"
+    ],
+    "indicators": [
+      "MACD",
+      "Signal Line",
+      "Histogram",
+      "Volume MA"
+    ],
+    "default_params": {
+      "risk": 2,
+      "sl": 2.5,
+      "tp": 7.5
+    },
+    "risk_level": "low",
+    "avg_win_rate": 64,
+    "avg_return": 38,
+    "times_used": 679,
+    "is_featured": false,
+    "tags": [
+      "momentum",
+      "macd",
+      "reliable"
+    ],
+    "id": "d5f66d71-8d15-46db-848d-7c54fc383d95",
+    "created_date": "2026-10-17T20:05:24.707Z",
+    "updated_date": "2026-10-17T20:05:58.990Z",
+    "created_by": "trader@local"
+  }
+]

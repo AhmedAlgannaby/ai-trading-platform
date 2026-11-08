@@ -1,0 +1,67 @@
+{
+  "name": "AlertConfig",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "\u0627\u0633\u0645 \u0627\u0644\u062a\u0646\u0628\u064a\u0647"
+    },
+    "pair": {
+      "type": "string",
+      "description": "\u0632\u0648\u062c \u0627\u0644\u062a\u062f\u0627\u0648\u0644 \u0645\u062b\u0644 BTCUSDT"
+    },
+    "alert_type": {
+      "type": "string",
+      "enum": [
+        "price_above",
+        "price_below",
+        "stop_loss_near",
+        "take_profit_near",
+        "big_move",
+        "new_signal",
+        "trade_opened",
+        "trade_closed"
+      ],
+      "description": "\u0646\u0648\u0639 \u0627\u0644\u062a\u0646\u0628\u064a\u0647"
+    },
+    "threshold": {
+      "type": "number",
+      "description": "\u0627\u0644\u0642\u064a\u0645\u0629 \u0627\u0644\u0645\u0633\u062a\u0647\u062f\u0641\u0629 (\u0633\u0639\u0631 \u0623\u0648 \u0646\u0633\u0628\u0629 %)"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "telegram_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "in_app_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "telegram_chat_id": {
+      "type": "string"
+    },
+    "telegram_bot_token": {
+      "type": "string"
+    },
+    "triggered_count": {
+      "type": "number",
+      "default": 0
+    },
+    "last_triggered": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "cooldown_minutes": {
+      "type": "number",
+      "default": 60,
+      "description": "\u062f\u0642\u0627\u0626\u0642 \u0627\u0644\u0627\u0646\u062a\u0638\u0627\u0631 \u0642\u0628\u0644 \u0625\u0639\u0627\u062f\u0629 \u0627\u0644\u0625\u0634\u0639\u0627\u0631"
+    }
+  },
+  "required": [
+    "name",
+    "alert_type"
+  ]
+}

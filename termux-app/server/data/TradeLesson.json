@@ -1,0 +1,363 @@
+[
+  {
+    "trade_id": "4b1b918d-e95c-45bb-9fe4-2571831dee32",
+    "pair": "XRP/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 3.59,
+    "pnl_percent": 1.79,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ XRP/USDT: التوصية بيع بثقة %",
+      "السوق في اتجاه هابط وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع XRP/USDT",
+    "id": "71b982ad-ce14-4952-8841-a08d94ff84ee",
+    "created_date": "2026-10-20T04:55:07.634Z",
+    "updated_date": "2026-10-20T04:55:07.634Z",
+    "created_by": "worker/learner"
+  },
+  {
+    "trade_id": "da33a74b-b14c-44bd-b8e4-19d4f8c6492d",
+    "pair": "ADA/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 12.17,
+    "pnl_percent": 6.09,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ ADA/USDT: التوصية بيع بثقة %",
+      "السوق في اتجاه هابط وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع ADA/USDT",
+    "id": "81278833-1f04-4487-82d3-2fa3893c2315",
+    "created_date": "2026-10-20T04:55:07.634Z",
+    "updated_date": "2026-10-20T04:55:07.634Z",
+    "created_by": "worker/learner"
+  },
+  {
+    "trade_id": "d80fa061-d03c-4b78-90bd-95353c775541",
+    "pair": "ADA/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 12.96,
+    "pnl_percent": 6.48,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ ADA/USDT: التوصية بيع بثقة %",
+      "السوق في اتجاه هابط وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع ADA/USDT",
+    "id": "f798029d-ff0f-4fc6-bbdb-8c87750940cb",
+    "created_date": "2026-10-20T04:55:07.634Z",
+    "updated_date": "2026-10-20T04:55:07.634Z",
+    "created_by": "worker/learner"
+  },
+  {
+    "trade_id": "0b7c2fb3-946d-4fc0-bd18-eb363bfe08ac",
+    "pair": "ADA/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 12.99,
+    "pnl_percent": 6.5,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ ADA/USDT: التوصية بيع بثقة %",
+      "السوق في اتجاه هابط وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع ADA/USDT",
+    "id": "dd0ad227-9bc3-4307-b29c-bf9d303d309b",
+    "created_date": "2026-10-20T05:26:04.560Z",
+    "updated_date": "2026-10-20T05:26:04.560Z",
+    "created_by": "worker/learner"
+  },
+  {
+    "trade_id": "e979166e-733e-46af-9b0f-ac331b55bb2d",
+    "pair": "SOL/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 9.87,
+    "pnl_percent": 4.93,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ SOL/USDT: التوصية بيع بثقة %",
+      "السوق في اتجاه هابط وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع SOL/USDT",
+    "id": "bec9f407-54ef-4876-af2e-1789e647de38",
+    "created_date": "2026-11-07T04:03:23.418Z",
+    "updated_date": "2026-11-07T04:03:23.418Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "e221ccbc-f676-4b4f-97a8-75cd1518e0ab",
+    "pair": "BNB/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 4.95,
+    "pnl_percent": 2.48,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ BNB/USDT: التوصية بيع بثقة %",
+      "السوق في نطاق عرضي وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ (معرفة مكتسبة: متوس"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع BNB/USDT",
+    "id": "fe56f3b3-64b7-4188-9326-8c460cc73151",
+    "created_date": "2026-11-07T04:03:23.418Z",
+    "updated_date": "2026-11-07T04:03:23.418Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "0b9ee416-bc26-4cc0-8686-994d91ebf329",
+    "pair": "BNB/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 5.23,
+    "pnl_percent": 2.61,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ BNB/USDT: التوصية بيع بثقة %",
+      "السوق في نطاق عرضي وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع BNB/USDT",
+    "id": "bcb5ec9c-ff2d-4813-bfbe-35440c0f64b0",
+    "created_date": "2026-11-07T04:03:23.418Z",
+    "updated_date": "2026-11-07T04:03:23.418Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "f2d18e19-cd7b-4b25-9d84-effc49a28ae0",
+    "pair": "SOL/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 10.47,
+    "pnl_percent": 5.24,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ SOL/USDT: التوصية بيع بثقة %",
+      "السوق في اتجاه هابط وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع SOL/USDT",
+    "id": "7760c947-43b1-4ff1-9e68-5a002df26cbd",
+    "created_date": "2026-11-07T04:03:23.418Z",
+    "updated_date": "2026-11-07T04:03:23.418Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "083ba220-f1bd-4411-9c0e-a467b0e6d7a9",
+    "pair": "BNB/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 5.23,
+    "pnl_percent": 2.61,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ BNB/USDT: التوصية بيع بثقة %",
+      "السوق في نطاق عرضي وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع BNB/USDT",
+    "id": "a2b0ee8e-f5dc-42e8-8044-1d12924b2d4c",
+    "created_date": "2026-11-07T04:03:23.418Z",
+    "updated_date": "2026-11-07T04:03:23.418Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "0f570f62-f606-464b-8603-1dc71d3db936",
+    "pair": "SOL/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 10.45,
+    "pnl_percent": 5.23,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ SOL/USDT: التوصية بيع بثقة %",
+      "السوق في اتجاه هابط وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع SOL/USDT",
+    "id": "cba70093-6fd1-4c94-98da-47cd302011e8",
+    "created_date": "2026-11-07T04:03:23.418Z",
+    "updated_date": "2026-11-07T04:03:23.418Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "cd4617fd-b0a0-48cb-b9e9-6adc3723a286",
+    "pair": "BNB/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 2.9,
+    "pnl_percent": 1.45,
+    "factors": [
+      "السعر تحت EMA",
+      "EMA تحت EMA"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع BNB/USDT",
+    "id": "721af0f1-7690-405a-a459-d1c6f9c6df1b",
+    "created_date": "2026-11-07T04:03:23.418Z",
+    "updated_date": "2026-11-07T04:03:23.418Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "e979166e-733e-46af-9b0f-ac331b55bb2d",
+    "pair": "SOL/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 9.87,
+    "pnl_percent": 4.93,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ SOL/USDT: التوصية بيع بثقة %",
+      "السوق في اتجاه هابط وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع SOL/USDT",
+    "id": "59cecf6a-f82d-44c3-9314-6e65a613b2c5",
+    "created_date": "2026-11-07T04:03:23.476Z",
+    "updated_date": "2026-11-07T04:03:23.476Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "e221ccbc-f676-4b4f-97a8-75cd1518e0ab",
+    "pair": "BNB/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 4.95,
+    "pnl_percent": 2.48,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ BNB/USDT: التوصية بيع بثقة %",
+      "السوق في نطاق عرضي وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ (معرفة مكتسبة: متوس"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع BNB/USDT",
+    "id": "657b7540-4989-4125-b081-7847500c78e7",
+    "created_date": "2026-11-07T04:03:23.476Z",
+    "updated_date": "2026-11-07T04:03:23.476Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "0b9ee416-bc26-4cc0-8686-994d91ebf329",
+    "pair": "BNB/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 5.23,
+    "pnl_percent": 2.61,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ BNB/USDT: التوصية بيع بثقة %",
+      "السوق في نطاق عرضي وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع BNB/USDT",
+    "id": "293a84e7-e3ec-46f1-b83f-ed2c0cb2f547",
+    "created_date": "2026-11-07T04:03:23.476Z",
+    "updated_date": "2026-11-07T04:03:23.476Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "f2d18e19-cd7b-4b25-9d84-effc49a28ae0",
+    "pair": "SOL/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 10.47,
+    "pnl_percent": 5.24,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ SOL/USDT: التوصية بيع بثقة %",
+      "السوق في اتجاه هابط وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع SOL/USDT",
+    "id": "cf574e5f-cf59-4867-9519-70681681a4f7",
+    "created_date": "2026-11-07T04:03:23.476Z",
+    "updated_date": "2026-11-07T04:03:23.476Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "083ba220-f1bd-4411-9c0e-a467b0e6d7a9",
+    "pair": "BNB/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 5.23,
+    "pnl_percent": 2.61,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ BNB/USDT: التوصية بيع بثقة %",
+      "السوق في نطاق عرضي وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع BNB/USDT",
+    "id": "70a42caf-3682-4171-a7ed-7e50dcb27605",
+    "created_date": "2026-11-07T04:03:23.476Z",
+    "updated_date": "2026-11-07T04:03:23.476Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "0f570f62-f606-464b-8603-1dc71d3db936",
+    "pair": "SOL/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 10.45,
+    "pnl_percent": 5.23,
+    "factors": [
+      "[أتمتة] العقل الكمي لـ SOL/USDT: التوصية بيع بثقة %",
+      "السوق في اتجاه هابط وتقلب طبيعي (ATR .%).\n• اتجاه EMA: هابط (السعر تحت EMA تحت EMA)\n• RSI: زخم سلبي (.)\n• MACD: سلبي متباطئ"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع SOL/USDT",
+    "id": "37f1eee3-dacd-4042-8538-de6bdf9d61e7",
+    "created_date": "2026-11-07T04:03:23.476Z",
+    "updated_date": "2026-11-07T04:03:23.476Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "cd4617fd-b0a0-48cb-b9e9-6adc3723a286",
+    "pair": "BNB/USDT",
+    "direction": "short",
+    "outcome": "win",
+    "pnl": 2.9,
+    "pnl_percent": 1.45,
+    "factors": [
+      "السعر تحت EMA",
+      "EMA تحت EMA"
+    ],
+    "exit_reason": "هدف الربح",
+    "lesson": "نجحت صفقة بيع BNB/USDT",
+    "id": "cd55f96b-b516-4999-a3fa-ebbd450c71c8",
+    "created_date": "2026-11-07T04:03:23.476Z",
+    "updated_date": "2026-11-07T04:03:23.476Z",
+    "created_by": "trader@local"
+  },
+  {
+    "trade_id": "1f6b961b-83b2-40b8-88d4-bdb3fe993aad",
+    "pair": "ATOM/USDT",
+    "direction": "short",
+    "outcome": "loss",
+    "pnl": 0,
+    "pnl_percent": 0,
+    "factors": [
+      "السعر تحت EMA",
+      "EMA تحت EMA"
+    ],
+    "exit_reason": "وقف الخسارة",
+    "lesson": "خسرت صفقة بيع ATOM/USDT (وقف الخسارة) — عوامل الدخول: السعر تحت EMA، EMA تحت EMA",
+    "id": "75fe3cc1-0e24-4ba0-964b-8a26752f7329",
+    "created_date": "2026-11-07T05:44:17.549Z",
+    "updated_date": "2026-11-07T05:44:17.549Z",
+    "created_by": "worker/learner"
+  },
+  {
+    "trade_id": "de3a6679-496f-415a-8694-9c838523c1ad",
+    "pair": "TIA/USDT",
+    "direction": "long",
+    "outcome": "loss",
+    "pnl": -54.18,
+    "pnl_percent": -0.46,
+    "factors": [
+      "السعر فوق EMA",
+      "EMA فوق EMA",
+      "RSI تشبع بيعي"
+    ],
+    "exit_reason": "وقف الخسارة",
+    "lesson": "خسرت صفقة شراء TIA/USDT (وقف الخسارة) — عوامل الدخول: السعر فوق EMA، EMA فوق EMA، RSI تشبع بيعي",
+    "id": "a48f95d9-543e-4a23-9954-98b537a5aeef",
+    "created_date": "2026-11-07T06:24:34.717Z",
+    "updated_date": "2026-11-07T06:24:34.717Z",
+    "created_by": "worker/learner"
+  }
+]

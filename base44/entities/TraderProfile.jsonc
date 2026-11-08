@@ -1,0 +1,74 @@
+{
+  "name": "TraderProfile",
+  "type": "object",
+  "properties": {
+    "display_name": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "avatar_url": {
+      "type": "string"
+    },
+    "is_published": {
+      "type": "boolean",
+      "default": false
+    },
+    "win_rate": {
+      "type": "number"
+    },
+    "total_return_percent": {
+      "type": "number"
+    },
+    "monthly_return_percent": {
+      "type": "number"
+    },
+    "total_trades": {
+      "type": "number"
+    },
+    "followers_count": {
+      "type": "number",
+      "default": 0
+    },
+    "avg_risk_per_trade": {
+      "type": "number"
+    },
+    "max_drawdown": {
+      "type": "number"
+    },
+    "sharpe_ratio": {
+      "type": "number"
+    },
+    "trading_style": {
+      "type": "string",
+      "enum": [
+        "scalping",
+        "swing",
+        "day_trading",
+        "position"
+      ]
+    },
+    "preferred_pairs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "copy_fee_percent": {
+      "type": "number",
+      "default": 0
+    },
+    "min_copy_amount": {
+      "type": "number",
+      "default": 100
+    },
+    "is_verified": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "display_name"
+  ]
+}

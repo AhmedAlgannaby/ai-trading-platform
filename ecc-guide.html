@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECC — الدليل الكامل للتثبيت والاستخدام</title>
+<style>
+  :root{
+    --bg:#0f1222; --card:#1a1f3a; --card2:#232949; --accent:#7c5cff; --accent2:#00e0c6;
+    --text:#eef0ff; --muted:#a9b0d0; --ok:#22c55e; --warn:#f59e0b; --code-bg:#0b0e1d;
+    --border:#2e3560;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:linear-gradient(180deg,#0f1222,#141833 60%,#0f1222);color:var(--text);line-height:1.9}
+  header{padding:48px 20px;text-align:center;background:radial-gradient(600px 300px at 50% 0%,rgba(124,92,255,.35),transparent),radial-gradient(500px 250px at 80% 20%,rgba(0,224,198,.18),transparent)}
+  header h1{margin:0;font-size:2.4rem}
+  header p{color:var(--muted);max-width:800px;margin:12px auto 0}
+  .badge{display:inline-block;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);color:#86efac;padding:6px 14px;border-radius:999px;font-size:.9rem;margin-top:14px}
+  nav{position:sticky;top:0;z-index:10;background:rgba(15,18,34,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:10px;overflow-x:auto;white-space:nowrap;text-align:center}
+  nav a{color:var(--muted);text-decoration:none;margin:0 10px;font-size:.95rem}
+  nav a:hover{color:#fff}
+  main{max-width:1050px;margin:0 auto;padding:24px 18px 80px}
+  section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px;margin:22px 0;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  h2{margin-top:0;color:#fff;border-right:4px solid var(--accent);padding-right:12px}
+  h3{color:var(--accent2)}
+  code,pre{direction:ltr;text-align:left}
+  code{background:#0b0e1d;padding:2px 8px;border-radius:6px;font-family:Consolas,monospace;color:#ffd479;font-size:.9em}
+  pre{background:var(--code-bg);border:1px solid var(--border);border-radius:12px;padding:16px;overflow-x:auto;color:#d6e2ff;font-size:.88rem}
+  pre button,.copy-btn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:6px 14px;cursor:pointer;float:right;font-family:inherit}
+  .copy-btn:hover{opacity:.85}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.93rem}
+  th,td{border:1px solid var(--border);padding:10px;text-align:right}
+  th{background:var(--card2);color:#fff}
+  tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:14px 0}
+  .card{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:16px}
+  .card b{color:#fff;font-size:1.1rem}
+  .card span{color:var(--muted);font-size:.9rem}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+  .flow span{background:#0b0e1d;border:1px solid var(--accent);padding:6px 14px;border-radius:999px;font-size:.9rem}
+  .flow i{color:var(--accent2);font-style:normal}
+  .ok{color:#86efac}.warn{color:#fcd34d}.muted{color:var(--muted)}
+  input[type=search]{width:100%;padding:12px 16px;border-radius:10px;border:1px solid var(--border);background:#0b0e1d;color:#fff;font-size:1rem;font-family:inherit}
+  footer{text-align:center;color:var(--muted);padding:30px;font-size:.9rem}
+  a{color:var(--accent2)}
+  .verdict{background:rgba(34,197,94,.1);border:1px dashed rgba(34,197,94,.5);border-radius:12px;padding:14px;margin:12px 0}
+  @media(max-width:600px){header h1{font-size:1.6rem}section{padding:18px}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⚡ ECC — نظام تشغيل وكلاء البرمجة</h1>
+  <p><b>Engineered Context & Capabilities</b> — الأداة مفتوحة المصدر (MIT) البتحوّل مساعد الذكاء الاصطناعي من "بكتب كود ساي" لمنظومة هندسية كاملة: تخطيط ← اختبار ← تنفيذ ← مراجعة ← تحقق ← تذكّر ← تحسين.</p>
+  <div class="badge">✅ تم تثبيتها عندك بنجاح — الإصدار 2.2.3 — بتاريخ 17 أكتوبر 2026</div>
+</header>
+
+<nav>
+  <a href="#what">شنو هي؟</a>
+  <a href="#installed">إثبات التثبيت</a>
+  <a href="#components">المكونات</a>
+  <a href="#install">التثبيت</a>
+  <a href="#profiles">البروفايلات</a>
+  <a href="#commands">الأوامر</a>
+  <a href="#examples">أمثلة عملية</a>
+  <a href="#maintain">الصيانة</a>
+  <a href="#faq">أسئلة شائعة</a>
+</nav>
+
+<main>
+
+<section id="what">
+  <h2>1. شنو هي أداة ECC؟</h2>
+  <p>ECC (اختصاراً لنظام تحسين أداء وكلاء البرمجة) هي مشروع مفتوح المصدر من المطوّر <code>affaan-m</code> على GitHub. فكرتها بسيطة وقوية:</p>
+  <div class="flow">
+    <span>plan التخطيط</span><i>←</i><span>test الاختبار</span><i>←</i><span>implement التنفيذ</span><i>←</i><span>review المراجعة</span><i>←</i><span>verify التحقق</span><i>←</i><span>remember التذكّر</span><i>←</i><span>improve التحسين</span>
+  </div>
+  <p>بدل ما تعيد كتابة نفس التعليمات في كل محادثة مع الذكاء الاصطناعي، بتثبّت ECC مرة واحدة وهي بتكون جزء من طريقة شغل المساعد.</p>
+  <div class="grid">
+    <div class="card"><b>🧠 ذاكرة وتعليم مستمر</b><br><span>بتحفظ ملخصات الجلسات والدروس المستفادة (instincts) عشان ما تعيد نفس الغلط.</span></div>
+    <div class="card"><b>🛡️ أمان AgentShield</b><br><span>فحص للبرومبتات والـ hooks وإعدادات MCP والأسرار المسربة وملفات الوكلاء.</span></div>
+    <div class="card"><b>🔍 البحث أولاً</b><br><span>منهجية research-first: يبحث في الكود والتوثيق قبل ما يكتب سطر واحد.</span></div>
+    <div class="card"><b>🔌 تدعم 7+ أنظمة</b><br><span>Claude Code و Codex و Cursor و OpenCode و Gemini و Zed و Copilot وغيرها.</span></div>
+  </div>
+  <p class="muted">المصادر الرسمية فقط: مستودع <a href="https://github.com/affaan-m/ECC">github.com/affaan-m/ECC</a> وحزم npm ‏<code>ecc-universal</code> و <code>ecc-agentshield</code> والموقع <a href="https://ecc.tools">ecc.tools</a>. أي نسخة من حتة تانية ممكن تكون فيها برمجيات خبيثة.</p>
+</section>
+
+<section id="installed">
+  <h2>2. إثبات التثبيت عندك (تم فعلياً ✅)</h2>
+  <div class="verdict">
+    <b class="ok">✔ التثبيت تم بنجاح على هذا الجهاز.</b><br>
+    المسار: <code>/home/cp0/.config/opencode/</code> (الإعداد العام لـ OpenCode)<br>
+    الملف المرجعي: <code>ecc-install-state.json</code> موجود ✔ &nbsp; فحص <code>doctor</code>: <b class="ok">OK — بدون مشاكل</b>
+  </div>
+  <table>
+    <tr><th>البند</th><th>العدد / القيمة</th></tr>
+    <tr><td>الإصدار</td><td><code>2.2.3</code> (مطابق لنسخة npm المنشورة)</td></tr>
+    <tr><td>البروفايل المثبت</td><td><code>full</code> مع تفعيل الـ hooks</td></tr>
+    <tr><td>المهارات Skills</td><td><b>311</b> مهارة (TDD، أمان، توثيق، فرونت إند، بيانات، ML...)</td></tr>
+    <tr><td>الوكلاء Agents</td><td><b>67+</b> وكيل متخصص (تخطيط، مراجعة، إصلاح بناء، معمارية...)</td></tr>
+    <tr><td>الأوامر Commands</td><td><b>103</b> أمر جاهز في <code>~/.config/opencode/commands/</code></td></tr>
+    <tr><td>المستودع المرجعي</td><td><code>/tmp/ecc</code> (نسخة git clone بعمق 1 من GitHub)</td></tr>
+  </table>
+  <p>الأمر النفّذناه للتثبيت:</p>
+  <pre><button class="copy-btn" onclick="copy(this)">نسخ</button>git clone --depth 1 https://github.com/affaan-m/ECC.git /tmp/ecc
+cd /tmp/ecc
+npm install
+npm run build:opencode
+./install.sh --profile full --target opencode --enable-hooks</pre>
+</section>
+
+<section id="components">
+  <h2>3. مكونات ECC بالشرح المبسط</h2>
+  <table>
+    <tr><th>المكوّن</th><th>شنو بيعمل؟</th><th>مثال</th></tr>
+    <tr><td><b>Agents</b> (وكلاء)</td><td>شخصيات متخصصة: مخطط، مراجع كود، مصلح بناء، مهندس أمان</td><td><code>code-reviewer</code> ، <code>architect</code> ، <code>go-reviewer</code></td></tr>
+    <tr><td><b>Skills</b> (مهارات)</td><td>وصفات عمل جاهزة تُستدعى تلقائياً حسب المهمة</td><td><code>tdd-workflow</code> ، <code>security-review</code></td></tr>
+    <tr><td><b>Commands</b> (أوامر /)</td><td>اختصارات تناديها بسلاش في المحادثة</td><td><code>/plan</code> ، <code>/build-fix</code> ، <code>/code-review</code></td></tr>
+    <tr><td><b>Hooks</b></td><td>سكربتات بتشتغل تلقائياً (قبل/بعد الأحداث) لفرض الجودة</td><td>ملخص الجلسة، منع الأسرار، فحص تلقائي</td></tr>
+    <tr><td><b>Rules</b></td><td>معايير محمّلة دائماً حسب اللغة (common + لغة مشروعك)</td><td><code>rules/common</code> + <code>rules/typescript</code></td></tr>
+    <tr><td><b>Memory</b></td><td>ذاكرة عبر الجلسات + ملخصات + instincts</td><td>يتذكر قراراتك المعمارية</td></tr>
+    <tr><td><b>AgentShield</b></td><td>ماسح أمني للبرومبتات والـ MCP والصلاحيات</td><td><code>npx ecc-agentshield</code></td></tr>
+  </table>
+</section>
+
+<section id="install">
+  <h2>4. طرق التثبيت (كل الأنظمة)</h2>
+  <h3>المتطلبات</h3>
+  <p>Node.js 18+ و Git. لـ Claude Code plugin تحتاج Claude Code 2.1+ في الـ PATH.</p>
+  <pre>node --version   # لازم 18+
+git --version
+claude --version # لو بتستخدم Claude Code</pre>
+
+  <h3>أ) التثبيت الموجّه (الموصى به)</h3>
+  <pre><button class="copy-btn" onclick="copy(this)">نسخ</button>npx ecc-universal@2.2.3 setup
+# أو لعدة أنظمة مع بعض:
+npx ecc-universal@2.2.3 install --guided</pre>
+
+  <h3>ب) Claude Code (أوامر أصلية داخل الجلسة)</h3>
+  <pre>/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin install ecc@ecc</pre>
+
+  <h3>ج) Codex</h3>
+  <pre><button class="copy-btn" onclick="copy(this)">نسخ</button>codex plugin marketplace add affaan-m/ECC
+codex plugin add ecc@ecc
+codex plugin list --json</pre>
+
+  <h3>د) OpenCode (الطريقة الاستخدمناها عندك)</h3>
+  <pre><button class="copy-btn" onclick="copy(this)">نسخ</button>git clone https://github.com/affaan-m/ECC.git
+cd ECC
+npm install && npm run build:opencode
+./install.sh --profile full --target opencode --enable-hooks</pre>
+
+  <h3>هـ) باقي الأنظمة</h3>
+  <table>
+    <tr><th>النظام</th><th>الأمر</th></tr>
+    <tr><td>Cursor</td><td><code>./install.sh --profile minimal --target cursor</code></td></tr>
+    <tr><td>Gemini CLI</td><td><code>./install.sh --profile minimal --target gemini</code></td></tr>
+    <tr><td>Zed</td><td><code>./install.sh --profile minimal --target zed</code></td></tr>
+    <tr><td>Copilot</td><td><code>./install.sh --profile full --target copilot</code></td></tr>
+    <tr><td>Qwen</td><td><code>./install.sh --profile minimal --target qwen</code></td></tr>
+    <tr><td>Kimi</td><td><code>./install.sh --profile minimal --target kimi</code></td></tr>
+  </table>
+  <p class="warn">⚠️ قاعدة مهمة: اختار <b>طريقة واحدة فقط لكل نظام</b>. ما تدمج plugin + تثبيت يدوي كامل في نفس النظام عشان ما تتضاعف الملفات.</p>
+</section>
+
+<section id="profiles">
+  <h2>5. البروفايلات (مستويات التثبيت)</h2>
+  <table>
+    <tr><th>البروفايل</th><th>ينفع لمنو؟</th></tr>
+    <tr><td><code>minimal</code></td><td>تثبيت خفيف بدون hooks — قواعد ووكلاء وأوامر أساسية فقط</td></tr>
+    <tr><td><code>core</code></td><td>الاستخدام اليومي المتوازن (الأكثر شيوعاً)</td></tr>
+    <tr><td><code>developer</code></td><td>مطوّر تطبيقات (فرونت/باك + تست)</td></tr>
+    <tr><td><code>security</code></td><td>مراجعات أمنية وتدقيق</td></tr>
+    <tr><td><code>research</code></td><td>بحث وتوثيق وتحليل كود</td></tr>
+    <tr><td><code>opencode</code></td><td>مضبوط مخصوص لـ OpenCode</td></tr>
+    <tr><td><code>full</code> ✅ (المثبت عندك)</td><td>كل شيء: كل المهارات والوكلاء والـ hooks</td></tr>
+  </table>
+  <p>تثبيت مهارة واحدة فقط:</p>
+  <pre>./install.sh --target opencode --skills tdd-workflow,security-review
+# أو استشارة المساعد لاقتراح المكون المناسب:
+node scripts/ecc.js consult "security reviews" --target opencode</pre>
+</section>
+
+<section id="commands">
+  <h2>6. أهم الأوامر — ابحث وانسخ</h2>
+  <input type="search" id="q" placeholder="🔎 ابحث عن أمر... مثال: review أو test أو build">
+  <table id="cmdTable">
+    <tr><th>الأمر</th><th>بيعمل شنو؟</th><th>متين تستخدمو؟</th></tr>
+    <tr><td><code>/plan</code></td><td>يكتب خطة تنفيذ خطوة بخطوة وينتظر موافقتك قبل لمس الكود</td><td>قبل أي ميزة جديدة</td></tr>
+    <tr><td><code>/feature-dev</code></td><td>تطوير ميزة موجّه مع فهم الكود والمعمارية</td><td>شغل الميزات الكبيرة</td></tr>
+    <tr><td><code>/code-review</code></td><td>مراجعة التغييرات المحلية أو PR في GitHub</td><td>قبل كل commit / push</td></tr>
+    <tr><td><code>/build-fix</code></td><td>يكتشف خطأ البناء ويحوّله لوكيل الإصلاح المناسب تلقائياً</td><td>لما البناء يفشل</td></tr>
+    <tr><td><code>/test-coverage</code></td><td>يحلل التغطية ويولّد التستات الناقصة</td><td>رفع التغطية للحد المطلوب</td></tr>
+    <tr><td><code>/quality-gate</code></td><td>فحص بوابة الجودة ضد معايير المشروع</td><td>قبل التسليم</td></tr>
+    <tr><td><code>/santa-loop</code></td><td>مراجعة مزدوجة عدائية — لازم مراجعان مستقلان يوافقا</td><td>كود حساس/حرج</td></tr>
+    <tr><td><code>/orch-add-feature</code></td><td>يبني ميزة end-to-end: بحث + تخطيط + TDD + مراجعة + commit مراقب</td><td>شغل متكامل</td></tr>
+    <tr><td><code>/orch-fix-defect</code></td><td>يحوّل البug لتست فاشل أولاً ثم يصلحه للأخضر</td><td>إصلاح الأخطاء</td></tr>
+    <tr><td><code>/orch-refine-code</code></td><td>إعادة هيكلة تحافظ على السلوك مع بقاء التستات خضراء</td><td>الريفاكتور الآمن</td></tr>
+    <tr><td><code>/react-test /go-test /rust-test</code></td><td>سير TDD مخصص لكل لغة</td><td>حسب لغة مشروعك</td></tr>
+    <tr><td><code>/react-review /go-review /python-review</code></td><td>مراجعة متخصصة حسب اللغة وأفضل ممارساتها</td><td>مراجعة متخصصة</td></tr>
+    <tr><td><code>/prp-prd /prp-plan /prp-implement</code></td><td>دورة PRP: متطلبات ← خطة ← تنفيذ متحقق منه</td><td>المشاريع الموثقة</td></tr>
+    <tr><td><code>/epic-decompose</code></td><td>يقسّم الـ epic لمهام فرعية</td><td>إدارة المشاريع الكبيرة</td></tr>
+  </table>
+</section>
+
+<section id="examples">
+  <h2>7. أمثلة عملية (انسخ وجرّب)</h2>
+  <h3>مثال 1: ميزة جديدة من الصفر</h3>
+  <pre><button class="copy-btn" onclick="copy(this)">نسخ</button>/plan أضف تسجيل دخول بـ OTP للواجهة
+# راجع الخطة، وافق، ثم:
+/orch-add-feature نفّذ خطة تسجيل الدخول بـ OTP
+/test-coverage --target 80
+/code-review
+/quality-gate</pre>
+  <h3>مثال 2: إصلاح خطأ بناء</h3>
+  <pre><button class="copy-btn" onclick="copy(this)">نسخ</button>/build-fix
+# ECC بيحدد اللغة (مثلاً React/Vite) ويحوّلها لوكيل react-build-resolver تلقائياً</pre>
+  <h3>مثال 3: مراجعة PR من GitHub</h3>
+  <pre><button class="copy-btn" onclick="copy(this)">نسخ</button>/code-review 123
+# أو بالرابط الكامل:
+/review-pr https://github.com/user/repo/pull/123</pre>
+  <h3>مثال 4: فحص أمني</h3>
+  <pre><button class="copy-btn" onclick="copy(this)">نسخ</button>npx ecc-agentshield
+# يفحص البرومبتات والـ hooks وإعدادات MCP والأسرار</pre>
+</section>
+
+<section id="maintain">
+  <h2>8. الصيانة: تحديث وفحص وإزالة</h2>
+  <pre><button class="copy-btn" onclick="copy(this)">نسخ</button># فحص السلامة
+node scripts/ecc.js doctor --target opencode
+# أو من الحزمة المنشورة:
+npx ecc-universal@2.2.3 doctor --target opencode
+
+# التحديث (أعد نفس أمر التثبيت)
+npx ecc-universal@2.2.3 setup
+
+# إصلاح التثبيت
+node scripts/ecc.js repair
+
+# إزالة نظيفة (جرب أولاً بوضع المعاينة)
+node scripts/ecc.js uninstall --dry-run
+node scripts/ecc.js uninstall</pre>
+  <p class="muted">ملفاتك الشخصية المعدّلة ما بتتمسح تلقائياً — ECC بحافظ عليها ويبلّغك بيها للمراجعة.</p>
+</section>
+
+<section id="faq">
+  <h2>9. أسئلة شائعة</h2>
+  <p><b>هل ECC مجاني؟</b><br>أيوه، المستودع مرخّص MIT ومجاني للأبد. في نسخة مدفوعة (ECC Pro عبر GitHub App) للمستودعات الخاصة بتموّل شغل المشرف الوحيد.</p>
+  <p><b>أثبّت في كم نظام مع بعض؟</b><br>ممكن (مثلاً Claude + Codex مع بعض)، لكن <b>طريقة واحدة فقط لكل نظام</b>. ما تكدّس plugin فوق manual install.</p>
+  <p><b>التثبيت ما ظهر لي، أعمل شنو؟</b><br>افتح جلسة جديدة وشغّل <code>/plugin list</code> (لـ Claude) أو <code>doctor</code>، وراجع ملف <code>TROUBLESHOOTING.md</code> في المستودع، أو افتح issue بقالب install-problem.</p>
+  <p><b>هل بياناتي بتترفع؟</b><br>لا. ECC ما بيرفع أي تشخيصات تلقائياً. أمر <code>ecc feedback</code> اختياري تماماً.</p>
+  <p><b>وين ألقى التوثيق العربي؟</b><br>في المستودع: <code>docs/ar/README.md</code> و <code>docs/ar/GLOSSARY.md</code>.</p>
+</section>
+
+</main>
+
+<footer>
+  أُعدّ هذا الدليل تلقائياً بعد تثبيت ECC v2.2.3 بنجاح على جهازك (OpenCode / مسار <code>~/.config/opencode</code>) — 17 أكتوبر 2026<br>
+  المصدر: <a href="https://github.com/affaan-m/ECC">github.com/affaan-m/ECC</a> · الموقع: <a href="https://ecc.tools">ecc.tools</a> · الرخصة: MIT
+</footer>
+
+<script>
+function copy(btn){
+  var pre = btn.parentElement;
+  var text = pre.innerText.replace(/^نسخ/,'').trim();
+  navigator.clipboard.writeText(text).then(function(){ btn.innerText='تم ✅'; setTimeout(function(){btn.innerText='نسخ'},1500); });
+}
+document.getElementById('q').addEventListener('input', function(e){
+  var v = e.target.value.trim();
+  var rows = document.querySelectorAll('#cmdTable tr');
+  for(var i=1;i<rows.length;i++){
+    rows[i].style.display = rows[i].innerText.indexOf(v) !== -1 ? '' : 'none';
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{
+  "name": "TradeLesson",
+  "type": "object",
+  "properties": {
+    "trade_id": {
+      "type": "string"
+    },
+    "pair": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "long",
+        "short"
+      ]
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "win",
+        "loss"
+      ]
+    },
+    "pnl": {
+      "type": "number"
+    },
+    "pnl_percent": {
+      "type": "number"
+    },
+    "factors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Entry reasons/indicator conditions present at entry"
+    },
+    "exit_reason": {
+      "type": "string"
+    },
+    "lesson": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "trade_id",
+    "pair",
+    "outcome"
+  ]
+}

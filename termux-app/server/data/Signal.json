@@ -1,0 +1,4154 @@
+[
+  {
+    "pair": "BNB/USDT",
+    "direction": "sell",
+    "confidence": 66,
+    "entry_price": 741.86,
+    "stop_loss": 747.2321428571429,
+    "take_profit_1": 731.1157142857143,
+    "take_profit_2": 725.7435714285715,
+    "take_profit_3": 720.3714285714286,
+    "timeframe": "1H",
+    "strategy": "Auto Paper (Technical)",
+    "analysis_summary": "السعر تحت EMA20 — EMA20 تحت EMA50 — تعلّم: احتمال النجاح 52% (نموذج v0)",
+    "status": "executed",
+    "id": "b1e3aab7-3292-47dc-bb1a-425c1d9fe20e",
+    "created_date": "2026-10-17T19:26:48.981Z",
+    "updated_date": "2026-10-17T19:26:48.981Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BTC/USDT",
+    "direction": "hold",
+    "confidence": 53,
+    "entry_price": 83264.01,
+    "stop_loss": null,
+    "take_profit_1": null,
+    "take_profit_2": null,
+    "take_profit_3": null,
+    "risk_reward": "—",
+    "analysis_summary": "العقل الكمي لـ BTC/USDT: التوصية انتظار بثقة 53% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.12%).\n• نمط ابتلاع بيعي: ابتلاع بيعي\n• اتجاه EMA: عرضي — لا أفضلية اتجاهية\n• MACD: إيجابي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "عرضي — لا أفضلية اتجاهية",
+        "signal": "hold"
+      },
+      {
+        "name": "MACD",
+        "value": "إيجابي متباطئ",
+        "signal": "buy"
+      },
+      {
+        "name": "RSI",
+        "value": "محايد (49.9)",
+        "signal": "hold"
+      },
+      {
+        "name": "التموضع",
+        "value": "ملاصق لـ EMA50 (-0.24%)",
+        "signal": "hold"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+1.13%",
+        "signal": "hold"
+      },
+      {
+        "name": "نمط ابتلاع بيعي",
+        "value": "ابتلاع بيعي",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [
+      "ابتلاع بيعي"
+    ],
+    "_debug": {
+      "score": -1.25,
+      "regime": {
+        "regime": "ranging",
+        "trend": "sideways",
+        "volatility": "normal",
+        "atrPct": 1.1182562550134194
+      },
+      "rsi": 49.9
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "e0e6f71c-813f-4b04-8946-6ab1be7a615b",
+    "created_date": "2026-10-17T19:27:43.850Z",
+    "updated_date": "2026-10-17T19:27:43.850Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ETH/USDT",
+    "direction": "hold",
+    "confidence": 48,
+    "entry_price": 2511,
+    "stop_loss": null,
+    "take_profit_1": null,
+    "take_profit_2": null,
+    "take_profit_3": null,
+    "risk_reward": "—",
+    "analysis_summary": "العقل الكمي لـ ETH/USDT: التوصية انتظار بثقة 48% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.64%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• MACD: إيجابي متباطئ\n• التموضع: تحت EMA50 بـ -1.60%",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "إيجابي متباطئ",
+        "signal": "buy"
+      },
+      {
+        "name": "RSI",
+        "value": "محايد (47.2)",
+        "signal": "hold"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -1.60%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+1.35%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -2,
+      "regime": {
+        "regime": "ranging",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.6429424816521587
+      },
+      "rsi": 47.2
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "680de6f8-d41d-4bbc-b23c-15c844aacabb",
+    "created_date": "2026-10-17T19:27:49.811Z",
+    "updated_date": "2026-10-17T19:27:49.811Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "SOL/USDT",
+    "direction": "sell",
+    "confidence": 80,
+    "entry_price": 107.82,
+    "stop_loss": 111.576,
+    "take_profit_1": 102.185,
+    "take_profit_2": 98.4289,
+    "take_profit_3": 92.7943,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ SOL/USDT: التوصية بيع بثقة 80% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.32%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (42.5)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (42.5)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -3.66%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-0.62%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -4.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.3226541590481515
+      },
+      "rsi": 42.5
+    },
+    "status": "executed",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "ab06b2ff-6ec7-4346-a67f-32c4b096afcb",
+    "created_date": "2026-10-17T19:27:50.365Z",
+    "updated_date": "2026-10-17T19:27:50.418Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BNB/USDT",
+    "direction": "sell",
+    "confidence": 80,
+    "entry_price": 741.86,
+    "stop_loss": 754.784,
+    "take_profit_1": 722.475,
+    "take_profit_2": 709.551,
+    "take_profit_3": 690.166,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ BNB/USDT: التوصية بيع بثقة 80% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.16%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (44.1)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (44.1)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -1.60%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+0.57%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -4.5,
+      "regime": {
+        "regime": "ranging",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.1613666036333388
+      },
+      "rsi": 44.1
+    },
+    "status": "executed",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "556a7d95-243f-4ade-80ed-839acee32aef",
+    "created_date": "2026-10-17T19:27:50.951Z",
+    "updated_date": "2026-10-17T19:27:51.001Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ADA/USDT",
+    "direction": "sell",
+    "confidence": 80,
+    "entry_price": 0.2376,
+    "stop_loss": 0.247864,
+    "take_profit_1": 0.222204,
+    "take_profit_2": 0.211939,
+    "take_profit_3": 0.196543,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ ADA/USDT: التوصية بيع بثقة 80% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.88%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (42.6)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (42.6)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -3.74%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+0.76%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -4.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.87999037999038
+      },
+      "rsi": 42.6
+    },
+    "status": "executed",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "26179c15-f536-4494-a6be-2d367cca894c",
+    "created_date": "2026-10-17T19:27:51.760Z",
+    "updated_date": "2026-10-17T19:27:51.830Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BTC/USDT",
+    "direction": "hold",
+    "confidence": 47,
+    "entry_price": 83219.82,
+    "stop_loss": null,
+    "take_profit_1": null,
+    "take_profit_2": null,
+    "take_profit_3": null,
+    "risk_reward": "—",
+    "analysis_summary": "العقل الكمي لـ BTC/USDT: التوصية انتظار بثقة 47% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.12%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• نمط ابتلاع بيعي: ابتلاع بيعي\n• الدعم: ارتكاز على 82,926.802 (تلامس 5x)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "إيجابي متباطئ",
+        "signal": "buy"
+      },
+      {
+        "name": "RSI",
+        "value": "محايد (49.6)",
+        "signal": "hold"
+      },
+      {
+        "name": "التموضع",
+        "value": "ملاصق لـ EMA50 (-0.29%)",
+        "signal": "hold"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+1.07%",
+        "signal": "hold"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 82,926.802 (تلامس 5x)",
+        "signal": "buy"
+      },
+      {
+        "name": "نمط ابتلاع بيعي",
+        "value": "ابتلاع بيعي",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [
+      "ابتلاع بيعي"
+    ],
+    "_debug": {
+      "score": -2.25,
+      "regime": {
+        "regime": "ranging",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.1188500527879044
+      },
+      "rsi": 49.6
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "67f0aa79-8cc0-44eb-984c-71d92f96c8da",
+    "created_date": "2026-10-17T19:37:31.617Z",
+    "updated_date": "2026-10-17T19:37:31.617Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ETH/USDT",
+    "direction": "hold",
+    "confidence": 48,
+    "entry_price": 2507.75,
+    "stop_loss": null,
+    "take_profit_1": null,
+    "take_profit_2": null,
+    "take_profit_3": null,
+    "risk_reward": "—",
+    "analysis_summary": "العقل الكمي لـ ETH/USDT: التوصية انتظار بثقة 48% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.65%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• MACD: إيجابي متباطئ\n• التموضع: تحت EMA50 بـ -1.73%",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "إيجابي متباطئ",
+        "signal": "buy"
+      },
+      {
+        "name": "RSI",
+        "value": "محايد (46.6)",
+        "signal": "hold"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -1.73%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+1.22%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -2,
+      "regime": {
+        "regime": "ranging",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.6450717062819542
+      },
+      "rsi": 46.6
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "4c7dcc40-9f82-47f4-af79-47ee2b4bce39",
+    "created_date": "2026-10-17T19:37:32.058Z",
+    "updated_date": "2026-10-17T19:37:32.058Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ADA/USDT",
+    "direction": "sell",
+    "confidence": 80,
+    "entry_price": 0.237,
+    "stop_loss": 0.247264,
+    "take_profit_1": 0.221604,
+    "take_profit_2": 0.211339,
+    "take_profit_3": 0.195943,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ ADA/USDT: التوصية بيع بثقة 80% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.89%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (41.9)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (41.9)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -3.97%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+0.51%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -4.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.8872814948764316
+      },
+      "rsi": 41.9
+    },
+    "status": "executed",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "97907ab2-894f-41d2-9335-6627f6ada6ca",
+    "created_date": "2026-10-17T19:37:32.500Z",
+    "updated_date": "2026-10-17T19:37:32.536Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "SOL/USDT",
+    "direction": "sell",
+    "confidence": 80,
+    "entry_price": 107.62,
+    "stop_loss": 111.376,
+    "take_profit_1": 101.985,
+    "take_profit_2": 98.2289,
+    "take_profit_3": 92.5943,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ SOL/USDT: التوصية بيع بثقة 80% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.33%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (41.7)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (41.7)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -3.83%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-0.80%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -4.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.3269705577826767
+      },
+      "rsi": 41.7
+    },
+    "status": "executed",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "fdc63764-d1d4-41bf-955d-694233b02f64",
+    "created_date": "2026-10-17T19:37:32.961Z",
+    "updated_date": "2026-10-17T19:37:33.021Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BNB/USDT",
+    "direction": "sell",
+    "confidence": 80,
+    "entry_price": 741.45,
+    "stop_loss": 754.374,
+    "take_profit_1": 722.065,
+    "take_profit_2": 709.141,
+    "take_profit_3": 689.756,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ BNB/USDT: التوصية بيع بثقة 80% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.16%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (43.8)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (43.8)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -1.66%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+0.51%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -4.5,
+      "regime": {
+        "regime": "ranging",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.1620088051405066
+      },
+      "rsi": 43.8
+    },
+    "status": "executed",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "c11e7360-31df-422a-9b69-db6a06c82327",
+    "created_date": "2026-10-17T19:37:33.513Z",
+    "updated_date": "2026-10-17T19:37:33.570Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BTC/USDT",
+    "direction": "hold",
+    "confidence": 47,
+    "entry_price": 83170.01,
+    "stop_loss": null,
+    "take_profit_1": null,
+    "take_profit_2": null,
+    "take_profit_3": null,
+    "risk_reward": "—",
+    "analysis_summary": "العقل الكمي لـ BTC/USDT: التوصية انتظار بثقة 47% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.12%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• نمط ابتلاع بيعي: ابتلاع بيعي\n• الدعم: ارتكاز على 82,926.802 (تلامس 5x)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "إيجابي متباطئ",
+        "signal": "buy"
+      },
+      {
+        "name": "RSI",
+        "value": "محايد (49.1)",
+        "signal": "hold"
+      },
+      {
+        "name": "التموضع",
+        "value": "ملاصق لـ EMA50 (-0.35%)",
+        "signal": "hold"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+1.01%",
+        "signal": "hold"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 82,926.802 (تلامس 5x)",
+        "signal": "buy"
+      },
+      {
+        "name": "نمط ابتلاع بيعي",
+        "value": "ابتلاع بيعي",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [
+      "ابتلاع بيعي"
+    ],
+    "_debug": {
+      "score": -2.25,
+      "regime": {
+        "regime": "ranging",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.1195201251027853
+      },
+      "rsi": 49.1
+    },
+    "status": "expired",
+    "suggested_size_percent": 5,
+    "timeframe": "4H",
+    "id": "cda0a0c5-0257-4fbc-9a04-0afe61d5243b",
+    "created_date": "2026-10-17T19:46:58.462Z",
+    "updated_date": "2026-10-17T19:46:58.462Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BTC/USDT",
+    "direction": "hold",
+    "confidence": 51,
+    "entry_price": 83415.49,
+    "stop_loss": null,
+    "take_profit_1": null,
+    "take_profit_2": null,
+    "take_profit_3": null,
+    "risk_reward": "—",
+    "analysis_summary": "العقل الكمي لـ BTC/USDT: التوصية انتظار بثقة 51% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.05%).\n• MACD: إيجابي متسارع\n• اتجاه EMA: عرضي — لا أفضلية اتجاهية\n• RSI: محايد (51.3)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [MACD] إيجابي متسارع — زخم شرائي متنامٍ",
+      "2. [اتجاه EMA] عرضي — لا أفضلية اتجاهية — سوق بلا اتجاه",
+      "3. [RSI] محايد (51.3) — لا حسم",
+      "4. [التموضع] ملاصق لـ EMA50 (-0.06%) — توازن حول المتوسط",
+      "5. [تغير 24h] +0.94% — حركة يومية هادئة"
+    ],
+    "invalidation": "لا دخول — الشروط غير مكتملة",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "عرضي — لا أفضلية اتجاهية",
+        "signal": "hold"
+      },
+      {
+        "name": "MACD",
+        "value": "إيجابي متسارع",
+        "signal": "buy"
+      },
+      {
+        "name": "RSI",
+        "value": "محايد (51.3)",
+        "signal": "hold"
+      },
+      {
+        "name": "التموضع",
+        "value": "ملاصق لـ EMA50 (-0.06%)",
+        "signal": "hold"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+0.94%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": 1.5,
+      "regime": {
+        "regime": "ranging",
+        "trend": "sideways",
+        "volatility": "normal",
+        "atrPct": 1.0548451920791748
+      },
+      "rsi": 51.3
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "e6636a58-45e1-40c9-9788-e1b097780df2",
+    "created_date": "2026-10-17T21:04:15.745Z",
+    "updated_date": "2026-10-17T21:04:15.745Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ETH/USDT",
+    "direction": "hold",
+    "confidence": 48,
+    "entry_price": 2510.38,
+    "stop_loss": null,
+    "take_profit_1": null,
+    "take_profit_2": null,
+    "take_profit_3": null,
+    "risk_reward": "—",
+    "analysis_summary": "العقل الكمي لـ ETH/USDT: التوصية انتظار بثقة 48% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.55%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• MACD: إيجابي متباطئ\n• التموضع: تحت EMA50 بـ -1.56%",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [MACD] إيجابي متباطئ — زخم شرائي يضعف",
+      "3. [التموضع] تحت EMA50 بـ -1.56% — تخلف عن المتوسط الطويل",
+      "4. [RSI] محايد (47.2) — لا حسم",
+      "5. [تغير 24h] +0.91% — حركة يومية هادئة"
+    ],
+    "invalidation": "لا دخول — الشروط غير مكتملة",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "إيجابي متباطئ",
+        "signal": "buy"
+      },
+      {
+        "name": "RSI",
+        "value": "محايد (47.2)",
+        "signal": "hold"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -1.56%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+0.91%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -2,
+      "regime": {
+        "regime": "ranging",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.550049907071553
+      },
+      "rsi": 47.2
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "908fb8a9-db5f-4b2a-b96a-0e5b5be2fef8",
+    "created_date": "2026-10-17T21:04:16.347Z",
+    "updated_date": "2026-10-17T21:04:16.347Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BNB/USDT",
+    "direction": "sell",
+    "confidence": 80,
+    "entry_price": 742.63,
+    "stop_loss": 754.889,
+    "take_profit_1": 724.241,
+    "take_profit_2": 711.982,
+    "take_profit_3": 693.593,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ BNB/USDT: التوصية بيع بثقة 80% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.10%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (44.8)\n• MACD: سلبي متباطئ (معرفة مكتسبة: متوسط نجاح 42% في 3 اختبارات)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (44.8) — بائعون مسيطرون",
+      "3. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "4. [التموضع] تحت EMA50 بـ -1.45% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] +0.04% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 754.889",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (44.8)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -1.45%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+0.04%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -4.5,
+      "regime": {
+        "regime": "ranging",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.1005288155416748
+      },
+      "rsi": 44.8
+    },
+    "status": "executed",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "1329f73a-3b23-4953-8a5c-5e0a71782574",
+    "created_date": "2026-10-17T21:04:16.801Z",
+    "updated_date": "2026-10-17T21:04:16.838Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "SOL/USDT",
+    "direction": "sell",
+    "confidence": 80,
+    "entry_price": 107.12,
+    "stop_loss": 110.643,
+    "take_profit_1": 101.836,
+    "take_profit_2": 98.3129,
+    "take_profit_3": 93.0286,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ SOL/USDT: التوصية بيع بثقة 80% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.19%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (40.2)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (40.2) — بائعون مسيطرون",
+      "3. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "4. [التموضع] تحت EMA50 بـ -4.11% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -1.84% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 110.643",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (40.2)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -4.11%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-1.84%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -4.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.1924677264483114
+      },
+      "rsi": 40.2
+    },
+    "status": "executed",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "efba7332-0ac7-40e1-a5cd-a7b22ae0f443",
+    "created_date": "2026-10-17T21:04:17.319Z",
+    "updated_date": "2026-10-17T21:04:17.376Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ADA/USDT",
+    "direction": "sell",
+    "confidence": 83,
+    "entry_price": 0.2369,
+    "stop_loss": 0.246511,
+    "take_profit_1": 0.222484,
+    "take_profit_2": 0.212873,
+    "take_profit_3": 0.198457,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ ADA/USDT: التوصية بيع بثقة 83% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.70%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (41.8)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (41.8) — بائعون مسيطرون",
+      "3. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "4. [التموضع] تحت EMA50 بـ -3.86% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -2.55% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 0.246511",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (41.8)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -3.86%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-2.55%",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [
+      "دوجي (حيرة)"
+    ],
+    "_debug": {
+      "score": -5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.704576976421636
+      },
+      "rsi": 41.8
+    },
+    "status": "executed",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "67ec31c9-7350-43ee-bb98-da41599acd2b",
+    "created_date": "2026-10-17T21:04:17.900Z",
+    "updated_date": "2026-10-17T21:04:17.948Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "XRP/USDT",
+    "direction": "sell",
+    "confidence": 80,
+    "entry_price": 1.3709,
+    "stop_loss": 1.3873,
+    "take_profit_1": 1.3463,
+    "take_profit_2": 1.3299,
+    "take_profit_3": 1.3053,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ XRP/USDT: التوصية بيع بثقة 80% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.78%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (43.3)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (43.3) — بائعون مسيطرون",
+      "3. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "4. [التموضع] تحت EMA50 بـ -2.86% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -1.78% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 1.3873",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (43.3)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -2.86%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-1.78%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -4.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.784541958879984
+      },
+      "rsi": 43.3
+    },
+    "status": "executed",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "a5f377d8-764a-47c4-9615-8145b7106495",
+    "created_date": "2026-10-17T21:04:18.545Z",
+    "updated_date": "2026-10-17T21:04:18.590Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "XRP/USDT",
+    "direction": "sell",
+    "confidence": 91,
+    "entry_price": 1.367,
+    "stop_loss": 1.3873,
+    "take_profit_1": 1.3366,
+    "take_profit_2": 1.3164,
+    "take_profit_3": 1.286,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ XRP/USDT: التوصية بيع بثقة 91% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.78%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• نمط شهاب: شهاب\n• RSI: زخم سلبي (42.3)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [نمط شهاب] شهاب — سلوك سعري انعكاسي",
+      "3. [RSI] زخم سلبي (42.3) — بائعون مسيطرون",
+      "4. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "5. [التموضع] تحت EMA50 بـ -3.00% — تخلف عن المتوسط الطويل",
+      "6. [تغير 24h] -2.62% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 1.3873",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (42.3)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -3.00%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-2.62%",
+        "signal": "sell"
+      },
+      {
+        "name": "نمط شهاب",
+        "value": "شهاب",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [
+      "شهاب",
+      "دوجي (حيرة)"
+    ],
+    "_debug": {
+      "score": -6.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.7755251332427613
+      },
+      "rsi": 42.3
+    },
+    "status": "pending",
+    "suggested_size_percent": 5,
+    "timeframe": "4H",
+    "id": "004fd3e1-7e92-474c-a04c-ed88dbfe0913",
+    "created_date": "2026-10-18T02:37:47.636Z",
+    "updated_date": "2026-10-18T02:37:47.636Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BTC/USDT",
+    "direction": "buy",
+    "confidence": 77,
+    "entry_price": 82617.68,
+    "stop_loss": 81302.02,
+    "take_profit_1": 84591.17,
+    "take_profit_2": 85906.83,
+    "take_profit_3": 87880.32,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ BTC/USDT: التوصية شراء بثقة 77% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.06%).\n• استراتيجية العقل الكمي الهجين: توافق 0.30\n• MACD: إيجابي متسارع\n• اتجاه EMA: عرضي — لا أفضلية اتجاهية (معرفة مكتسبة: متوسط نجاح 36% في 3 اختبارات)",
+    "strategy": "العقل الكمي الهجين",
+    "strategy_id": "quant_hybrid",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "عرضي — لا أفضلية اتجاهية",
+        "signal": "hold"
+      },
+      {
+        "name": "MACD",
+        "value": "إيجابي متسارع",
+        "signal": "buy"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم إيجابي (55.9)",
+        "signal": "buy"
+      },
+      {
+        "name": "التموضع",
+        "value": "ملاصق لـ EMA50 (0.47%)",
+        "signal": "hold"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+1.55%",
+        "signal": "hold"
+      },
+      {
+        "name": "Bollinger",
+        "value": "قرب الحد العلوي",
+        "signal": "sell"
+      },
+      {
+        "name": "الحجم",
+        "value": "مرتفع 2.5x المتوسط",
+        "signal": "hold"
+      },
+      {
+        "name": "استراتيجية العقل الكمي الهجين",
+        "value": "توافق 0.30",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "timeframe": "4H",
+    "status": "pending",
+    "suggested_size_percent": 2,
+    "id": "4a064715-ac19-469f-9109-c935736de6d4",
+    "created_date": "2026-10-20T05:11:04.251Z",
+    "updated_date": "2026-10-20T05:11:04.251Z",
+    "created_by": null
+  },
+  {
+    "pair": "ETH/USDT",
+    "direction": "hold",
+    "confidence": 48,
+    "entry_price": 2441.16,
+    "stop_loss": null,
+    "take_profit_1": null,
+    "take_profit_2": null,
+    "take_profit_3": null,
+    "risk_reward": "—",
+    "analysis_summary": "العقل الكمي لـ ETH/USDT: التوصية انتظار بثقة 48% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.68%).\n• استراتيجية العقل الكمي الهجين: توافق 0.30\n• MACD: إيجابي متسارع\n• اتجاه EMA: عرضي — لا أفضلية اتجاهية",
+    "strategy": "العقل الكمي الهجين",
+    "strategy_id": "quant_hybrid",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "عرضي — لا أفضلية اتجاهية",
+        "signal": "hold"
+      },
+      {
+        "name": "MACD",
+        "value": "إيجابي متسارع",
+        "signal": "buy"
+      },
+      {
+        "name": "RSI",
+        "value": "محايد (54.3)",
+        "signal": "hold"
+      },
+      {
+        "name": "التموضع",
+        "value": "ملاصق لـ EMA50 (-0.07%)",
+        "signal": "hold"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+0.40%",
+        "signal": "hold"
+      },
+      {
+        "name": "Bollinger",
+        "value": "قرب الحد العلوي",
+        "signal": "sell"
+      },
+      {
+        "name": "الحجم",
+        "value": "مرتفع 2.8x المتوسط",
+        "signal": "hold"
+      },
+      {
+        "name": "المقاومة",
+        "value": "اصطدام بـ 2,443.965 (تلامس 2x)",
+        "signal": "sell"
+      },
+      {
+        "name": "استراتيجية العقل الكمي الهجين",
+        "value": "توافق 0.30",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "timeframe": "4H",
+    "status": "expired",
+    "suggested_size_percent": 2,
+    "id": "440b4a7c-fdaa-4fe6-9c93-a2e58d8dc64d",
+    "created_date": "2026-10-20T05:11:05.380Z",
+    "updated_date": "2026-10-20T05:11:05.380Z",
+    "created_by": null
+  },
+  {
+    "pair": "SOL/USDT",
+    "direction": "buy",
+    "confidence": 85,
+    "entry_price": 105.89,
+    "stop_loss": 102.916,
+    "take_profit_1": 110.351,
+    "take_profit_2": 113.326,
+    "take_profit_3": 117.787,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ SOL/USDT: التوصية شراء بثقة 85% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.87%).\n• نمط ابتلاع شرائي: ابتلاع شرائي\n• استراتيجية العقل الكمي الهجين: توافق 0.30\n• MACD: إيجابي متسارع",
+    "strategy": "العقل الكمي الهجين",
+    "strategy_id": "quant_hybrid",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "عرضي — لا أفضلية اتجاهية",
+        "signal": "hold"
+      },
+      {
+        "name": "MACD",
+        "value": "إيجابي متسارع",
+        "signal": "buy"
+      },
+      {
+        "name": "RSI",
+        "value": "محايد (54.6)",
+        "signal": "hold"
+      },
+      {
+        "name": "التموضع",
+        "value": "ملاصق لـ EMA50 (-0.06%)",
+        "signal": "hold"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+2.04%",
+        "signal": "buy"
+      },
+      {
+        "name": "Bollinger",
+        "value": "قرب الحد العلوي",
+        "signal": "sell"
+      },
+      {
+        "name": "الحجم",
+        "value": "مرتفع 3.0x المتوسط",
+        "signal": "hold"
+      },
+      {
+        "name": "نمط ابتلاع شرائي",
+        "value": "ابتلاع شرائي",
+        "signal": "buy"
+      },
+      {
+        "name": "استراتيجية العقل الكمي الهجين",
+        "value": "توافق 0.30",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [
+      "ابتلاع شرائي"
+    ],
+    "timeframe": "4H",
+    "status": "pending",
+    "suggested_size_percent": 2,
+    "id": "303567b3-01ae-45fc-ae09-ec7938f43181",
+    "created_date": "2026-10-20T05:11:06.398Z",
+    "updated_date": "2026-10-20T05:11:06.398Z",
+    "created_by": null
+  },
+  {
+    "pair": "BNB/USDT",
+    "direction": "buy",
+    "confidence": 72,
+    "entry_price": 734.25,
+    "stop_loss": 723.147,
+    "take_profit_1": 750.905,
+    "take_profit_2": 762.008,
+    "take_profit_3": 778.663,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ BNB/USDT: التوصية شراء بثقة 72% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.01%).\n• استراتيجية العقل الكمي الهجين: توافق 0.30\n• MACD: إيجابي متسارع\n• اتجاه EMA: عرضي — لا أفضلية اتجاهية (معرفة مكتسبة: متوسط نجاح 42% في 3 اختبارات)",
+    "strategy": "العقل الكمي الهجين",
+    "strategy_id": "quant_hybrid",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "عرضي — لا أفضلية اتجاهية",
+        "signal": "hold"
+      },
+      {
+        "name": "MACD",
+        "value": "إيجابي متسارع",
+        "signal": "buy"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم إيجابي (58.2)",
+        "signal": "buy"
+      },
+      {
+        "name": "التموضع",
+        "value": "ملاصق لـ EMA50 (0.42%)",
+        "signal": "hold"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+1.52%",
+        "signal": "hold"
+      },
+      {
+        "name": "Bollinger",
+        "value": "قرب الحد العلوي",
+        "signal": "sell"
+      },
+      {
+        "name": "الحجم",
+        "value": "مرتفع 2.2x المتوسط",
+        "signal": "hold"
+      },
+      {
+        "name": "المقاومة",
+        "value": "اصطدام بـ 735.023 (تلامس 3x)",
+        "signal": "sell"
+      },
+      {
+        "name": "استراتيجية العقل الكمي الهجين",
+        "value": "توافق 0.30",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "timeframe": "4H",
+    "status": "pending",
+    "suggested_size_percent": 2,
+    "id": "1aa88e54-2735-4ec7-9eff-a4fd0b2e582a",
+    "created_date": "2026-10-20T05:11:07.494Z",
+    "updated_date": "2026-10-20T05:11:07.494Z",
+    "created_by": null
+  },
+  {
+    "pair": "XRP/USDT",
+    "direction": "buy",
+    "confidence": 72,
+    "entry_price": 1.3224,
+    "stop_loss": 1.2891,
+    "take_profit_1": 1.3724,
+    "take_profit_2": 1.4057,
+    "take_profit_3": 1.4556,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ XRP/USDT: التوصية شراء بثقة 72% — السوق في نطاق عرضي وتقلب طبيعي (ATR 1.68%).\n• استراتيجية العقل الكمي الهجين: توافق 0.30\n• MACD: إيجابي متسارع\n• اتجاه EMA: عرضي — لا أفضلية اتجاهية",
+    "strategy": "العقل الكمي الهجين",
+    "strategy_id": "quant_hybrid",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "عرضي — لا أفضلية اتجاهية",
+        "signal": "hold"
+      },
+      {
+        "name": "MACD",
+        "value": "إيجابي متسارع",
+        "signal": "buy"
+      },
+      {
+        "name": "RSI",
+        "value": "محايد (54.7)",
+        "signal": "hold"
+      },
+      {
+        "name": "التموضع",
+        "value": "ملاصق لـ EMA50 (-0.51%)",
+        "signal": "hold"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+1.03%",
+        "signal": "hold"
+      },
+      {
+        "name": "Bollinger",
+        "value": "قرب الحد العلوي",
+        "signal": "sell"
+      },
+      {
+        "name": "الحجم",
+        "value": "مرتفع 2.5x المتوسط",
+        "signal": "hold"
+      },
+      {
+        "name": "استراتيجية العقل الكمي الهجين",
+        "value": "توافق 0.30",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "timeframe": "4H",
+    "status": "pending",
+    "suggested_size_percent": 2,
+    "id": "100a1067-4586-47a4-95ac-528216311b9e",
+    "created_date": "2026-10-20T05:11:08.966Z",
+    "updated_date": "2026-10-20T05:11:08.966Z",
+    "created_by": null
+  },
+  {
+    "pair": "BTC/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 75893.66,
+    "stop_loss": 77506.52,
+    "take_profit_1": 73474.36,
+    "take_profit_2": 71861.5,
+    "take_profit_3": 69442.2,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ BTC/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.42%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (38.5)\n• الدعم: ارتكاز على 75,736.38 (تلامس 1x)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (38.5) — بائعون مسيطرون",
+      "3. [الدعم] ارتكاز على 75,736.38 (تلامس 1x) — دعم يحترمه السعر",
+      "4. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "5. [التموضع] تحت EMA50 بـ -2.59% — تخلف عن المتوسط الطويل",
+      "6. [تغير 24h] -1.36% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 77506.52",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (38.5)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -2.59%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-1.36%",
+        "signal": "hold"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 75,736.38 (تلامس 1x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -3.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.4167756004162346
+      },
+      "rsi": 38.5
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "01ffbd47-f928-48e6-830f-fb1c306532ec",
+    "created_date": "2026-11-07T04:03:48.750Z",
+    "updated_date": "2026-11-07T04:03:48.750Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ETH/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 2245.11,
+    "stop_loss": 2306.08,
+    "take_profit_1": 2153.65,
+    "take_profit_2": 2092.68,
+    "take_profit_3": 2001.21,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ ETH/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.81%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (42.4)\n• الدعم: ارتكاز على 2,242.123 (تلامس 3x)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (42.4) — بائعون مسيطرون",
+      "3. [الدعم] ارتكاز على 2,242.123 (تلامس 3x) — دعم يحترمه السعر",
+      "4. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "5. [التموضع] تحت EMA50 بـ -2.14% — تخلف عن المتوسط الطويل",
+      "6. [تغير 24h] -0.37% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 2306.08",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (42.4)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -2.14%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-0.37%",
+        "signal": "hold"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 2,242.123 (تلامس 3x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -3.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.810569892534695
+      },
+      "rsi": 42.4
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "f7674d7b-ca66-4ee1-bec9-29595a4387d1",
+    "created_date": "2026-11-07T04:03:49.207Z",
+    "updated_date": "2026-11-07T04:03:49.207Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BTC/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 75893.66,
+    "stop_loss": 77506.52,
+    "take_profit_1": 73474.36,
+    "take_profit_2": 71861.5,
+    "take_profit_3": 69442.2,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ BTC/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.42%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (38.5)\n• الدعم: ارتكاز على 75,736.38 (تلامس 1x)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (38.5) — بائعون مسيطرون",
+      "3. [الدعم] ارتكاز على 75,736.38 (تلامس 1x) — دعم يحترمه السعر",
+      "4. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "5. [التموضع] تحت EMA50 بـ -2.59% — تخلف عن المتوسط الطويل",
+      "6. [تغير 24h] -1.36% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 77506.52",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (38.5)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -2.59%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-1.36%",
+        "signal": "hold"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 75,736.38 (تلامس 1x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -3.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.4167756004162346
+      },
+      "rsi": 38.5
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "5c0567de-89ce-4ec4-81ff-b108958460bf",
+    "created_date": "2026-11-07T04:04:38.853Z",
+    "updated_date": "2026-11-07T04:04:38.853Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ETH/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 2245.11,
+    "stop_loss": 2306.08,
+    "take_profit_1": 2153.65,
+    "take_profit_2": 2092.68,
+    "take_profit_3": 2001.21,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ ETH/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.81%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (42.4)\n• الدعم: ارتكاز على 2,242.123 (تلامس 3x)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (42.4) — بائعون مسيطرون",
+      "3. [الدعم] ارتكاز على 2,242.123 (تلامس 3x) — دعم يحترمه السعر",
+      "4. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "5. [التموضع] تحت EMA50 بـ -2.14% — تخلف عن المتوسط الطويل",
+      "6. [تغير 24h] -0.37% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 2306.08",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (42.4)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -2.14%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-0.37%",
+        "signal": "hold"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 2,242.123 (تلامس 3x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -3.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.810569892534695
+      },
+      "rsi": 42.4
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "5a6f3db7-9a37-4433-b5f9-5349b8616bcf",
+    "created_date": "2026-11-07T04:04:39.439Z",
+    "updated_date": "2026-11-07T04:04:39.439Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "SOL/USDT",
+    "direction": "sell",
+    "confidence": 72,
+    "entry_price": 90.06,
+    "stop_loss": 92.9368,
+    "take_profit_1": 85.7448,
+    "take_profit_2": 82.868,
+    "take_profit_3": 78.5529,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ SOL/USDT: التوصية بيع بثقة 72% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.13%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (39.6)\n• Stochastic: تقاطع ذهبي في التشبع",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (39.6) — بائعون مسيطرون",
+      "3. [Stochastic] تقاطع ذهبي في التشبع — إشارة انعكاس شرائية",
+      "4. [الدعم] ارتكاز على 89.86 (تلامس 1x) — دعم يحترمه السعر",
+      "5. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "6. [التموضع] تحت EMA50 بـ -4.29% — تخلف عن المتوسط الطويل",
+      "7. [تغير 24h] -2.27% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 92.9368",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (39.6)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -4.29%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-2.27%",
+        "signal": "sell"
+      },
+      {
+        "name": "Stochastic",
+        "value": "تقاطع ذهبي في التشبع",
+        "signal": "buy"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 89.86 (تلامس 1x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [
+      "دوجي (حيرة)"
+    ],
+    "_debug": {
+      "score": -3,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.1295326924907187
+      },
+      "rsi": 39.6
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "eed4c942-0f0c-4d9f-985c-d74839b91786",
+    "created_date": "2026-11-07T04:04:46.846Z",
+    "updated_date": "2026-11-07T04:04:46.846Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BNB/USDT",
+    "direction": "sell",
+    "confidence": 69,
+    "entry_price": 694.13,
+    "stop_loss": 707.135,
+    "take_profit_1": 674.622,
+    "take_profit_2": 661.618,
+    "take_profit_3": 642.11,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ BNB/USDT: التوصية بيع بثقة 69% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.25%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (44.6)\n• Stochastic: تقاطع ذهبي في التشبع (معرفة مكتسبة: متوسط نجاح 42% في 3 اختبارات)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (44.6) — بائعون مسيطرون",
+      "3. [Stochastic] تقاطع ذهبي في التشبع — إشارة انعكاس شرائية",
+      "4. [الدعم] ارتكاز على 693.143 (تلامس 3x) — دعم يحترمه السعر",
+      "5. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "6. [التموضع] تحت EMA50 بـ -1.80% — تخلف عن المتوسط الطويل",
+      "7. [تغير 24h] -0.39% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 707.135",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (44.6)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -1.80%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-0.39%",
+        "signal": "hold"
+      },
+      {
+        "name": "Stochastic",
+        "value": "تقاطع ذهبي في التشبع",
+        "signal": "buy"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 693.143 (تلامس 3x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [
+      "دوجي (حيرة)"
+    ],
+    "_debug": {
+      "score": -2.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.2490455678331114
+      },
+      "rsi": 44.6
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "c8183ac7-3884-42b9-8754-ce31291c044f",
+    "created_date": "2026-11-07T04:04:47.331Z",
+    "updated_date": "2026-11-07T04:04:47.331Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ADA/USDT",
+    "direction": "sell",
+    "confidence": 83,
+    "entry_price": 0.1843,
+    "stop_loss": 0.192164,
+    "take_profit_1": 0.172504,
+    "take_profit_2": 0.164639,
+    "take_profit_3": 0.152843,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ ADA/USDT: التوصية بيع بثقة 83% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.84%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (42.7)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (42.7) — بائعون مسيطرون",
+      "3. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "4. [التموضع] تحت EMA50 بـ -4.13% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -2.33% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 0.192164",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (42.7)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -4.13%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-2.33%",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [
+      "دوجي (حيرة)"
+    ],
+    "_debug": {
+      "score": -5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.844740717773819
+      },
+      "rsi": 42.7
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "f3fcc066-70d9-414e-b701-67d3c7ba0fff",
+    "created_date": "2026-11-07T04:04:47.766Z",
+    "updated_date": "2026-11-07T04:04:47.766Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "XRP/USDT",
+    "direction": "sell",
+    "confidence": 84,
+    "entry_price": 1.1603,
+    "stop_loss": 1.2012,
+    "take_profit_1": 1.0989,
+    "take_profit_2": 1.058,
+    "take_profit_3": 0.996586,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ XRP/USDT: التوصية بيع بثقة 84% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.35%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• MACD: سلبي متسارع\n• RSI: تشبع بيعي مع اتجاه هابط (26.4)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [MACD] سلبي متسارع — زخم بيعي متنامٍ",
+      "3. [RSI] تشبع بيعي مع اتجاه هابط (26.4) — ضغط متواصل — لا تصطد السكين",
+      "4. [التموضع] تحت EMA50 بـ -7.39% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -7.31% — ضغط يومي سلبي",
+      "6. [Bollinger] قرب الحد السفلي — دعم متحرك"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 1.2012",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متسارع",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "تشبع بيعي مع اتجاه هابط (26.4)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -7.39%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-7.31%",
+        "signal": "sell"
+      },
+      {
+        "name": "Bollinger",
+        "value": "قرب الحد السفلي",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -5.25,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.351608574137234
+      },
+      "rsi": 26.4
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "deca6129-e759-4c16-bda8-4a36811a34dc",
+    "created_date": "2026-11-07T04:04:48.372Z",
+    "updated_date": "2026-11-07T04:04:48.372Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BTC/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 75893.66,
+    "stop_loss": 77506.52,
+    "take_profit_1": 73474.36,
+    "take_profit_2": 71861.5,
+    "take_profit_3": 69442.2,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ BTC/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.42%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (38.5)\n• الدعم: ارتكاز على 75,736.38 (تلامس 1x)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (38.5) — بائعون مسيطرون",
+      "3. [الدعم] ارتكاز على 75,736.38 (تلامس 1x) — دعم يحترمه السعر",
+      "4. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "5. [التموضع] تحت EMA50 بـ -2.59% — تخلف عن المتوسط الطويل",
+      "6. [تغير 24h] -1.36% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 77506.52",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (38.5)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -2.59%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-1.36%",
+        "signal": "hold"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 75,736.38 (تلامس 1x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -3.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.4167756004162346
+      },
+      "rsi": 38.5
+    },
+    "status": "executed",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "b01c10a1-50f2-43f8-9d2b-bd3872b7f66c",
+    "created_date": "2026-11-07T04:17:09.997Z",
+    "updated_date": "2026-11-07T04:17:10.091Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ETH/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 2245.11,
+    "stop_loss": 2306.08,
+    "take_profit_1": 2153.65,
+    "take_profit_2": 2092.68,
+    "take_profit_3": 2001.21,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ ETH/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.81%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (42.4)\n• الدعم: ارتكاز على 2,242.123 (تلامس 3x)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (42.4) — بائعون مسيطرون",
+      "3. [الدعم] ارتكاز على 2,242.123 (تلامس 3x) — دعم يحترمه السعر",
+      "4. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "5. [التموضع] تحت EMA50 بـ -2.14% — تخلف عن المتوسط الطويل",
+      "6. [تغير 24h] -0.37% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 2306.08",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (42.4)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -2.14%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-0.37%",
+        "signal": "hold"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 2,242.123 (تلامس 3x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -3.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.810569892534695
+      },
+      "rsi": 42.4
+    },
+    "status": "executed",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "8f9a7b82-33ac-42fc-be4e-5809149ffb44",
+    "created_date": "2026-11-07T04:17:11.640Z",
+    "updated_date": "2026-11-07T04:17:11.744Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "SOL/USDT",
+    "direction": "sell",
+    "confidence": 72,
+    "entry_price": 90.06,
+    "stop_loss": 92.9368,
+    "take_profit_1": 85.7448,
+    "take_profit_2": 82.868,
+    "take_profit_3": 78.5529,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ SOL/USDT: التوصية بيع بثقة 72% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.13%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (39.6)\n• Stochastic: تقاطع ذهبي في التشبع",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (39.6) — بائعون مسيطرون",
+      "3. [Stochastic] تقاطع ذهبي في التشبع — إشارة انعكاس شرائية",
+      "4. [الدعم] ارتكاز على 89.86 (تلامس 1x) — دعم يحترمه السعر",
+      "5. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "6. [التموضع] تحت EMA50 بـ -4.29% — تخلف عن المتوسط الطويل",
+      "7. [تغير 24h] -2.27% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 92.9368",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (39.6)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -4.29%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-2.27%",
+        "signal": "sell"
+      },
+      {
+        "name": "Stochastic",
+        "value": "تقاطع ذهبي في التشبع",
+        "signal": "buy"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 89.86 (تلامس 1x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [
+      "دوجي (حيرة)"
+    ],
+    "_debug": {
+      "score": -3,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.1295326924907187
+      },
+      "rsi": 39.6
+    },
+    "status": "executed",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "id": "58643b51-d441-4986-839a-72d60fa94438",
+    "created_date": "2026-11-07T04:17:14.020Z",
+    "updated_date": "2026-11-07T04:17:14.105Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "DOGE/USDT",
+    "direction": "sell",
+    "confidence": 94,
+    "entry_price": 0.072,
+    "stop_loss": 0.074282,
+    "take_profit_1": 0.068577,
+    "take_profit_2": 0.066295,
+    "take_profit_3": 0.062871,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ DOGE/USDT: التوصية بيع بثقة 94% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.11%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• استراتيجية العقل الكمي الهجين: توافق -1.00\n• RSI: زخم سلبي (40.1)",
+    "strategy": "العقل الكمي الهجين",
+    "strategy_id": "quant_hybrid",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (40.1)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -3.92%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-2.86%",
+        "signal": "sell"
+      },
+      {
+        "name": "استراتيجية العقل الكمي الهجين",
+        "value": "توافق -1.00",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [],
+    "timeframe": "4H",
+    "status": "pending",
+    "suggested_size_percent": 2,
+    "id": "2eafb4d4-7538-43dc-af8d-cee4dec8c9e3",
+    "created_date": "2026-11-07T04:31:45.176Z",
+    "updated_date": "2026-11-07T04:31:45.176Z",
+    "created_by": null
+  },
+  {
+    "pair": "LINK/USDT",
+    "direction": "sell",
+    "confidence": 94,
+    "entry_price": 10.796,
+    "stop_loss": 11.2128,
+    "take_profit_1": 10.1708,
+    "take_profit_2": 9.754,
+    "take_profit_3": 9.1289,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ LINK/USDT: التوصية بيع بثقة 94% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.57%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• استراتيجية العقل الكمي الهجين: توافق -1.00\n• RSI: زخم سلبي (42.4)",
+    "strategy": "العقل الكمي الهجين",
+    "strategy_id": "quant_hybrid",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (42.4)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -3.71%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-2.99%",
+        "signal": "sell"
+      },
+      {
+        "name": "استراتيجية العقل الكمي الهجين",
+        "value": "توافق -1.00",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [],
+    "timeframe": "4H",
+    "status": "pending",
+    "suggested_size_percent": 2,
+    "id": "8c25142a-c634-469e-b640-935546400169",
+    "created_date": "2026-11-07T04:31:46.083Z",
+    "updated_date": "2026-11-07T04:31:46.083Z",
+    "created_by": null
+  },
+  {
+    "pair": "SUI/USDT",
+    "direction": "sell",
+    "confidence": 91,
+    "entry_price": 0.866,
+    "stop_loss": 0.902193,
+    "take_profit_1": 0.811711,
+    "take_profit_2": 0.775518,
+    "take_profit_3": 0.721229,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ SUI/USDT: التوصية بيع بثقة 91% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.79%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• استراتيجية العقل الكمي الهجين: توافق -1.00\n• RSI: زخم سلبي (43.6)",
+    "strategy": "العقل الكمي الهجين",
+    "strategy_id": "quant_hybrid",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (43.6)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -3.23%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-0.18%",
+        "signal": "hold"
+      },
+      {
+        "name": "استراتيجية العقل الكمي الهجين",
+        "value": "توافق -1.00",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [],
+    "timeframe": "4H",
+    "status": "pending",
+    "suggested_size_percent": 2,
+    "id": "5c74ca18-5213-450c-9d1e-9cf22dff540e",
+    "created_date": "2026-11-07T04:31:46.853Z",
+    "updated_date": "2026-11-07T04:31:46.853Z",
+    "created_by": null
+  },
+  {
+    "pair": "PEPE/USDT",
+    "direction": "buy",
+    "confidence": 75,
+    "entry_price": 0.000005,
+    "stop_loss": 0.000005,
+    "take_profit_1": 0.000005,
+    "take_profit_2": 0.000006,
+    "take_profit_3": 0.000006,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ PEPE/USDT: التوصية شراء بثقة 75% — السوق في اتجاه صاعد وتقلب عالٍ (ATR 3.35%).\n• اتجاه EMA: صاعد (السعر فوق EMA20 فوق EMA50)\n• استراتيجية العقل الكمي الهجين: توافق 1.00\n• MACD: إيجابي متباطئ",
+    "strategy": "العقل الكمي الهجين",
+    "strategy_id": "quant_hybrid",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "صاعد (السعر فوق EMA20 فوق EMA50)",
+        "signal": "buy"
+      },
+      {
+        "name": "MACD",
+        "value": "إيجابي متباطئ",
+        "signal": "buy"
+      },
+      {
+        "name": "RSI",
+        "value": "محايد (51.7)",
+        "signal": "hold"
+      },
+      {
+        "name": "التموضع",
+        "value": "فوق EMA50 بـ 1.70%",
+        "signal": "buy"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "+5.74%",
+        "signal": "buy"
+      },
+      {
+        "name": "استراتيجية العقل الكمي الهجين",
+        "value": "توافق 1.00",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "timeframe": "4H",
+    "status": "pending",
+    "suggested_size_percent": 2,
+    "id": "9f154ed0-0003-43c6-a865-b36f4ded4e00",
+    "created_date": "2026-11-07T04:31:47.360Z",
+    "updated_date": "2026-11-07T04:31:47.360Z",
+    "created_by": null
+  },
+  {
+    "pair": "BTC/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 75893.66,
+    "stop_loss": 77506.52,
+    "take_profit_1": 73474.36,
+    "take_profit_2": 71861.5,
+    "take_profit_3": 69442.2,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ BTC/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.42%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (38.5)\n• الدعم: ارتكاز على 75,736.38 (تلامس 1x)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (38.5) — بائعون مسيطرون",
+      "3. [الدعم] ارتكاز على 75,736.38 (تلامس 1x) — دعم يحترمه السعر",
+      "4. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "5. [التموضع] تحت EMA50 بـ -2.59% — تخلف عن المتوسط الطويل",
+      "6. [تغير 24h] -1.36% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 77506.52",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (38.5)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -2.59%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-1.36%",
+        "signal": "hold"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 75,736.38 (تلامس 1x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -3.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.4167756004162346
+      },
+      "rsi": 38.5
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "82faac8c-f4b6-4f9f-a682-95bb2833bdd5",
+    "created_date": "2026-11-07T04:40:00.108Z",
+    "updated_date": "2026-11-07T04:40:00.108Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ETH/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 2245.11,
+    "stop_loss": 2306.08,
+    "take_profit_1": 2153.65,
+    "take_profit_2": 2092.68,
+    "take_profit_3": 2001.21,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ ETH/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.81%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (42.4)\n• الدعم: ارتكاز على 2,242.123 (تلامس 3x)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (42.4) — بائعون مسيطرون",
+      "3. [الدعم] ارتكاز على 2,242.123 (تلامس 3x) — دعم يحترمه السعر",
+      "4. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "5. [التموضع] تحت EMA50 بـ -2.14% — تخلف عن المتوسط الطويل",
+      "6. [تغير 24h] -0.37% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 2306.08",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (42.4)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -2.14%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-0.37%",
+        "signal": "hold"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 2,242.123 (تلامس 3x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -3.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.810569892534695
+      },
+      "rsi": 42.4
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "149f820e-4916-4a96-b712-bd7567cab2ed",
+    "created_date": "2026-11-07T04:40:02.876Z",
+    "updated_date": "2026-11-07T04:40:02.876Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "SOL/USDT",
+    "direction": "sell",
+    "confidence": 72,
+    "entry_price": 90.06,
+    "stop_loss": 92.9368,
+    "take_profit_1": 85.7448,
+    "take_profit_2": 82.868,
+    "take_profit_3": 78.5529,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ SOL/USDT: التوصية بيع بثقة 72% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.13%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (39.6)\n• Stochastic: تقاطع ذهبي في التشبع",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (39.6) — بائعون مسيطرون",
+      "3. [Stochastic] تقاطع ذهبي في التشبع — إشارة انعكاس شرائية",
+      "4. [الدعم] ارتكاز على 89.86 (تلامس 1x) — دعم يحترمه السعر",
+      "5. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "6. [التموضع] تحت EMA50 بـ -4.29% — تخلف عن المتوسط الطويل",
+      "7. [تغير 24h] -2.27% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 92.9368",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (39.6)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -4.29%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-2.27%",
+        "signal": "sell"
+      },
+      {
+        "name": "Stochastic",
+        "value": "تقاطع ذهبي في التشبع",
+        "signal": "buy"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 89.86 (تلامس 1x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [
+      "دوجي (حيرة)"
+    ],
+    "_debug": {
+      "score": -3,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.1295326924907187
+      },
+      "rsi": 39.6
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "d3511e28-cb90-4c2b-b85a-3ee2c0886e30",
+    "created_date": "2026-11-07T04:40:03.377Z",
+    "updated_date": "2026-11-07T04:40:03.377Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BNB/USDT",
+    "direction": "sell",
+    "confidence": 69,
+    "entry_price": 694.13,
+    "stop_loss": 707.135,
+    "take_profit_1": 674.622,
+    "take_profit_2": 661.618,
+    "take_profit_3": 642.11,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ BNB/USDT: التوصية بيع بثقة 69% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.25%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (44.6)\n• Stochastic: تقاطع ذهبي في التشبع (معرفة مكتسبة: متوسط نجاح 42% في 3 اختبارات)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (44.6) — بائعون مسيطرون",
+      "3. [Stochastic] تقاطع ذهبي في التشبع — إشارة انعكاس شرائية",
+      "4. [الدعم] ارتكاز على 693.143 (تلامس 3x) — دعم يحترمه السعر",
+      "5. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "6. [التموضع] تحت EMA50 بـ -1.80% — تخلف عن المتوسط الطويل",
+      "7. [تغير 24h] -0.39% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 707.135",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (44.6)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -1.80%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-0.39%",
+        "signal": "hold"
+      },
+      {
+        "name": "Stochastic",
+        "value": "تقاطع ذهبي في التشبع",
+        "signal": "buy"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 693.143 (تلامس 3x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [
+      "دوجي (حيرة)"
+    ],
+    "_debug": {
+      "score": -2.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 1.2490455678331114
+      },
+      "rsi": 44.6
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "58efa52d-0094-475d-8634-f8325402f438",
+    "created_date": "2026-11-07T04:40:03.817Z",
+    "updated_date": "2026-11-07T04:40:03.817Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "XRP/USDT",
+    "direction": "sell",
+    "confidence": 84,
+    "entry_price": 1.1603,
+    "stop_loss": 1.2012,
+    "take_profit_1": 1.0989,
+    "take_profit_2": 1.058,
+    "take_profit_3": 0.996586,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ XRP/USDT: التوصية بيع بثقة 84% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.35%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• MACD: سلبي متسارع\n• RSI: تشبع بيعي مع اتجاه هابط (26.4)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [MACD] سلبي متسارع — زخم بيعي متنامٍ",
+      "3. [RSI] تشبع بيعي مع اتجاه هابط (26.4) — ضغط متواصل — لا تصطد السكين",
+      "4. [التموضع] تحت EMA50 بـ -7.39% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -7.31% — ضغط يومي سلبي",
+      "6. [Bollinger] قرب الحد السفلي — دعم متحرك"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 1.2012",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متسارع",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "تشبع بيعي مع اتجاه هابط (26.4)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -7.39%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-7.31%",
+        "signal": "sell"
+      },
+      {
+        "name": "Bollinger",
+        "value": "قرب الحد السفلي",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -5.25,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.351608574137234
+      },
+      "rsi": 26.4
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "ff99b2a8-2604-497e-bc05-5a4361eb7db2",
+    "created_date": "2026-11-07T04:40:04.243Z",
+    "updated_date": "2026-11-07T04:40:04.243Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ADA/USDT",
+    "direction": "sell",
+    "confidence": 83,
+    "entry_price": 0.1843,
+    "stop_loss": 0.192164,
+    "take_profit_1": 0.172504,
+    "take_profit_2": 0.164639,
+    "take_profit_3": 0.152843,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ ADA/USDT: التوصية بيع بثقة 83% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.84%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (42.7)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (42.7) — بائعون مسيطرون",
+      "3. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "4. [التموضع] تحت EMA50 بـ -4.13% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -2.33% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 0.192164",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (42.7)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -4.13%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-2.33%",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [
+      "دوجي (حيرة)"
+    ],
+    "_debug": {
+      "score": -5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.844740717773819
+      },
+      "rsi": 42.7
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "6dc23894-dd14-4aa0-8bf7-7441a2656934",
+    "created_date": "2026-11-07T04:40:04.722Z",
+    "updated_date": "2026-11-07T04:40:04.722Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "DOGE/USDT",
+    "direction": "sell",
+    "confidence": 83,
+    "entry_price": 0.072,
+    "stop_loss": 0.074282,
+    "take_profit_1": 0.068577,
+    "take_profit_2": 0.066295,
+    "take_profit_3": 0.062871,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ DOGE/USDT: التوصية بيع بثقة 83% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.11%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (40.1)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (40.1) — بائعون مسيطرون",
+      "3. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "4. [التموضع] تحت EMA50 بـ -3.92% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -2.86% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 0.074282",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (40.1)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -3.92%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-2.86%",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.113095238095237
+      },
+      "rsi": 40.1
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "5c6cad74-f27b-4592-9b57-e3cffaff531b",
+    "created_date": "2026-11-07T04:40:05.205Z",
+    "updated_date": "2026-11-07T04:40:05.205Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "AVAX/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 8.307,
+    "stop_loss": 8.6067,
+    "take_profit_1": 7.8575,
+    "take_profit_2": 7.5578,
+    "take_profit_3": 7.1083,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ AVAX/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.41%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (43.7)\n• الدعم: ارتكاز على 8.282 (تلامس 3x)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (43.7) — بائعون مسيطرون",
+      "3. [الدعم] ارتكاز على 8.282 (تلامس 3x) — دعم يحترمه السعر",
+      "4. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "5. [التموضع] تحت EMA50 بـ -3.12% — تخلف عن المتوسط الطويل",
+      "6. [تغير 24h] -0.43% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 8.6067",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (43.7)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -3.12%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-0.43%",
+        "signal": "hold"
+      },
+      {
+        "name": "الدعم",
+        "value": "ارتكاز على 8.282 (تلامس 3x)",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -3.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.4050284613664883
+      },
+      "rsi": 43.7
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "d5569d64-dba0-49ff-9f4e-11ade9db1bef",
+    "created_date": "2026-11-07T04:40:05.683Z",
+    "updated_date": "2026-11-07T04:40:05.683Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "LINK/USDT",
+    "direction": "sell",
+    "confidence": 83,
+    "entry_price": 10.796,
+    "stop_loss": 11.2128,
+    "take_profit_1": 10.1708,
+    "take_profit_2": 9.754,
+    "take_profit_3": 9.1289,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ LINK/USDT: التوصية بيع بثقة 83% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.57%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (42.4)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (42.4) — بائعون مسيطرون",
+      "3. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "4. [التموضع] تحت EMA50 بـ -3.71% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -2.99% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 11.2128",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (42.4)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -3.71%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-2.99%",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.57370454665749
+      },
+      "rsi": 42.4
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "c2d160dc-80e5-4384-94e9-ac7b1da50bb5",
+    "created_date": "2026-11-07T04:40:06.161Z",
+    "updated_date": "2026-11-07T04:40:06.161Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "DOT/USDT",
+    "direction": "sell",
+    "confidence": 84,
+    "entry_price": 0.904,
+    "stop_loss": 0.942786,
+    "take_profit_1": 0.845821,
+    "take_profit_2": 0.807036,
+    "take_profit_3": 0.748857,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ DOT/USDT: التوصية بيع بثقة 84% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.86%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• MACD: سلبي متسارع\n• RSI: زخم سلبي (40.8)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [MACD] سلبي متسارع — زخم بيعي متنامٍ",
+      "3. [RSI] زخم سلبي (40.8) — بائعون مسيطرون",
+      "4. [التموضع] تحت EMA50 بـ -4.97% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -3.62% — ضغط يومي سلبي",
+      "6. [Bollinger] قرب الحد السفلي — دعم متحرك"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 0.942786",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متسارع",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (40.8)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -4.97%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-3.62%",
+        "signal": "sell"
+      },
+      {
+        "name": "Bollinger",
+        "value": "قرب الحد السفلي",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -5.25,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.8603034134007563
+      },
+      "rsi": 40.8
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "d4c8d8e9-245f-4482-85f3-80946b1cc8bb",
+    "created_date": "2026-11-07T04:40:06.581Z",
+    "updated_date": "2026-11-07T04:40:06.581Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "TRX/USDT",
+    "direction": "sell",
+    "confidence": 80,
+    "entry_price": 0.3177,
+    "stop_loss": 0.319404,
+    "take_profit_1": 0.315145,
+    "take_profit_2": 0.313441,
+    "take_profit_3": 0.310886,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ TRX/USDT: التوصية بيع بثقة 80% — السوق في نطاق عرضي وتقلب منخفض (ATR 0.36%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• MACD: سلبي متسارع\n• RSI: زخم سلبي (44.1)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [MACD] سلبي متسارع — زخم بيعي متنامٍ",
+      "3. [RSI] زخم سلبي (44.1) — بائعون مسيطرون",
+      "4. [التموضع] ملاصق لـ EMA50 (-0.97%) — توازن حول المتوسط",
+      "5. [تغير 24h] -1.18% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 0.319404",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متسارع",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (44.1)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "ملاصق لـ EMA50 (-0.97%)",
+        "signal": "hold"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-1.18%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -4.5,
+      "regime": {
+        "regime": "ranging",
+        "trend": "down",
+        "volatility": "low",
+        "atrPct": 0.3574801025225923
+      },
+      "rsi": 44.1
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "2fb983c5-3b20-4d82-afac-63f8ef258f4b",
+    "created_date": "2026-11-07T04:40:07.009Z",
+    "updated_date": "2026-11-07T04:40:07.009Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "LTC/USDT",
+    "direction": "sell",
+    "confidence": 83,
+    "entry_price": 52.32,
+    "stop_loss": 54.0204,
+    "take_profit_1": 49.7695,
+    "take_profit_2": 48.0691,
+    "take_profit_3": 45.5186,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ LTC/USDT: التوصية بيع بثقة 83% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.17%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (40.4)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (40.4) — بائعون مسيطرون",
+      "3. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "4. [التموضع] تحت EMA50 بـ -4.28% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -2.97% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 54.0204",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (40.4)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -4.28%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-2.97%",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.166612057667101
+      },
+      "rsi": 40.4
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "17c7d39f-6702-4655-a80c-f52456cd45f0",
+    "created_date": "2026-11-07T04:40:07.436Z",
+    "updated_date": "2026-11-07T04:40:07.436Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BCH/USDT",
+    "direction": "sell",
+    "confidence": 84,
+    "entry_price": 262.7,
+    "stop_loss": 274.518,
+    "take_profit_1": 244.973,
+    "take_profit_2": 233.155,
+    "take_profit_3": 215.429,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ BCH/USDT: التوصية بيع بثقة 84% — السوق في اتجاه هابط وتقلب طبيعي (ATR 3.00%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• MACD: سلبي متسارع\n• RSI: زخم سلبي (36.2)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [MACD] سلبي متسارع — زخم بيعي متنامٍ",
+      "3. [RSI] زخم سلبي (36.2) — بائعون مسيطرون",
+      "4. [التموضع] تحت EMA50 بـ -5.24% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -4.23% — ضغط يومي سلبي",
+      "6. [Bollinger] قرب الحد السفلي — دعم متحرك"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 274.518",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متسارع",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (36.2)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -5.24%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-4.23%",
+        "signal": "sell"
+      },
+      {
+        "name": "Bollinger",
+        "value": "قرب الحد السفلي",
+        "signal": "buy"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -5.25,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.999075534286804
+      },
+      "rsi": 36.2
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "1ae3bf0e-f0b3-4f55-9bff-db1819d703e0",
+    "created_date": "2026-11-07T04:40:07.841Z",
+    "updated_date": "2026-11-07T04:40:07.841Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ATOM/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 1.382,
+    "stop_loss": 1.4569,
+    "take_profit_1": 1.2697,
+    "take_profit_2": 1.1948,
+    "take_profit_3": 1.0824,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ ATOM/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب عالٍ (ATR 3.61%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• MACD: سلبي متسارع\n• RSI: زخم سلبي (41.4)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [MACD] سلبي متسارع — زخم بيعي متنامٍ",
+      "3. [RSI] زخم سلبي (41.4) — بائعون مسيطرون",
+      "4. [التموضع] تحت EMA50 بـ -6.10% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -3.15% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 1.4569",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متسارع",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (41.4)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -6.10%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-3.15%",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -5.75,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "high",
+        "atrPct": 3.6127765143684107
+      },
+      "rsi": 41.4
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "da81a97d-73b7-4440-9e51-215d63d9c7de",
+    "created_date": "2026-11-07T04:40:08.771Z",
+    "updated_date": "2026-11-07T04:40:08.771Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "FIL/USDT",
+    "direction": "sell",
+    "confidence": 70,
+    "entry_price": 0.8087,
+    "stop_loss": 0.848654,
+    "take_profit_1": 0.74877,
+    "take_profit_2": 0.708816,
+    "take_profit_3": 0.648886,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ FIL/USDT: التوصية بيع بثقة 70% — السوق في اتجاه هابط وتقلب عالٍ (ATR 3.29%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (41.4)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (41.4) — بائعون مسيطرون",
+      "3. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "4. [التموضع] تحت EMA50 بـ -5.73% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -6.76% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 0.848654",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (41.4)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -5.73%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-6.76%",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "high",
+        "atrPct": 3.2936458866964626
+      },
+      "rsi": 41.4
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "a5a18704-5620-41ae-a0cc-6e7102735d15",
+    "created_date": "2026-11-07T04:40:09.337Z",
+    "updated_date": "2026-11-07T04:40:09.337Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "APT/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 0.6002,
+    "stop_loss": 0.630221,
+    "take_profit_1": 0.555168,
+    "take_profit_2": 0.525146,
+    "take_profit_3": 0.480114,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ APT/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب عالٍ (ATR 3.33%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• MACD: سلبي متسارع\n• RSI: زخم سلبي (43.3)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [MACD] سلبي متسارع — زخم بيعي متنامٍ",
+      "3. [RSI] زخم سلبي (43.3) — بائعون مسيطرون",
+      "4. [التموضع] تحت EMA50 بـ -5.12% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -2.50% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 0.630221",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متسارع",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (43.3)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -5.12%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-2.50%",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -5.75,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "high",
+        "atrPct": 3.334602751463796
+      },
+      "rsi": 43.3
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "e0bbaf5a-5133-4c31-99e1-5f102badde8c",
+    "created_date": "2026-11-07T04:40:09.925Z",
+    "updated_date": "2026-11-07T04:40:09.925Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "OP/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 0.1044,
+    "stop_loss": 0.10995,
+    "take_profit_1": 0.096075,
+    "take_profit_2": 0.090525,
+    "take_profit_3": 0.0822,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ OP/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب عالٍ (ATR 3.54%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• MACD: سلبي متسارع\n• RSI: زخم سلبي (42.8)",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [MACD] سلبي متسارع — زخم بيعي متنامٍ",
+      "3. [RSI] زخم سلبي (42.8) — بائعون مسيطرون",
+      "4. [التموضع] تحت EMA50 بـ -4.75% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -3.33% — ضغط يومي سلبي"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 0.10995",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متسارع",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (42.8)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -4.75%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-3.33%",
+        "signal": "sell"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -5.75,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "high",
+        "atrPct": 3.544061302681993
+      },
+      "rsi": 42.8
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "e52260fe-9444-4471-8393-734284095594",
+    "created_date": "2026-11-07T04:40:10.838Z",
+    "updated_date": "2026-11-07T04:40:10.838Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "SUI/USDT",
+    "direction": "sell",
+    "confidence": 80,
+    "entry_price": 0.866,
+    "stop_loss": 0.902193,
+    "take_profit_1": 0.811711,
+    "take_profit_2": 0.775518,
+    "take_profit_3": 0.721229,
+    "risk_reward": "1:2.5",
+    "analysis_summary": "العقل الكمي لـ SUI/USDT: التوصية بيع بثقة 80% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.79%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (43.6)\n• MACD: سلبي متباطئ",
+    "strategy": "عقل كمي: توافق الاتجاه والزخم والسيولة",
+    "strategy_id": "quant_hybrid_legacy",
+    "evidence": [
+      "1. [اتجاه EMA] هابط (السعر تحت EMA20 تحت EMA50) — زخم هابط مؤكد",
+      "2. [RSI] زخم سلبي (43.6) — بائعون مسيطرون",
+      "3. [MACD] سلبي متباطئ — زخم بيعي يضعف",
+      "4. [التموضع] تحت EMA50 بـ -3.23% — تخلف عن المتوسط الطويل",
+      "5. [تغير 24h] -0.18% — حركة يومية هادئة"
+    ],
+    "invalidation": "يُبطل البيع: إغلاق شمعة فوق الوقف 0.902193",
+    "indicators": [
+      {
+        "name": "اتجاه EMA",
+        "value": "هابط (السعر تحت EMA20 تحت EMA50)",
+        "signal": "sell"
+      },
+      {
+        "name": "MACD",
+        "value": "سلبي متباطئ",
+        "signal": "sell"
+      },
+      {
+        "name": "RSI",
+        "value": "زخم سلبي (43.6)",
+        "signal": "sell"
+      },
+      {
+        "name": "التموضع",
+        "value": "تحت EMA50 بـ -3.23%",
+        "signal": "sell"
+      },
+      {
+        "name": "تغير 24h",
+        "value": "-0.18%",
+        "signal": "hold"
+      }
+    ],
+    "patterns_detected": [],
+    "_debug": {
+      "score": -4.5,
+      "regime": {
+        "regime": "trending",
+        "trend": "down",
+        "volatility": "normal",
+        "atrPct": 2.786209171890467
+      },
+      "rsi": 43.6
+    },
+    "status": "expired",
+    "timeframe": "1H",
+    "suggested_size_percent": 2,
+    "auto_execute": true,
+    "origin": "browser_bot",
+    "id": "f15f8ba2-58d9-457e-86e3-dba9c59d978e",
+    "created_date": "2026-11-07T04:40:11.300Z",
+    "updated_date": "2026-11-07T04:40:11.300Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "ATOM/USDT",
+    "direction": "sell",
+    "confidence": 77,
+    "entry_price": 1.386,
+    "stop_loss": 1.4069999999999998,
+    "take_profit_1": 1.344,
+    "take_profit_2": 1.323,
+    "take_profit_3": 1.302,
+    "timeframe": "1H",
+    "strategy": "Auto Paper (Technical)",
+    "analysis_summary": "السعر تحت EMA20 — EMA20 تحت EMA50 — تعلّم: احتمال النجاح 75% (نموذج v2)",
+    "status": "executed",
+    "id": "738b2a04-5f3e-49a8-9aee-c1bdf68d817b",
+    "created_date": "2026-11-07T04:45:43.189Z",
+    "updated_date": "2026-11-07T04:45:43.189Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "SUI/USDT",
+    "direction": "sell",
+    "confidence": 77,
+    "entry_price": 0.8661,
+    "stop_loss": 0.87795,
+    "take_profit_1": 0.8423999999999999,
+    "take_profit_2": 0.83055,
+    "take_profit_3": 0.8187,
+    "timeframe": "1H",
+    "strategy": "Auto Paper (Technical)",
+    "analysis_summary": "السعر تحت EMA20 — EMA20 تحت EMA50 — تعلّم: احتمال النجاح 75% (نموذج v2)",
+    "status": "executed",
+    "id": "8825aaa5-a410-4671-a3e1-f43a7c0359e2",
+    "created_date": "2026-11-07T04:45:45.186Z",
+    "updated_date": "2026-11-07T04:45:45.186Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "SEI/USDT",
+    "direction": "sell",
+    "confidence": 77,
+    "entry_price": 0.04624,
+    "stop_loss": 0.046958928571428575,
+    "take_profit_1": 0.04480214285714286,
+    "take_profit_2": 0.04408321428571429,
+    "take_profit_3": 0.043364285714285716,
+    "timeframe": "1H",
+    "strategy": "Auto Paper (Technical)",
+    "analysis_summary": "السعر تحت EMA20 — EMA20 تحت EMA50 — تعلّم: احتمال النجاح 75% (نموذج v2)",
+    "status": "executed",
+    "id": "4374012f-d483-4b6d-84ac-ea44c5f84fd0",
+    "created_date": "2026-11-07T04:45:46.507Z",
+    "updated_date": "2026-11-07T04:45:46.507Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "SHIB/USDT",
+    "direction": "sell",
+    "confidence": 77,
+    "entry_price": 0.00000453,
+    "stop_loss": 0.0000045835714285714285,
+    "take_profit_1": 0.000004422857142857143,
+    "take_profit_2": 0.000004369285714285715,
+    "take_profit_3": 0.000004315714285714286,
+    "timeframe": "1H",
+    "strategy": "Auto Paper (Technical)",
+    "analysis_summary": "السعر تحت EMA20 — EMA20 تحت EMA50 — تعلّم: احتمال النجاح 75% (نموذج v2)",
+    "status": "executed",
+    "id": "ac2a806b-985a-4749-8f1b-a374b3286c6f",
+    "created_date": "2026-11-07T04:45:47.407Z",
+    "updated_date": "2026-11-07T04:45:47.407Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BNB/USDT",
+    "direction": "sell",
+    "confidence": 77,
+    "entry_price": 694.79,
+    "stop_loss": 698.2303571428571,
+    "take_profit_1": 687.9092857142857,
+    "take_profit_2": 684.4689285714285,
+    "take_profit_3": 681.0285714285714,
+    "timeframe": "1H",
+    "strategy": "Auto Paper (Technical)",
+    "analysis_summary": "السعر تحت EMA20 — EMA20 تحت EMA50 — تعلّم: احتمال النجاح 74% (نموذج v2)",
+    "status": "executed",
+    "id": "609f8b88-7f69-4db5-8cd1-e13a9972a936",
+    "created_date": "2026-11-07T05:03:17.508Z",
+    "updated_date": "2026-11-07T05:03:17.508Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BNB/USDT",
+    "direction": "sell",
+    "confidence": 77,
+    "entry_price": 694.79,
+    "stop_loss": 698.2303571428571,
+    "take_profit_1": 687.9092857142857,
+    "take_profit_2": 684.4689285714285,
+    "take_profit_3": 681.0285714285714,
+    "timeframe": "1H",
+    "strategy": "Auto Paper (Technical)",
+    "analysis_summary": "السعر تحت EMA20 — EMA20 تحت EMA50 — تعلّم: احتمال النجاح 74% (نموذج v2)",
+    "status": "executed",
+    "id": "126d596b-09c4-422c-8033-04fe28461e69",
+    "created_date": "2026-11-07T05:03:17.525Z",
+    "updated_date": "2026-11-07T05:03:17.525Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "XLM/USDT",
+    "direction": "sell",
+    "confidence": 77,
+    "entry_price": 0.1525,
+    "stop_loss": 0.1546857142857143,
+    "take_profit_1": 0.14812857142857144,
+    "take_profit_2": 0.14594285714285715,
+    "take_profit_3": 0.14375714285714286,
+    "timeframe": "1H",
+    "strategy": "Auto Paper (Technical)",
+    "analysis_summary": "السعر تحت EMA20 — EMA20 تحت EMA50 — تعلّم: احتمال النجاح 75% (نموذج v2)",
+    "status": "executed",
+    "id": "b0087250-c693-40ab-bafc-33be6ce88e24",
+    "created_date": "2026-11-07T05:03:25.279Z",
+    "updated_date": "2026-11-07T05:03:25.279Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "XLM/USDT",
+    "direction": "sell",
+    "confidence": 77,
+    "entry_price": 0.1525,
+    "stop_loss": 0.1546857142857143,
+    "take_profit_1": 0.14812857142857144,
+    "take_profit_2": 0.14594285714285715,
+    "take_profit_3": 0.14375714285714286,
+    "timeframe": "1H",
+    "strategy": "Auto Paper (Technical)",
+    "analysis_summary": "السعر تحت EMA20 — EMA20 تحت EMA50 — تعلّم: احتمال النجاح 75% (نموذج v2)",
+    "status": "executed",
+    "id": "566c6e2b-23e1-4d5d-bc5f-b4fd01f8bb7a",
+    "created_date": "2026-11-07T05:03:25.293Z",
+    "updated_date": "2026-11-07T05:03:25.293Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "AVAX/USDT",
+    "direction": "sell",
+    "confidence": 77,
+    "entry_price": 8.327,
+    "stop_loss": 8.417321428571428,
+    "take_profit_1": 8.146357142857143,
+    "take_profit_2": 8.056035714285713,
+    "take_profit_3": 7.965714285714285,
+    "timeframe": "1H",
+    "strategy": "Auto Paper (Technical)",
+    "analysis_summary": "السعر تحت EMA20 — EMA20 تحت EMA50 — تعلّم: احتمال النجاح 75% (نموذج v2)",
+    "status": "executed",
+    "id": "d48fd8dd-7de3-45d2-8173-99aa89d89150",
+    "created_date": "2026-11-07T05:13:21.664Z",
+    "updated_date": "2026-11-07T05:13:21.664Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BTC/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 75893.66,
+    "stop_loss": 77506.52,
+    "take_profit_1": 73474.36,
+    "take_profit_2": 71861.5,
+    "timeframe": "1H",
+    "strategy": "AI Auto",
+    "analysis_summary": "العقل الكمي لـ BTC/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.42%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (38.5)\n• الدعم: ارتكاز على 75,736.38 (تلامس 1x)",
+    "status": "executed",
+    "id": "91094bd0-1157-42df-9de6-128a07297a04",
+    "created_date": "2026-11-07T05:22:31.304Z",
+    "updated_date": "2026-11-07T05:22:31.354Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "DOGE/USDT",
+    "direction": "sell",
+    "confidence": 83,
+    "entry_price": 0.072,
+    "stop_loss": 0.074282,
+    "take_profit_1": 0.068577,
+    "take_profit_2": 0.066295,
+    "timeframe": "1H",
+    "strategy": "AI Auto",
+    "analysis_summary": "العقل الكمي لـ DOGE/USDT: التوصية بيع بثقة 83% — السوق في اتجاه هابط وتقلب طبيعي (ATR 2.11%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (40.1)\n• MACD: سلبي متباطئ",
+    "status": "executed",
+    "id": "668f94cc-78cd-4b67-aec4-8b5b9a0eafb7",
+    "created_date": "2026-11-07T05:22:58.392Z",
+    "updated_date": "2026-11-07T05:22:58.461Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "TRX/USDT",
+    "direction": "sell",
+    "confidence": 80,
+    "entry_price": 0.3177,
+    "stop_loss": 0.319404,
+    "take_profit_1": 0.315145,
+    "take_profit_2": 0.313441,
+    "timeframe": "1H",
+    "strategy": "AI Auto",
+    "analysis_summary": "العقل الكمي لـ TRX/USDT: التوصية بيع بثقة 80% — السوق في نطاق عرضي وتقلب منخفض (ATR 0.36%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• MACD: سلبي متسارع\n• RSI: زخم سلبي (44.1)",
+    "status": "executed",
+    "id": "cb708505-6c4e-4ea5-9826-cfe8eb7449e3",
+    "created_date": "2026-11-07T05:23:06.558Z",
+    "updated_date": "2026-11-07T05:23:06.616Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "LINK/USDT",
+    "direction": "sell",
+    "confidence": 77,
+    "entry_price": 10.843,
+    "stop_loss": 10.968142857142857,
+    "take_profit_1": 10.592714285714285,
+    "take_profit_2": 10.467571428571429,
+    "take_profit_3": 10.34242857142857,
+    "timeframe": "1H",
+    "strategy": "Auto Paper (Technical)",
+    "analysis_summary": "السعر تحت EMA20 — EMA20 تحت EMA50 — تعلّم: احتمال النجاح 75% (نموذج v2)",
+    "status": "executed",
+    "id": "c7fd8b06-de64-41d1-bffc-3654d49e225b",
+    "created_date": "2026-11-07T05:35:06.503Z",
+    "updated_date": "2026-11-07T05:35:06.503Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "PEPE/USDT",
+    "direction": "buy",
+    "confidence": 63,
+    "entry_price": 0.00000493,
+    "stop_loss": 0.000004820714285714286,
+    "take_profit_1": 0.000005148571428571429,
+    "take_profit_2": 0.000005257857142857143,
+    "take_profit_3": 0.000005367142857142858,
+    "timeframe": "1H",
+    "strategy": "Auto Paper (Technical)",
+    "analysis_summary": "السعر تحت EMA20 — EMA20 فوق EMA50 — RSI تشبع بيعي 28 — تعلّم: احتمال النجاح 55% (نموذج v3)",
+    "status": "executed",
+    "id": "646c9996-541f-4218-b294-666a20c4e45a",
+    "created_date": "2026-11-07T05:45:41.611Z",
+    "updated_date": "2026-11-07T05:45:41.611Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BTC/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 75893.66,
+    "stop_loss": 77506.52,
+    "take_profit_1": 73474.36,
+    "take_profit_2": 71861.5,
+    "timeframe": "1H",
+    "strategy": "AI Auto",
+    "analysis_summary": "العقل الكمي لـ BTC/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.42%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (38.5)\n• الدعم: ارتكاز على 75,736.38 (تلامس 1x)",
+    "status": "executed",
+    "id": "508b648a-aafd-4ec8-b841-b5c9dec88a9b",
+    "created_date": "2026-11-07T05:46:42.473Z",
+    "updated_date": "2026-11-07T05:46:42.543Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "TIA/USDT",
+    "direction": "buy",
+    "confidence": 71,
+    "entry_price": 0.4374,
+    "stop_loss": 0.4300178571428572,
+    "take_profit_1": 0.4521642857142857,
+    "take_profit_2": 0.4595464285714286,
+    "take_profit_3": 0.4669285714285714,
+    "timeframe": "1H",
+    "strategy": "Auto Paper (Technical)",
+    "analysis_summary": "السعر فوق EMA20 — EMA20 فوق EMA50 — RSI تشبع بيعي 33 — تعلّم: احتمال النجاح 56% (نموذج v3)",
+    "status": "executed",
+    "id": "ef9df85d-2b8c-4fce-9a7b-9c39bd3fac27",
+    "created_date": "2026-11-07T06:03:36.738Z",
+    "updated_date": "2026-11-07T06:03:36.738Z",
+    "created_by": "trader@local"
+  },
+  {
+    "pair": "BTC/USDT",
+    "direction": "sell",
+    "confidence": 74,
+    "entry_price": 75893.66,
+    "stop_loss": 77506.52,
+    "take_profit_1": 73474.36,
+    "take_profit_2": 71861.5,
+    "timeframe": "1H",
+    "strategy": "AI Auto",
+    "analysis_summary": "العقل الكمي لـ BTC/USDT: التوصية بيع بثقة 74% — السوق في اتجاه هابط وتقلب طبيعي (ATR 1.42%).\n• اتجاه EMA: هابط (السعر تحت EMA20 تحت EMA50)\n• RSI: زخم سلبي (38.5)\n• الدعم: ارتكاز على 75,736.38 (تلامس 1x)",
+    "status": "expired",
+    "id": "2855e1fe-8372-4ab1-87e1-a00411cc1557",
+    "created_date": "2026-11-07T06:15:12.060Z",
+    "updated_date": "2026-11-07T06:15:12.132Z",
+    "created_by": "trader@local"
+  }
+]

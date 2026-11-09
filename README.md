@@ -1,46 +1,80 @@
-**Welcome to Quantum Trade**
+# Quantum Trade
 
-**About**
+AI-powered crypto trading platform for market analysis, signal generation, backtesting, and local strategy execution.
 
-View and Edit  your app on [Base44.com](http://Base44.com) 
+## Overview
 
-This project contains everything you need to run your app locally.
+Quantum Trade is a local-first trading workspace built to help you analyze markets, monitor positions, test strategies, and automate trading workflows without depending on a hosted platform. The project includes a React frontend, a Node-based backend, JSON-backed local storage, and optional AI integration for analysis and suggestions.
 
-**Edit the code in your local development environment**
+## Features
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+- Market dashboard and trade monitoring
+- Signal generation and AI-assisted insights
+- Backtesting and performance review
+- Risk settings and execution controls
+- Local API server with JSON database storage
+- Optional LLM integration for advanced analysis
 
-**Start the local app on Windows**
+## Prerequisites
 
-Install [Node.js LTS](https://nodejs.org/) once, then double-click `start-app.bat`.
-It installs dependencies if needed, builds the app, starts the local server, and
-opens the app at [http://localhost:3001](http://localhost:3001). Keep the server
-window open while using the app; close it to stop the server.
+- Node.js LTS
+- npm
+- A configured local environment file for your AI and exchange integrations
 
-**Prerequisites:** 
+## Run locally on Windows
 
-1. Clone the repository using the project's Git URL 
-2. Navigate to the project directory
-3. Install dependencies: `npm install`
-4. Create an `.env.local` file and set the right environment variables
+1. Clone the repository.
+2. Open a terminal in the project folder.
+3. Install dependencies:
 
-```
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=your_backend_url
-
-e.g.
-VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
-VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
+```bash
+npm install
 ```
 
-Run the app: `npm run dev`
+4. Create a local environment file based on `.env.example` and fill in the required values.
+5. Start the app:
 
-**Publish your changes**
+```bash
+npm run dev
+npm run dev:server
+```
 
-Open [Base44.com](http://Base44.com) and click on Publish.
+The frontend runs at http://localhost:5173 and the backend API runs at http://localhost:3001.
 
-**Docs & Support**
+## Environment configuration
 
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
+Copy `.env.example` to `.env` or `.env.local` and adjust the values for your setup.
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+```env
+PORT=3001
+DATA_DIR=./server/data
+LLM_BASE_URL=https://api.openai.com/v1
+LLM_API_KEY=
+LLM_MODEL=gpt-4o-mini
+AI_CRON_MINUTES=0
+BINANCE_BASE_URL=https://api.binance.com
+CORS_ORIGIN=http://localhost:5173,http://127.0.0.1:5173
+LOCAL_API_TOKEN=
+```
+
+You can also use other compatible OpenAI-style providers such as DeepSeek, Groq, OpenRouter, or a local Ollama instance.
+
+## Project scripts
+
+```bash
+npm run dev
+npm run build
+npm run test
+npm run dev:server
+npm run restore:local
+```
+
+## Notes
+
+- The app includes a local compatibility layer so the frontend can work without a hosted backend.
+- The server stores data in JSON files under `server/data` for local development and testing.
+- The Windows helper script `start-app.bat` is available for quick startup.
+
+## Support
+
+Use your internal documentation, issue tracker, or deployment workflow for additional help and release notes.

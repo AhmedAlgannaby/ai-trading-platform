@@ -119,7 +119,7 @@ const s9 = await seedSignal({ direction: 'sell', stop_loss: 102, take_profit_1: 
 const r9 = await executeSignal(s9.id);
 const after9 = await db.list('Trade', {});
 ok(r9.success && after9.length === 1 && after9[0].type === 'short' &&
-  after9[0].market_type === 'futures' && after9[0].leverage === 3, 'بيع فيوتشر ينفذ برافعة الإعدادات');
+  after9[0].market_type === 'futures' && after9[0].leverage === 2, 'بيع فيوتشر ينفذ داخل حد الرافعة الآمن 2x');
 ok(after9[0].position_size === 10000 && calcPnL(after9[0], 102).pnl === -200,
   'futures size risks the configured 2% at the stop without double leverage');
 
@@ -180,12 +180,25 @@ const s15 = await seedSignal({ confidence: 65 });
 const r15 = await executeSignal(s15.id);
 ok(r15.skipped && /minimum 70/.test(r15.reason), 'micro: ثقة 65% مرفوضة');
 
-// ── 16) micro: هدف لا يغطي الرسوم يُرفض ──
+// ── 16) paper: profit cap + leverage cap يمنع نمو غير واقعي في الحساب الصغير ──
+await resetDir();
+await seedSettings({ paper_balance: 100, trading_mode: 'paper', market_type: 'futures', default_leverage: 5, max_risk_per_trade: 2 });
+await db.create('Trade', {
+  pair: 'BTC/USDT', status: 'closed', mode: 'paper',
+  position_size: 100, pnl: 18, created_date: new Date().toISOString(), closed_at: new Date().toISOString(),
+});
+const s16 = await seedSignal({ pair: 'ETH/USDT', entry_price: 100, stop_loss: 99, take_profit_1: 103 });
+const r16 = await executeSignal(s16.id);
+const after16 = await db.list('Trade', {});
+ok(r16.skipped && /daily profit cap|paper/i.test(r16.reason), 'paper: cap يومي يمنع سيناريو نمو غير واقعي');
+ok(after16.length === 1, 'لا تُفتح صفقة جديدة بعد الوصول إلى حد الربح اليومي');
+
+// ── 17) micro: هدف لا يغطي الرسوم يُرفض ──
 await resetDir();
 await seedSettings({ paper_balance: 10, market_type: 'futures' });
-const s16 = await seedSignal({ stop_loss: 99.99, take_profit_1: 100.01, take_profit_2: 100.02, take_profit_3: 100.03 });
-const r16 = await executeSignal(s16.id);
-ok(r16.skipped && /fee guard/.test(r16.reason), 'micro: هدف لا يغطي الرسوم مرفوض');
+const s17 = await seedSignal({ stop_loss: 99.99, take_profit_1: 100.01, take_profit_2: 100.02, take_profit_3: 100.03 });
+const r17 = await executeSignal(s17.id);
+ok(r17.skipped && /fee guard/.test(r17.reason), 'micro: هدف لا يغطي الرسوم مرفوض');
 
 // تنظيف
 await fs.rm(process.env.DATA_DIR, { recursive: true, force: true });

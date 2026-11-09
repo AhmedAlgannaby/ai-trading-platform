@@ -242,6 +242,19 @@ async function _executeSignalInner(signalId) {
     return { skipped: true, reason: `confidence ${signal.confidence}% below minimum ${minConfidence}%` };
   }
 
+  if (tradingMode === 'paper') {
+    const today = new Date().toISOString().slice(0, 10);
+    const closedToday = await db.list('Trade', { filter: { status: 'closed', mode: 'paper' } });
+    const dailyProfit = closedToday
+      .filter((t) => (t.closed_at || t.updated_date || '').slice(0, 10) === today)
+      .reduce((sum, t) => sum + (Number(t.pnl) || 0), 0);
+    const dailyProfitCap = Math.max(5, balance * 0.1);
+    if (dailyProfit >= dailyProfitCap) {
+      await db.update('Signal', signal.id, { status: 'expired' });
+      return { skipped: true, reason: `paper daily profit cap hit ($${dailyProfit.toFixed(2)} >= $${dailyProfitCap.toFixed(2)})` };
+    }
+  }
+
   const openTrades = await db.list('Trade', { filter: { status: 'open' } });
   // زوج واحد = صفقة مفتوحة واحدة — يمنع تكرار نفس الزوج من مولدات إشارات متعددة
   if (openTrades.some(t => t.pair === signal.pair)) {
@@ -291,11 +304,11 @@ async function _executeSignalInner(signalId) {
       });
       return { skipped: true, reason: throttle.reason };
     }
-    const baseRisk = micro ? microRiskPct(balance) : Math.min(Math.max(Number(settings.max_risk_per_trade) || 2, 0.1), 10);
+    const baseRisk = micro ? microRiskPct(balance) : Math.min(Math.max(Number(settings.max_risk_per_trade) || 2, 0.1), 2);
     const riskPct = baseRisk * (throttle.riskMult ?? 1);
     const market = settings.market_type === 'futures' ? 'futures' : 'spot';
     const maxAllowedLeverage = market === 'futures'
-      ? Math.min(Math.max(Math.trunc(Number(settings.max_leverage) || 5), 1), 125)
+      ? Math.min(Math.max(Math.trunc(Number(settings.max_leverage) || 2), 1), 2)
       : 1;
     const requestedLeverage = market === 'futures'
       ? Math.min(Math.max(Math.trunc(Number(settings.default_leverage) || 1), 1), maxAllowedLeverage)
